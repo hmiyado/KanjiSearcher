@@ -104,6 +104,7 @@
 		2F076B7D24BAF8C6001EA7FD /* KanjiSearcherTests */ = {
 			isa = PBXGroup;
 			children = (
+				2F076B8E24BB4404001EA7FD /* source */,
 				2F076B7E24BAF8C6001EA7FD /* KanjiSearcherTests.swift */,
 				2F076B8024BAF8C6001EA7FD /* Info.plist */,
 			);
@@ -136,6 +137,21 @@
 				2F076B7224BAF8C6001EA7FD /* LaunchScreen.storyboard */,
 			);
 			path = storyboard;
+			sourceTree = "<group>";
+		};
+		2F076B8E24BB4404001EA7FD /* source */ = {
+			isa = PBXGroup;
+			children = (
+				2F076B8F24BB4418001EA7FD /* search */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
+		2F076B8F24BB4418001EA7FD /* search */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = search;
 			sourceTree = "<group>";
 		};
 		B18149BC2863CB5B9341844F /* Pods */ = {
