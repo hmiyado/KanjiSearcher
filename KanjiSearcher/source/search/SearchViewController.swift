@@ -6,24 +6,32 @@
 //  Copyright © 2020 hmiyado. All rights reserved.
 //
 
+import RxCocoa
+import RxSwift
 import UIKit
 
 class SearchViewController: UIViewController {
+
+    // MARK: property
+    let viewModel = SearchViewModel.init()
+    let disposeBag = DisposeBag()
     
-    // MARK: override UIViewController
+    @IBOutlet weak var buttonSearch: UIButton!
+    @IBOutlet weak var textFieldReading: UITextField!
+    
+
+    // MARK: method
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-
-    // MARK: IBxxx
-    
-    @IBOutlet weak var textFieldReading: UITextField!
-    @IBAction func buttonSearch(_ sender: Any) {
-        guard let reading = textFieldReading.text else {
-            return
-        }
-        print("reading: \(reading)")
+        
+        buttonSearch.rx.tap
+            .bind(to: viewModel.input.onSearch)
+            .disposed(by: disposeBag)
+        textFieldReading.rx.text
+            .map { query in query ?? "" }
+            .bind(to: viewModel.input.onQueryReading)
+            .disposed(by: disposeBag)
     }
 }
 

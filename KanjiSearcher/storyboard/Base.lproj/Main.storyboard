@@ -38,13 +38,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="neq-o3-6wM">
-                                <rect key="frame" x="170.66666666666666" y="126.33333333333331" width="73" height="55"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="neq-o3-6wM">
+                                <rect key="frame" x="170.66666666666666" y="129.33333333333326" width="73" height="55"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <state key="normal" title="検索"/>
-                                <connections>
-                                    <action selector="buttonSearch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="znB-KR-EO4"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -62,6 +59,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="buttonSearch" destination="neq-o3-6wM" id="GDa-y8-Jv4"/>
                         <outlet property="textFieldReading" destination="XCY-6R-wUV" id="TYt-VN-40y"/>
                     </connections>
                 </viewController>
