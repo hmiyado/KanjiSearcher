@@ -1,0 +1,591 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		51318D8730FCF69A3B62874304186857 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		8C14B9E3EDE8D49A26751E02D3ED5CA8 /* Pods-KanjiSearcher-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B04740C7DC438D4446E6AC1D3854B6B5 /* Pods-KanjiSearcher-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C93C3297E80F0510C2B18874DEC7F50 /* Pods-KanjiSearcher-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D9D96FF30C0A348FF29CC8DE8A67CA /* Pods-KanjiSearcher-dummy.m */; };
+		AD7C4072B4C742963B3F8E2DA3C7E194 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		EE47A6AC175702E8C63CC05D9A96EE80 /* Pods-KanjiSearcherTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7870FEFABFC0CFBA061BC760E5EEF0DF /* Pods-KanjiSearcherTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8AB91508B893A591FA813AA0A538322 /* Pods-KanjiSearcherTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 921D000AFE9641E1AFC09F6A0214891F /* Pods-KanjiSearcherTests-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7ECE9DB88A3CE762130A0407D4D4B6DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0A9920C194301BF3E95F660850C486D6;
+			remoteInfo = "Pods-KanjiSearcher";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01A5C87EFB75DEB82D329CF02CC6BA70 /* Pods-KanjiSearcher-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-KanjiSearcher-acknowledgements.plist"; sourceTree = "<group>"; };
+		0D4CE2ABDD9DD89D48923423B75F9FB0 /* Pods-KanjiSearcher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KanjiSearcher.release.xcconfig"; sourceTree = "<group>"; };
+		1CE983E7B276AB1279D57CAD841B2E4F /* Pods-KanjiSearcherTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-KanjiSearcherTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		240E731BAF39961B0CDA1DB181221BE3 /* Pods-KanjiSearcherTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-KanjiSearcherTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		261F8ECBE7C30890D5A1B8A7D1A8C984 /* Pods_KanjiSearcherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_KanjiSearcherTests.framework; path = "Pods-KanjiSearcherTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		40A38E23C99A918F0F9405FB09A82430 /* Pods-KanjiSearcherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KanjiSearcherTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4C46BBE60DDB614B95EA5F824869396D /* Pods-KanjiSearcherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KanjiSearcherTests.release.xcconfig"; sourceTree = "<group>"; };
+		59D9D96FF30C0A348FF29CC8DE8A67CA /* Pods-KanjiSearcher-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-KanjiSearcher-dummy.m"; sourceTree = "<group>"; };
+		679DFCD4A2FC3B8B52B69966E3318C68 /* Pods-KanjiSearcher-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-KanjiSearcher-Info.plist"; sourceTree = "<group>"; };
+		7870FEFABFC0CFBA061BC760E5EEF0DF /* Pods-KanjiSearcherTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KanjiSearcherTests-umbrella.h"; sourceTree = "<group>"; };
+		859E30E5A31E7D84D763372A63519A04 /* Pods-KanjiSearcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KanjiSearcher.debug.xcconfig"; sourceTree = "<group>"; };
+		921D000AFE9641E1AFC09F6A0214891F /* Pods-KanjiSearcherTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-KanjiSearcherTests-dummy.m"; sourceTree = "<group>"; };
+		97EA94F75869616256C671BE69FCBBB8 /* Pods_KanjiSearcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_KanjiSearcher.framework; path = "Pods-KanjiSearcher.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B04740C7DC438D4446E6AC1D3854B6B5 /* Pods-KanjiSearcher-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KanjiSearcher-umbrella.h"; sourceTree = "<group>"; };
+		B8AC5761BFCE5137B882A3A532F59A78 /* Pods-KanjiSearcherTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-KanjiSearcherTests-Info.plist"; sourceTree = "<group>"; };
+		BE18825DAA7F1F9A44D6156F004B53B8 /* Pods-KanjiSearcher-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-KanjiSearcher-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E5AA9AC8F05E1CF765830972A0A8000A /* Pods-KanjiSearcherTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-KanjiSearcherTests.modulemap"; sourceTree = "<group>"; };
+		FE787D74CEA35D97AACAB3BDF70CE42A /* Pods-KanjiSearcher.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-KanjiSearcher.modulemap"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6163765646E131AB8069116BFD00B820 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD7C4072B4C742963B3F8E2DA3C7E194 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFAE6A2463684AE1A1AB967AE1D1BDC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51318D8730FCF69A3B62874304186857 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8A2CA2B589F3098957645B0CD3A4D783 /* Pods-KanjiSearcher */ = {
+			isa = PBXGroup;
+			children = (
+				FE787D74CEA35D97AACAB3BDF70CE42A /* Pods-KanjiSearcher.modulemap */,
+				BE18825DAA7F1F9A44D6156F004B53B8 /* Pods-KanjiSearcher-acknowledgements.markdown */,
+				01A5C87EFB75DEB82D329CF02CC6BA70 /* Pods-KanjiSearcher-acknowledgements.plist */,
+				59D9D96FF30C0A348FF29CC8DE8A67CA /* Pods-KanjiSearcher-dummy.m */,
+				679DFCD4A2FC3B8B52B69966E3318C68 /* Pods-KanjiSearcher-Info.plist */,
+				B04740C7DC438D4446E6AC1D3854B6B5 /* Pods-KanjiSearcher-umbrella.h */,
+				859E30E5A31E7D84D763372A63519A04 /* Pods-KanjiSearcher.debug.xcconfig */,
+				0D4CE2ABDD9DD89D48923423B75F9FB0 /* Pods-KanjiSearcher.release.xcconfig */,
+			);
+			name = "Pods-KanjiSearcher";
+			path = "Target Support Files/Pods-KanjiSearcher";
+			sourceTree = "<group>";
+		};
+		926F588A67751E1943C0F197D518A8F2 /* Pods-KanjiSearcherTests */ = {
+			isa = PBXGroup;
+			children = (
+				E5AA9AC8F05E1CF765830972A0A8000A /* Pods-KanjiSearcherTests.modulemap */,
+				240E731BAF39961B0CDA1DB181221BE3 /* Pods-KanjiSearcherTests-acknowledgements.markdown */,
+				1CE983E7B276AB1279D57CAD841B2E4F /* Pods-KanjiSearcherTests-acknowledgements.plist */,
+				921D000AFE9641E1AFC09F6A0214891F /* Pods-KanjiSearcherTests-dummy.m */,
+				B8AC5761BFCE5137B882A3A532F59A78 /* Pods-KanjiSearcherTests-Info.plist */,
+				7870FEFABFC0CFBA061BC760E5EEF0DF /* Pods-KanjiSearcherTests-umbrella.h */,
+				40A38E23C99A918F0F9405FB09A82430 /* Pods-KanjiSearcherTests.debug.xcconfig */,
+				4C46BBE60DDB614B95EA5F824869396D /* Pods-KanjiSearcherTests.release.xcconfig */,
+			);
+			name = "Pods-KanjiSearcherTests";
+			path = "Target Support Files/Pods-KanjiSearcherTests";
+			sourceTree = "<group>";
+		};
+		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				F1599301BB94947DA631F4F1F0806637 /* Products */,
+				FDBA3300E8598FCF85BE7E2452127190 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F1599301BB94947DA631F4F1F0806637 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				97EA94F75869616256C671BE69FCBBB8 /* Pods_KanjiSearcher.framework */,
+				261F8ECBE7C30890D5A1B8A7D1A8C984 /* Pods_KanjiSearcherTests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FDBA3300E8598FCF85BE7E2452127190 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8A2CA2B589F3098957645B0CD3A4D783 /* Pods-KanjiSearcher */,
+				926F588A67751E1943C0F197D518A8F2 /* Pods-KanjiSearcherTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0E692C738260764C73C4B4A433C6C80D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C14B9E3EDE8D49A26751E02D3ED5CA8 /* Pods-KanjiSearcher-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3E05A9EBE3D0EE831A2B4E4886EAD05 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE47A6AC175702E8C63CC05D9A96EE80 /* Pods-KanjiSearcherTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0A9920C194301BF3E95F660850C486D6 /* Pods-KanjiSearcher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B42ABFAAC9381710569E0B78ADBC1DE /* Build configuration list for PBXNativeTarget "Pods-KanjiSearcher" */;
+			buildPhases = (
+				0E692C738260764C73C4B4A433C6C80D /* Headers */,
+				41D05E01721A0BCA02E5F78E06D20363 /* Sources */,
+				6163765646E131AB8069116BFD00B820 /* Frameworks */,
+				1604A577DAD772676726E3E3240C6EAF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-KanjiSearcher";
+			productName = "Pods-KanjiSearcher";
+			productReference = 97EA94F75869616256C671BE69FCBBB8 /* Pods_KanjiSearcher.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		2DCB9767A3E0903BC2F29EB89679FC45 /* Pods-KanjiSearcherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9064B1B13CD46811FD4C09C38332403A /* Build configuration list for PBXNativeTarget "Pods-KanjiSearcherTests" */;
+			buildPhases = (
+				C3E05A9EBE3D0EE831A2B4E4886EAD05 /* Headers */,
+				E230A8B6DD5A46EF1410E7805A238E51 /* Sources */,
+				BFAE6A2463684AE1A1AB967AE1D1BDC1 /* Frameworks */,
+				7E7EAAA66FF2CEC20BCA4E2685B94E7C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EE0B069EB2A96A544382B1EDFBE06C59 /* PBXTargetDependency */,
+			);
+			name = "Pods-KanjiSearcherTests";
+			productName = "Pods-KanjiSearcherTests";
+			productReference = 261F8ECBE7C30890D5A1B8A7D1A8C984 /* Pods_KanjiSearcherTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = F1599301BB94947DA631F4F1F0806637 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0A9920C194301BF3E95F660850C486D6 /* Pods-KanjiSearcher */,
+				2DCB9767A3E0903BC2F29EB89679FC45 /* Pods-KanjiSearcherTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1604A577DAD772676726E3E3240C6EAF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E7EAAA66FF2CEC20BCA4E2685B94E7C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		41D05E01721A0BCA02E5F78E06D20363 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C93C3297E80F0510C2B18874DEC7F50 /* Pods-KanjiSearcher-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E230A8B6DD5A46EF1410E7805A238E51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8AB91508B893A591FA813AA0A538322 /* Pods-KanjiSearcherTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EE0B069EB2A96A544382B1EDFBE06C59 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-KanjiSearcher";
+			target = 0A9920C194301BF3E95F660850C486D6 /* Pods-KanjiSearcher */;
+			targetProxy = 7ECE9DB88A3CE762130A0407D4D4B6DD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1422B121EAEAEA11307496903FA623C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		3BA82C4FCD6E1B11FE6B19D461270046 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 859E30E5A31E7D84D763372A63519A04 /* Pods-KanjiSearcher.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-KanjiSearcher/Pods-KanjiSearcher-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-KanjiSearcher/Pods-KanjiSearcher.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3C2DF70554F69154065A7BC752E098DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C46BBE60DDB614B95EA5F824869396D /* Pods-KanjiSearcherTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-KanjiSearcherTests/Pods-KanjiSearcherTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-KanjiSearcherTests/Pods-KanjiSearcherTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		68B107849236DC8E4A934567987A8056 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40A38E23C99A918F0F9405FB09A82430 /* Pods-KanjiSearcherTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-KanjiSearcherTests/Pods-KanjiSearcherTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-KanjiSearcherTests/Pods-KanjiSearcherTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C6916C1DE4155CBF26EF15BF6EA247A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D4CE2ABDD9DD89D48923423B75F9FB0 /* Pods-KanjiSearcher.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-KanjiSearcher/Pods-KanjiSearcher-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-KanjiSearcher/Pods-KanjiSearcher.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		ED7888FA6713EABBF66D26A8003AD1CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED7888FA6713EABBF66D26A8003AD1CA /* Debug */,
+				1422B121EAEAEA11307496903FA623C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B42ABFAAC9381710569E0B78ADBC1DE /* Build configuration list for PBXNativeTarget "Pods-KanjiSearcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BA82C4FCD6E1B11FE6B19D461270046 /* Debug */,
+				C6916C1DE4155CBF26EF15BF6EA247A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9064B1B13CD46811FD4C09C38332403A /* Build configuration list for PBXNativeTarget "Pods-KanjiSearcherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68B107849236DC8E4A934567987A8056 /* Debug */,
+				3C2DF70554F69154065A7BC752E098DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

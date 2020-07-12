@@ -14,6 +14,8 @@
 		2F076B7124BAF8C6001EA7FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F076B7024BAF8C6001EA7FD /* Assets.xcassets */; };
 		2F076B7424BAF8C6001EA7FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F076B7224BAF8C6001EA7FD /* LaunchScreen.storyboard */; };
 		2F076B7F24BAF8C6001EA7FD /* KanjiSearcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F076B7E24BAF8C6001EA7FD /* KanjiSearcherTests.swift */; };
+		501EBC1D565AE48412ECCBBC /* Pods_KanjiSearcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BA6443CCBE50221B27442A9 /* Pods_KanjiSearcher.framework */; };
+		FEF28FC15744B6B57FC9DC88 /* Pods_KanjiSearcherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 562500A0C8C6D7DF8D22BB36 /* Pods_KanjiSearcherTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1BA6443CCBE50221B27442A9 /* Pods_KanjiSearcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KanjiSearcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AC8E8A3F8B29C170C5A590E /* Pods-KanjiSearcherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KanjiSearcherTests.release.xcconfig"; path = "Target Support Files/Pods-KanjiSearcherTests/Pods-KanjiSearcherTests.release.xcconfig"; sourceTree = "<group>"; };
 		2F076B6424BAF8C4001EA7FD /* KanjiSearcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KanjiSearcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F076B6724BAF8C4001EA7FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F076B6924BAF8C4001EA7FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +42,10 @@
 		2F076B7A24BAF8C6001EA7FD /* KanjiSearcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KanjiSearcherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F076B7E24BAF8C6001EA7FD /* KanjiSearcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiSearcherTests.swift; sourceTree = "<group>"; };
 		2F076B8024BAF8C6001EA7FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4AE8F3AAA553B903018973ED /* Pods-KanjiSearcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KanjiSearcher.debug.xcconfig"; path = "Target Support Files/Pods-KanjiSearcher/Pods-KanjiSearcher.debug.xcconfig"; sourceTree = "<group>"; };
+		562500A0C8C6D7DF8D22BB36 /* Pods_KanjiSearcherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KanjiSearcherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		675B682B1DB2F5A62ADA7989 /* Pods-KanjiSearcherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KanjiSearcherTests.debug.xcconfig"; path = "Target Support Files/Pods-KanjiSearcherTests/Pods-KanjiSearcherTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F34B25E9EA5480ACEF4FDE03 /* Pods-KanjiSearcher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KanjiSearcher.release.xcconfig"; path = "Target Support Files/Pods-KanjiSearcher/Pods-KanjiSearcher.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				501EBC1D565AE48412ECCBBC /* Pods_KanjiSearcher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEF28FC15744B6B57FC9DC88 /* Pods_KanjiSearcherTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +74,8 @@
 				2F076B6624BAF8C4001EA7FD /* KanjiSearcher */,
 				2F076B7D24BAF8C6001EA7FD /* KanjiSearcherTests */,
 				2F076B6524BAF8C4001EA7FD /* Products */,
+				B18149BC2863CB5B9341844F /* Pods */,
+				ECC442BC6A71DBBC0C02E4F4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +111,27 @@
 			path = KanjiSearcherTests;
 			sourceTree = "<group>";
 		};
+		B18149BC2863CB5B9341844F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4AE8F3AAA553B903018973ED /* Pods-KanjiSearcher.debug.xcconfig */,
+				F34B25E9EA5480ACEF4FDE03 /* Pods-KanjiSearcher.release.xcconfig */,
+				675B682B1DB2F5A62ADA7989 /* Pods-KanjiSearcherTests.debug.xcconfig */,
+				2AC8E8A3F8B29C170C5A590E /* Pods-KanjiSearcherTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		ECC442BC6A71DBBC0C02E4F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1BA6443CCBE50221B27442A9 /* Pods_KanjiSearcher.framework */,
+				562500A0C8C6D7DF8D22BB36 /* Pods_KanjiSearcherTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,6 +139,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2F076B8324BAF8C6001EA7FD /* Build configuration list for PBXNativeTarget "KanjiSearcher" */;
 			buildPhases = (
+				BFBB862614CE6F2D3CE484F1 /* [CP] Check Pods Manifest.lock */,
 				2F076B6024BAF8C4001EA7FD /* Sources */,
 				2F076B6124BAF8C4001EA7FD /* Frameworks */,
 				2F076B6224BAF8C4001EA7FD /* Resources */,
@@ -123,6 +157,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2F076B8624BAF8C6001EA7FD /* Build configuration list for PBXNativeTarget "KanjiSearcherTests" */;
 			buildPhases = (
+				56369ADCA8EBBDE5AD8D2615 /* [CP] Check Pods Manifest.lock */,
 				2F076B7624BAF8C6001EA7FD /* Sources */,
 				2F076B7724BAF8C6001EA7FD /* Frameworks */,
 				2F076B7824BAF8C6001EA7FD /* Resources */,
@@ -194,6 +229,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		56369ADCA8EBBDE5AD8D2615 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KanjiSearcherTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BFBB862614CE6F2D3CE484F1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KanjiSearcher-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2F076B6024BAF8C4001EA7FD /* Sources */ = {
@@ -360,6 +442,7 @@
 		};
 		2F076B8424BAF8C6001EA7FD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4AE8F3AAA553B903018973ED /* Pods-KanjiSearcher.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -378,6 +461,7 @@
 		};
 		2F076B8524BAF8C6001EA7FD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F34B25E9EA5480ACEF4FDE03 /* Pods-KanjiSearcher.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -396,6 +480,7 @@
 		};
 		2F076B8724BAF8C6001EA7FD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 675B682B1DB2F5A62ADA7989 /* Pods-KanjiSearcherTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -418,6 +503,7 @@
 		};
 		2F076B8824BAF8C6001EA7FD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2AC8E8A3F8B29C170C5A590E /* Pods-KanjiSearcherTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

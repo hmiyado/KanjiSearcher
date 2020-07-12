@@ -1,0 +1,6 @@
+framework module Pods_KanjiSearcher {
+  umbrella header "Pods-KanjiSearcher-umbrella.h"
+
+  export *
+  module * { export * }
+}
