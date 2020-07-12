@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SearchViewController.swift
 //  KanjiSearcher
 //
 //  Created by 吉田拓真 on 2020/07/12.
@@ -8,13 +8,22 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class SearchViewController: UIViewController {
+    
+    // MARK: override UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-
+    // MARK: IBxxx
+    
+    @IBOutlet weak var textFieldReading: UITextField!
+    @IBAction func buttonSearch(_ sender: Any) {
+        guard let reading = textFieldReading.text else {
+            return
+        }
+        print("reading: \(reading)")
+    }
 }
 
