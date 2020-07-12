@@ -91,6 +91,7 @@
 		2F076B6624BAF8C4001EA7FD /* KanjiSearcher */ = {
 			isa = PBXGroup;
 			children = (
+				2F076B8B24BB0B87001EA7FD /* storyboard */,
 				2F076B8A24BAFC1B001EA7FD /* source */,
 				2F076B7024BAF8C6001EA7FD /* Assets.xcassets */,
 				2F076B7524BAF8C6001EA7FD /* Info.plist */,
@@ -110,7 +111,6 @@
 		2F076B8924BAFBFE001EA7FD /* search */ = {
 			isa = PBXGroup;
 			children = (
-				2F076B6D24BAF8C4001EA7FD /* Main.storyboard */,
 				2F076B6B24BAF8C4001EA7FD /* SearchViewController.swift */,
 			);
 			path = search;
@@ -121,10 +121,18 @@
 			children = (
 				2F076B6724BAF8C4001EA7FD /* AppDelegate.swift */,
 				2F076B6924BAF8C4001EA7FD /* SceneDelegate.swift */,
-				2F076B7224BAF8C6001EA7FD /* LaunchScreen.storyboard */,
 				2F076B8924BAFBFE001EA7FD /* search */,
 			);
 			path = source;
+			sourceTree = "<group>";
+		};
+		2F076B8B24BB0B87001EA7FD /* storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				2F076B6D24BAF8C4001EA7FD /* Main.storyboard */,
+				2F076B7224BAF8C6001EA7FD /* LaunchScreen.storyboard */,
+			);
+			path = storyboard;
 			sourceTree = "<group>";
 		};
 		B18149BC2863CB5B9341844F /* Pods */ = {
