@@ -16,6 +16,10 @@ target 'KanjiSearcher' do
     # Pods for testing
     pod 'RxBlocking', "~>#{rx_version}"
     pod 'RxTest', "~>#{rx_version}"
+    
+    pod 'Quick', '~>3.0.0'
+    pod 'Nimble', '~>8.1.1'
+
   end
 
 end
