@@ -15,6 +15,22 @@ class SearchViewModelSpec: QuickSpec {
             viewModel = SearchViewModel.init()
         }
         describe("search") {
+            context("with no QueryReading") {
+                it("onSearch") {
+                    scheduler
+                        .createHotObservable([.next(10, ())])
+                        .bind(to: viewModel.onSearch)
+                        .disposed(by: disposeBag)
+                    
+                    let observer = scheduler.createObserver(String.self)
+                    viewModel.search.drive(observer).disposed(by: disposeBag)
+                    
+                    scheduler.start()
+                    
+                    expect(observer.events)
+                        .to(equal([]))
+                }
+            }
             context("with QeuryReading") {
                 beforeEach {
                     scheduler

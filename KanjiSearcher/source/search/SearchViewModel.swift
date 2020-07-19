@@ -33,6 +33,7 @@ final class SearchViewModel : SearchViewModelType, SearchViewModelInput, SearchV
     init() {
         search = onSearch
             .withLatestFrom(onQueryReading)
+            .filter { !$0.isEmpty }
             .asDriver(onErrorDriveWith: .empty())
     }
 }
