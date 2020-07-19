@@ -1,5 +1,6 @@
 //
 
+import RxCocoa
 import RxRelay
 import RxSwift
 
@@ -9,7 +10,7 @@ protocol SearchViewModelInput {
 }
 
 protocol SearchViewModelOutput {
-    
+    var search: Driver<String> { get }
 }
 
 protocol SearchViewModelType {
@@ -18,18 +19,20 @@ protocol SearchViewModelType {
 }
 
 final class SearchViewModel : SearchViewModelType, SearchViewModelInput, SearchViewModelOutput {
+    
     var input: SearchViewModelInput { return self }
     var output: SearchViewModelOutput { return self }
     
     var onQueryReading: BehaviorRelay<String> = BehaviorRelay.init(value: "")
     var onSearch: PublishRelay<Void> = PublishRelay.init()
-    
+
+    var search: Driver<String>
+
     let disposeBag = DisposeBag()
     
     init() {
-        onSearch
+        search = onSearch
             .withLatestFrom(onQueryReading)
-            .subscribe { queryReading in print("onSearch: \(queryReading)")}
-            .disposed(by: disposeBag)
+            .asDriver(onErrorDriveWith: .empty())
     }
 }

@@ -1,0 +1,43 @@
+//
+import Nimble
+import Quick
+import RxSwift
+import RxTest
+@testable import KanjiSearcher
+
+class SearchViewModelSpec: QuickSpec {
+    override func spec() {
+        let disposeBag = DisposeBag()
+        var scheduler: TestScheduler!
+        var viewModel: SearchViewModel!
+        beforeEach {
+            scheduler = TestScheduler.init(initialClock: 0)
+            viewModel = SearchViewModel.init()
+        }
+        describe("search") {
+            context("with QeuryReading") {
+                beforeEach {
+                    scheduler
+                        .createHotObservable([.next(10, "query")])
+                        .bind(to: viewModel.onQueryReading)
+                        .disposed(by: disposeBag)
+                }
+                it("onSearch") {
+                    scheduler
+                        .createHotObservable([.next(20, ())])
+                        .bind(to: viewModel.onSearch)
+                        .disposed(by: disposeBag)
+                    
+                    let observer = scheduler.createObserver(String.self)
+                    viewModel.search.drive(observer).disposed(by: disposeBag)
+                    
+                    scheduler.start()
+                    
+                    expect(observer.events)
+                        .to(equal([.next(20, "query")]))
+                    
+                }
+            }
+        }
+    }
+}
