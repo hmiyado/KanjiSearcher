@@ -18,18 +18,18 @@ protocol SearchViewModelType {
     var output: SearchViewModelOutput { get }
 }
 
-final class SearchViewModel : SearchViewModelType, SearchViewModelInput, SearchViewModelOutput {
-    
+final class SearchViewModel: SearchViewModelType, SearchViewModelInput, SearchViewModelOutput {
+
     var input: SearchViewModelInput { return self }
     var output: SearchViewModelOutput { return self }
-    
+
     var onQueryReading: BehaviorRelay<String> = BehaviorRelay.init(value: "")
     var onSearch: PublishRelay<Void> = PublishRelay.init()
 
     var search: Driver<String>
 
     let disposeBag = DisposeBag()
-    
+
     init() {
         search = onSearch
             .withLatestFrom(onQueryReading)
