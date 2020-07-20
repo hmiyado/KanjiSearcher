@@ -201,6 +201,7 @@
 			buildConfigurationList = 2F076B8624BAF8C6001EA7FD /* Build configuration list for PBXNativeTarget "KanjiSearcherTests" */;
 			buildPhases = (
 				56369ADCA8EBBDE5AD8D2615 /* [CP] Check Pods Manifest.lock */,
+				2F6C153B24C5D66A00D69AE5 /* ShellScript */,
 				2F076B7624BAF8C6001EA7FD /* Sources */,
 				2F076B7724BAF8C6001EA7FD /* Frameworks */,
 				2F076B7824BAF8C6001EA7FD /* Resources */,
@@ -276,6 +277,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2F6C153B24C5D66A00D69AE5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		56369ADCA8EBBDE5AD8D2615 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
