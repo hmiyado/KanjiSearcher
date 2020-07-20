@@ -1,7 +1,7 @@
 //
 
-import XCTest
 @testable import KanjiSearcher
+import XCTest
 
 class KanjiSearcherTests: XCTestCase {
 

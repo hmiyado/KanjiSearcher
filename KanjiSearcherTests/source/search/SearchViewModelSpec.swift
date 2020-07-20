@@ -1,9 +1,9 @@
 //
+@testable import KanjiSearcher
 import Nimble
 import Quick
 import RxSwift
 import RxTest
-@testable import KanjiSearcher
 
 class SearchViewModelSpec: QuickSpec {
     override func spec() {
