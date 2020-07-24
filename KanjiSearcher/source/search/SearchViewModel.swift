@@ -10,7 +10,7 @@ protocol SearchViewModelInput {
 }
 
 protocol SearchViewModelOutput {
-    var search: Driver<String> { get }
+    var search: Driver<KanjiQuery> { get }
 }
 
 protocol SearchViewModelType {
@@ -26,7 +26,7 @@ final class SearchViewModel: SearchViewModelType, SearchViewModelInput, SearchVi
     var onQueryReading: BehaviorRelay<String> = BehaviorRelay.init(value: "")
     var onSearch: PublishRelay<Void> = PublishRelay.init()
 
-    var search: Driver<String>
+    var search: Driver<KanjiQuery>
 
     let disposeBag = DisposeBag()
 
@@ -34,6 +34,7 @@ final class SearchViewModel: SearchViewModelType, SearchViewModelInput, SearchVi
         search = onSearch
             .withLatestFrom(onQueryReading)
             .filter { !$0.isEmpty }
+            .map { KanjiQuery.init(reading: $0) }
             .asDriver(onErrorDriveWith: .empty())
     }
 }

@@ -25,7 +25,7 @@ class SearchViewController: UIViewController {
             .map { query in query ?? "" }
             .bind(to: viewModel.input.onQueryReading)
             .disposed(by: disposeBag)
-        
+
         viewModel.output.search
             .asObservable()
             .subscribe(onNext: { query in

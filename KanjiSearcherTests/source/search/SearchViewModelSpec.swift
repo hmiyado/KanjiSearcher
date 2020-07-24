@@ -22,7 +22,7 @@ class SearchViewModelSpec: QuickSpec {
                         .bind(to: viewModel.onSearch)
                         .disposed(by: disposeBag)
 
-                    let observer = scheduler.createObserver(String.self)
+                    let observer = scheduler.createObserver(KanjiQuery.self)
                     viewModel.search.drive(observer).disposed(by: disposeBag)
 
                     scheduler.start()
@@ -44,13 +44,13 @@ class SearchViewModelSpec: QuickSpec {
                         .bind(to: viewModel.onSearch)
                         .disposed(by: disposeBag)
 
-                    let observer = scheduler.createObserver(String.self)
+                    let observer = scheduler.createObserver(KanjiQuery.self)
                     viewModel.search.drive(observer).disposed(by: disposeBag)
 
                     scheduler.start()
 
                     expect(observer.events)
-                        .to(equal([.next(20, "query")]))
+                        .to(equal([.next(20, KanjiQuery.init(reading: "query"))]))
 
                 }
             }
