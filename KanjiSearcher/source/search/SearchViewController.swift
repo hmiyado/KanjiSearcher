@@ -7,7 +7,7 @@ import UIKit
 class SearchViewController: UIViewController {
 
     // MARK: property
-    let viewModel = SearchViewModel.init()
+    let viewModel: SearchViewModelType = SearchViewModel.init()
     let disposeBag = DisposeBag()
 
     @IBOutlet weak var buttonSearch: UIButton!
@@ -24,6 +24,11 @@ class SearchViewController: UIViewController {
         textFieldReading.rx.text
             .map { query in query ?? "" }
             .bind(to: viewModel.input.onQueryReading)
+            .disposed(by: disposeBag)
+        
+        viewModel.output.search
+            .asObservable()
+            .subscribe(onNext: { query in print("search " + query) })
             .disposed(by: disposeBag)
     }
 }
