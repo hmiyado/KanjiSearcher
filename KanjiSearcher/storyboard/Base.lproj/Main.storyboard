@@ -70,7 +70,7 @@
         <!--Result View Controller-->
         <scene sceneID="3pH-up-y2n">
             <objects>
-                <viewController storyboardIdentifier="ResultView" id="XFw-Z2-2mS" customClass="ResultViewController" customModule="KanjiSearcher" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResultView" modalPresentationStyle="fullScreen" id="XFw-Z2-2mS" customClass="ResultViewController" customModule="KanjiSearcher" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dLI-0I-bQc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
