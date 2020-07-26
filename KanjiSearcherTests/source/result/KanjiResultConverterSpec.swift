@@ -6,6 +6,19 @@ import Quick
 class KanjiResultConverterSpec: QuickSpec {
     override func spec() {
         describe("convert") {
+            context("error") {
+                it("convert") {
+                    let json = """
+                    {
+                        "status": "error",
+                        "message": "Invalid Parameters"
+                    }
+                    """.data(using: .utf8)!
+
+                    let result = KanjiResultConverter().convert(json)
+                    expect(result).to(beNil())
+                }
+            }
             context("no result") {
                 it("convert") {
                     let json = """
