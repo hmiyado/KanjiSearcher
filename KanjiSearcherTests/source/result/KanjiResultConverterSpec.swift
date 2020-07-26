@@ -17,7 +17,7 @@ class KanjiResultConverterSpec: QuickSpec {
                     """.data(using: .utf8)!
 
                     let result = KanjiResultConverter().convert(json)
-                    expect(result).to(equal(KanjiResults.init(find: false, count: 0)))
+                    expect(result).to(equal(KanjiResults.init(status: .success, find: false, count: 0)))
                 }
             }
         }
