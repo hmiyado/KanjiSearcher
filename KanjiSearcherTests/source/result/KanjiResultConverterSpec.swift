@@ -148,14 +148,14 @@ class KanjiResultConverterSpec: QuickSpec {
                         KanjiInfo.init(
                             name: "MJ025761",
                             number: 437750,
-                            //                            type: KanjiType.init(forPersonalName: true, forStandardUse: false),
+                            type: KanjiType.init(forPersonalName: true, forStandardUse: false),
                             //                            figure: KanjiFigure.init(uri: URL(string: "http://mojikiban.ipa.go.jp/MJ025761.png")!, version: "1.0"),
                             strokeCount: 6),
                         //                            reading: KanjiReading.init(onyomi: [], kunyomi: ["つじ"])),
                         KanjiInfo.init(
                             name: "MJ025760",
                             number: 437660,
-                            //                            type: KanjiType.init(forPersonalName: false, forStandardUse: false),
+                            type: KanjiType.init(forPersonalName: false, forStandardUse: false),
                             //                            figure: KanjiFigure.init(uri: URL(string: "http://mojikiban.ipa.go.jp/MJ025760.png")!, version: "1.0"),
                             strokeCount: 5)
                         //                            reading: KanjiReading.init(onyomi: [], kunyomi: ["つじ"]))
