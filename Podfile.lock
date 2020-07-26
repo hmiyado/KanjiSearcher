@@ -2,6 +2,11 @@ PODS:
   - Alamofire (5.2.1)
   - Nimble (8.1.1)
   - Quick (3.0.0)
+  - RxAlamofire (5.6.0):
+    - RxAlamofire/Core (= 5.6.0)
+  - RxAlamofire/Core (5.6.0):
+    - Alamofire (~> 5.1)
+    - RxSwift (~> 5.1)
   - RxBlocking (5.1.1):
     - RxSwift (~> 5)
   - RxCocoa (5.1.1):
@@ -18,6 +23,7 @@ DEPENDENCIES:
   - Alamofire (~> 5.2)
   - Nimble (~> 8.1.1)
   - Quick (~> 3.0.0)
+  - RxAlamofire (~> 5.6.0)
   - RxBlocking (~> 5.1.1)
   - RxCocoa (~> 5.1.1)
   - RxSwift (~> 5.1.1)
@@ -29,6 +35,7 @@ SPEC REPOS:
     - Alamofire
     - Nimble
     - Quick
+    - RxAlamofire
     - RxBlocking
     - RxCocoa
     - RxRelay
@@ -40,6 +47,7 @@ SPEC CHECKSUMS:
   Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
   Nimble: 5f8a2fb6fa343a7242dfdd9d42f7267419d464b2
   Quick: 6d9559f40647bc4d510103842ef2fdd882d753e2
+  RxAlamofire: f34ddbab56fa2a36f99737f4d4ecc22288a1384f
   RxBlocking: 5f700a78cad61ce253ebd37c9a39b5ccc76477b4
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
@@ -47,6 +55,6 @@ SPEC CHECKSUMS:
   RxTest: 711632d5644dffbeb62c936a521b5b008a1e1faa
   SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
 
-PODFILE CHECKSUM: 7462a627ad6877acc575e036cd354bcb17ee7370
+PODFILE CHECKSUM: 663c3231e8216def3a0f7e80456564ef0415b755
 
 COCOAPODS: 1.9.3
