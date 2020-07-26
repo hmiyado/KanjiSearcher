@@ -11,7 +11,7 @@ struct KanjiInfo: Equatable {
     var figure: KanjiFigure
     /// 総画数
     var strokeCount: Int
-    //    var reading: KanjiReading
+    var reading: KanjiReading
 }
 
 extension KanjiInfo: Decodable {
@@ -22,6 +22,7 @@ extension KanjiInfo: Decodable {
         strokeCount = try values.decode(Int.self, forKey: .strokeCount)
         type = try values.decode(KanjiType.self, forKey: .type)
         figure = try values.decode(KanjiFigure.self, forKey: .figure)
+        reading = try values.decode(KanjiReading.self, forKey: .reading)
     }
 
     enum CodingKeys: String, CodingKey {
@@ -30,7 +31,7 @@ extension KanjiInfo: Decodable {
         case type = "漢字施策"
         case figure = "MJ文字図形"
         case strokeCount = "総画数"
-        //        case reading = "読み"
+        case reading = "読み"
     }
 
 }
@@ -60,9 +61,22 @@ struct KanjiFigure: Decodable, Equatable {
 }
 
 /// 読み
-struct KanjiReading: Decodable, Equatable {
+struct KanjiReading: Equatable {
     /// 音読み
     var onyomi: [String]
     /// 訓読み
     var kunyomi: [String]
+}
+
+extension KanjiReading: Decodable {
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        onyomi = (try? container.decode(Array<String>.self, forKey: .onyomi)) ?? []
+        kunyomi = (try? container.decode(Array<String>.self, forKey: .kunyomi)) ?? []
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case onyomi = "音読み"
+        case kunyomi = "訓読み"
+    }
 }
