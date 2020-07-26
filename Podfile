@@ -8,6 +8,8 @@ target 'KanjiSearcher' do
   use_frameworks!
 
   # Pods for KanjiSearcher
+  pod 'Alamofire', '~> 5.2'
+  
   pod 'RxSwift', "~>#{rx_version}"
   pod 'RxCocoa', "~>#{rx_version}"
 
