@@ -16,7 +16,9 @@ class KanjiResultConverterSpec: QuickSpec {
                     """.data(using: .utf8)!
 
                     let result = KanjiResultConverter().convert(json)
-                    expect(result).to(beNil())
+                    expect(result).to(equal(KanjiResults.init(
+                        status: .error, message: "Invalid Parameters", find: false, count: 0, results: []
+                    )))
                 }
             }
             context("no result") {
@@ -30,7 +32,7 @@ class KanjiResultConverterSpec: QuickSpec {
                     """.data(using: .utf8)!
 
                     let result = KanjiResultConverter().convert(json)
-                    expect(result).to(equal(KanjiResults.init(status: .success, find: false, count: 0, results: [])))
+                    expect(result).to(equal(KanjiResults.init(status: .success, message: "", find: false, count: 0, results: [])))
                 }
             }
             context("with result") {
@@ -144,7 +146,7 @@ class KanjiResultConverterSpec: QuickSpec {
                     """.data(using: .utf8)!
 
                     let result = KanjiResultConverter().convert(json)
-                    expect(result).to(equal(KanjiResults.init(status: .success, find: true, count: 2, results: [
+                    expect(result).to(equal(KanjiResults.init(status: .success, message: "", find: true, count: 2, results: [
                         KanjiInfo.init(
                             name: "MJ025761",
                             number: 437750,
