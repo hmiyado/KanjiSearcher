@@ -8,8 +8,8 @@ class KanjiRepository {
     func search(query: KanjiQuery) -> Observable<KanjiResults> {
         return RxAlamofire
             .requestData(.get, query.asUrl()!)
-            .map { (resoibnse, data) in
+            .map { (_, data) in
                 KanjiResultConverter().convert(data)
-            }
+        }
     }
 }
