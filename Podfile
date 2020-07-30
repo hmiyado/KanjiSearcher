@@ -22,6 +22,7 @@ target 'KanjiSearcher' do
     pod 'RxBlocking', "~>#{rx_version}"
     pod 'RxTest', "~>#{rx_version}"
     
+    pod 'OHHTTPStubs/Swift', '~>9.0.0'
     pod 'Quick', '~>3.0.0'
     pod 'Nimble', '~>8.1.1'
 
