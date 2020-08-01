@@ -23,6 +23,8 @@
 		2F6C154A24CD482400D69AE5 /* KanjiResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6C154924CD482400D69AE5 /* KanjiResults.swift */; };
 		2F6C154C24CD494700D69AE5 /* KanjiInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6C154B24CD494700D69AE5 /* KanjiInfo.swift */; };
 		2F6C154F24CD510300D69AE5 /* KanjiResultConverterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6C154E24CD510300D69AE5 /* KanjiResultConverterSpec.swift */; };
+		2F6C155124D309E700D69AE5 /* KanjiRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6C155024D309E700D69AE5 /* KanjiRepositorySpec.swift */; };
+		2F6C155724D521D500D69AE5 /* error_invalid_parameters.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F6C155624D521D500D69AE5 /* error_invalid_parameters.json */; };
 		501EBC1D565AE48412ECCBBC /* Pods_KanjiSearcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BA6443CCBE50221B27442A9 /* Pods_KanjiSearcher.framework */; };
 		FEF28FC15744B6B57FC9DC88 /* Pods_KanjiSearcherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 562500A0C8C6D7DF8D22BB36 /* Pods_KanjiSearcherTests.framework */; };
 /* End PBXBuildFile section */
@@ -60,6 +62,8 @@
 		2F6C154924CD482400D69AE5 /* KanjiResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiResults.swift; sourceTree = "<group>"; };
 		2F6C154B24CD494700D69AE5 /* KanjiInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiInfo.swift; sourceTree = "<group>"; };
 		2F6C154E24CD510300D69AE5 /* KanjiResultConverterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiResultConverterSpec.swift; sourceTree = "<group>"; };
+		2F6C155024D309E700D69AE5 /* KanjiRepositorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiRepositorySpec.swift; sourceTree = "<group>"; };
+		2F6C155624D521D500D69AE5 /* error_invalid_parameters.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = error_invalid_parameters.json; sourceTree = "<group>"; };
 		4AE8F3AAA553B903018973ED /* Pods-KanjiSearcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KanjiSearcher.debug.xcconfig"; path = "Target Support Files/Pods-KanjiSearcher/Pods-KanjiSearcher.debug.xcconfig"; sourceTree = "<group>"; };
 		562500A0C8C6D7DF8D22BB36 /* Pods_KanjiSearcherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KanjiSearcherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		675B682B1DB2F5A62ADA7989 /* Pods-KanjiSearcherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KanjiSearcherTests.debug.xcconfig"; path = "Target Support Files/Pods-KanjiSearcherTests/Pods-KanjiSearcherTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 		2F076B7D24BAF8C6001EA7FD /* KanjiSearcherTests */ = {
 			isa = PBXGroup;
 			children = (
+				2F6C155224D5216A00D69AE5 /* resource */,
 				2F076B8E24BB4404001EA7FD /* source */,
 				2F076B8024BAF8C6001EA7FD /* Info.plist */,
 			);
@@ -190,8 +195,41 @@
 			isa = PBXGroup;
 			children = (
 				2F6C154E24CD510300D69AE5 /* KanjiResultConverterSpec.swift */,
+				2F6C155024D309E700D69AE5 /* KanjiRepositorySpec.swift */,
 			);
 			path = result;
+			sourceTree = "<group>";
+		};
+		2F6C155224D5216A00D69AE5 /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				2F6C155324D5217700D69AE5 /* mjapi */,
+			);
+			path = resource;
+			sourceTree = "<group>";
+		};
+		2F6C155324D5217700D69AE5 /* mjapi */ = {
+			isa = PBXGroup;
+			children = (
+				2F6C155424D521A300D69AE5 /* mji */,
+			);
+			path = mjapi;
+			sourceTree = "<group>";
+		};
+		2F6C155424D521A300D69AE5 /* mji */ = {
+			isa = PBXGroup;
+			children = (
+				2F6C155524D521AA00D69AE5 /* q */,
+			);
+			path = mji;
+			sourceTree = "<group>";
+		};
+		2F6C155524D521AA00D69AE5 /* q */ = {
+			isa = PBXGroup;
+			children = (
+				2F6C155624D521D500D69AE5 /* error_invalid_parameters.json */,
+			);
+			path = q;
 			sourceTree = "<group>";
 		};
 		B18149BC2863CB5B9341844F /* Pods */ = {
@@ -311,6 +349,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F6C155724D521D500D69AE5 /* error_invalid_parameters.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +475,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F6C155124D309E700D69AE5 /* KanjiRepositorySpec.swift in Sources */,
 				2F6C154F24CD510300D69AE5 /* KanjiResultConverterSpec.swift in Sources */,
 				2F076B9724C1D7E3001EA7FD /* SearchViewModelSpec.swift in Sources */,
 				2F6C154424CAD18C00D69AE5 /* KanjiQuerySpec.swift in Sources */,

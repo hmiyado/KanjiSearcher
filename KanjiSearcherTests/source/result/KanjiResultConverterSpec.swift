@@ -8,12 +8,8 @@ class KanjiResultConverterSpec: QuickSpec {
         describe("convert") {
             context("error") {
                 it("convert") {
-                    let json = """
-                    {
-                        "status": "error",
-                        "message": "Invalid Parameters"
-                    }
-                    """.data(using: .utf8)!
+                    let pathString = Bundle(for: type(of: self)).path(forResource: "error_invalid_parameters", ofType: "json")
+                    let json = try Data(contentsOf: URL(fileURLWithPath: pathString!))
 
                     let result = KanjiResultConverter().convert(json)
                     expect(result).to(equal(KanjiResults.init(
