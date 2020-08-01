@@ -19,16 +19,17 @@ class KanjiResultConverterSpec: QuickSpec {
             }
             context("no result") {
                 it("convert") {
-                    let json = """
-                    {
-                        "status": "success",
-                        "find": false,
-                        "count": 0
-                    }
-                    """.data(using: .utf8)!
+                    let pathString = Bundle(for: type(of: self)).path(forResource: "no_results", ofType: "json")
+                    let json = try Data(contentsOf: URL(fileURLWithPath: pathString!))
 
                     let result = KanjiResultConverter().convert(json)
-                    expect(result).to(equal(KanjiResults.init(status: .success, message: "", find: false, count: 0, results: [])))
+                    expect(result)
+                        .to(equal(KanjiResults.init(
+                            status: .success,
+                            message: "",
+                            find: false,
+                            count: 0,
+                            results: [])))
                 }
             }
             context("with result") {
