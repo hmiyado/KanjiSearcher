@@ -28,6 +28,9 @@
 		2F6C155924D526AD00D69AE5 /* no_results.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F6C155824D526AD00D69AE5 /* no_results.json */; };
 		2F6C155B24D5274900D69AE5 /* query_つじ.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F6C155A24D5274900D69AE5 /* query_つじ.json */; };
 		2F6C156224D5330300D69AE5 /* FileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6C156124D5330300D69AE5 /* FileReader.swift */; };
+		2F6C156B24D5503600D69AE5 /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6C156A24D5503600D69AE5 /* ResultViewModel.swift */; };
+		2F6C156D24D553DF00D69AE5 /* KanjiSearchStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6C156C24D553DF00D69AE5 /* KanjiSearchStatus.swift */; };
+		2F6C156F24D5641000D69AE5 /* error_empty_query.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F6C156E24D5641000D69AE5 /* error_empty_query.json */; };
 		501EBC1D565AE48412ECCBBC /* Pods_KanjiSearcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BA6443CCBE50221B27442A9 /* Pods_KanjiSearcher.framework */; };
 		FEF28FC15744B6B57FC9DC88 /* Pods_KanjiSearcherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 562500A0C8C6D7DF8D22BB36 /* Pods_KanjiSearcherTests.framework */; };
 /* End PBXBuildFile section */
@@ -70,6 +73,9 @@
 		2F6C155824D526AD00D69AE5 /* no_results.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = no_results.json; sourceTree = "<group>"; };
 		2F6C155A24D5274900D69AE5 /* query_つじ.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "query_つじ.json"; sourceTree = "<group>"; };
 		2F6C156124D5330300D69AE5 /* FileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReader.swift; sourceTree = "<group>"; };
+		2F6C156A24D5503600D69AE5 /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
+		2F6C156C24D553DF00D69AE5 /* KanjiSearchStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiSearchStatus.swift; sourceTree = "<group>"; };
+		2F6C156E24D5641000D69AE5 /* error_empty_query.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = error_empty_query.json; sourceTree = "<group>"; };
 		4AE8F3AAA553B903018973ED /* Pods-KanjiSearcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KanjiSearcher.debug.xcconfig"; path = "Target Support Files/Pods-KanjiSearcher/Pods-KanjiSearcher.debug.xcconfig"; sourceTree = "<group>"; };
 		562500A0C8C6D7DF8D22BB36 /* Pods_KanjiSearcherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KanjiSearcherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		675B682B1DB2F5A62ADA7989 /* Pods-KanjiSearcherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KanjiSearcherTests.debug.xcconfig"; path = "Target Support Files/Pods-KanjiSearcherTests/Pods-KanjiSearcherTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -190,6 +196,8 @@
 			isa = PBXGroup;
 			children = (
 				2F6C153D24CAC8FE00D69AE5 /* ResultViewController.swift */,
+				2F6C156A24D5503600D69AE5 /* ResultViewModel.swift */,
+				2F6C156C24D553DF00D69AE5 /* KanjiSearchStatus.swift */,
 			);
 			path = result;
 			sourceTree = "<group>";
@@ -231,6 +239,7 @@
 				2F6C155624D521D500D69AE5 /* error_invalid_parameters.json */,
 				2F6C155824D526AD00D69AE5 /* no_results.json */,
 				2F6C155A24D5274900D69AE5 /* query_つじ.json */,
+				2F6C156E24D5641000D69AE5 /* error_empty_query.json */,
 			);
 			path = q;
 			sourceTree = "<group>";
@@ -400,6 +409,7 @@
 			files = (
 				2F6C155724D521D500D69AE5 /* error_invalid_parameters.json in Resources */,
 				2F6C155B24D5274900D69AE5 /* query_つじ.json in Resources */,
+				2F6C156F24D5641000D69AE5 /* error_empty_query.json in Resources */,
 				2F6C155924D526AD00D69AE5 /* no_results.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -512,7 +522,9 @@
 				2F6C153E24CAC8FE00D69AE5 /* ResultViewController.swift in Sources */,
 				2F6C154824CD47A200D69AE5 /* KanjiResultConverter.swift in Sources */,
 				2F076B6C24BAF8C4001EA7FD /* SearchViewController.swift in Sources */,
+				2F6C156B24D5503600D69AE5 /* ResultViewModel.swift in Sources */,
 				2F6C154224CACE2300D69AE5 /* KanjiQuery.swift in Sources */,
+				2F6C156D24D553DF00D69AE5 /* KanjiSearchStatus.swift in Sources */,
 				2F6C154C24CD494700D69AE5 /* KanjiInfo.swift in Sources */,
 				2F076B6824BAF8C4001EA7FD /* AppDelegate.swift in Sources */,
 				2F076B8D24BB37F8001EA7FD /* SearchViewModel.swift in Sources */,

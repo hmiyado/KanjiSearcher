@@ -37,11 +37,25 @@ class KanjiRepositorySpec: QuickSpec {
             }
             context("with no query") {
                 it("error") {
+                    let json = try reader.readJson(fileName: "error_empty_query")
+                    HTTPStubs.stubRequests(passingTest: { (request) -> Bool in
+                        let url = request.url
+                        let host = url?.host ?? ""
+                        let path = url?.path ?? ""
+                        let query = url?.query ?? ""
+
+                        return host == "mojikiban.ipa.go.jp"
+                            && path == "/mji/q"
+                            && query == ""
+                    }, withStubResponse: { (_) -> HTTPStubsResponse in
+                        HTTPStubsResponse.init(data: json, statusCode: 200, headers: nil)
+                    })
+
                     let observable = KanjiRepository()
                         .search(query: KanjiQuery.init())
                         .toBlocking()
 
-                    expect(try observable.first()).to(beNil())
+                    expect(try observable.first()).to(equal(KanjiResultConverter().convert(json)))
                 }
             }
         }
