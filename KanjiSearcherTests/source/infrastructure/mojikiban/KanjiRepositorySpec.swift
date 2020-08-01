@@ -11,6 +11,9 @@ import RxTest
 class KanjiRepositorySpec: QuickSpec {
     override func spec() {
         let reader = FileReader()
+        afterEach {
+            HTTPStubs.removeAllStubs()
+        }
         describe("search") {
             context("with reading") {
                 it("success") {
