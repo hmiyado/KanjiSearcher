@@ -25,23 +25,31 @@ class ResultViewModel: ResultViewModelType, ResultViewModelInput, ResultViewMode
 
     var searchStatus: Driver<KanjiSearchStatus>
 
-    var kanjiRepository: KanjiRepository
+    var kanjiRepository: KanjiRepositoryProtocol
 
     let disposeBag = DisposeBag()
 
-    init(kanjiRepository: KanjiRepository) {
+    init(kanjiRepository: KanjiRepositoryProtocol) {
         self.kanjiRepository = kanjiRepository
 
         searchStatus = onQuery
+            // skip initial BehaviorRelay value
+            .skip(1)
             .flatMap { query in
                 Observable.concat(
                     Observable.just(KanjiSearchStatus.loading),
                     kanjiRepository
                         .search(query: query)
-                        .map { KanjiSearchStatus.success(payload: $0)}
+                        .map {
+                            if let error = KanjiSearchError.init(kanjiResults: $0) {
+                                return KanjiSearchStatus.error(error: error)
+                            } else {
+                                return KanjiSearchStatus.success(payload: $0)
+                            }
+                        }
                         .asObservable()
                 )
         }
-        .asDriver(onErrorRecover: { Driver.just( KanjiSearchStatus.error(error: $0) )})
+        .asDriver(onErrorRecover: { Driver.just( KanjiSearchStatus.error(error: KanjiSearchError.init(error: $0)) )})
     }
 }

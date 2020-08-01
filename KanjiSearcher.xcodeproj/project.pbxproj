@@ -31,6 +31,8 @@
 		2F6C156B24D5503600D69AE5 /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6C156A24D5503600D69AE5 /* ResultViewModel.swift */; };
 		2F6C156D24D553DF00D69AE5 /* KanjiSearchStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6C156C24D553DF00D69AE5 /* KanjiSearchStatus.swift */; };
 		2F6C156F24D5641000D69AE5 /* error_empty_query.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F6C156E24D5641000D69AE5 /* error_empty_query.json */; };
+		2F6C157124D565FC00D69AE5 /* ResultViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6C157024D565FC00D69AE5 /* ResultViewModelSpec.swift */; };
+		2F6C157324D59CF800D69AE5 /* KanjiRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6C157224D59CF700D69AE5 /* KanjiRepositoryMock.swift */; };
 		501EBC1D565AE48412ECCBBC /* Pods_KanjiSearcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BA6443CCBE50221B27442A9 /* Pods_KanjiSearcher.framework */; };
 		FEF28FC15744B6B57FC9DC88 /* Pods_KanjiSearcherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 562500A0C8C6D7DF8D22BB36 /* Pods_KanjiSearcherTests.framework */; };
 /* End PBXBuildFile section */
@@ -76,6 +78,8 @@
 		2F6C156A24D5503600D69AE5 /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
 		2F6C156C24D553DF00D69AE5 /* KanjiSearchStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiSearchStatus.swift; sourceTree = "<group>"; };
 		2F6C156E24D5641000D69AE5 /* error_empty_query.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = error_empty_query.json; sourceTree = "<group>"; };
+		2F6C157024D565FC00D69AE5 /* ResultViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModelSpec.swift; sourceTree = "<group>"; };
+		2F6C157224D59CF700D69AE5 /* KanjiRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiRepositoryMock.swift; sourceTree = "<group>"; };
 		4AE8F3AAA553B903018973ED /* Pods-KanjiSearcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KanjiSearcher.debug.xcconfig"; path = "Target Support Files/Pods-KanjiSearcher/Pods-KanjiSearcher.debug.xcconfig"; sourceTree = "<group>"; };
 		562500A0C8C6D7DF8D22BB36 /* Pods_KanjiSearcherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KanjiSearcherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		675B682B1DB2F5A62ADA7989 /* Pods-KanjiSearcherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KanjiSearcherTests.debug.xcconfig"; path = "Target Support Files/Pods-KanjiSearcherTests/Pods-KanjiSearcherTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -205,6 +209,7 @@
 		2F6C154D24CD50DC00D69AE5 /* result */ = {
 			isa = PBXGroup;
 			children = (
+				2F6C157024D565FC00D69AE5 /* ResultViewModelSpec.swift */,
 			);
 			path = result;
 			sourceTree = "<group>";
@@ -286,6 +291,7 @@
 				2F6C155024D309E700D69AE5 /* KanjiRepositorySpec.swift */,
 				2F6C154E24CD510300D69AE5 /* KanjiResultConverterSpec.swift */,
 				2F6C154324CAD18C00D69AE5 /* KanjiQuerySpec.swift */,
+				2F6C157224D59CF700D69AE5 /* KanjiRepositoryMock.swift */,
 			);
 			path = mojikiban;
 			sourceTree = "<group>";
@@ -538,10 +544,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F6C157124D565FC00D69AE5 /* ResultViewModelSpec.swift in Sources */,
 				2F6C155124D309E700D69AE5 /* KanjiRepositorySpec.swift in Sources */,
 				2F6C154F24CD510300D69AE5 /* KanjiResultConverterSpec.swift in Sources */,
 				2F6C156224D5330300D69AE5 /* FileReader.swift in Sources */,
 				2F076B9724C1D7E3001EA7FD /* SearchViewModelSpec.swift in Sources */,
+				2F6C157324D59CF800D69AE5 /* KanjiRepositoryMock.swift in Sources */,
 				2F6C154424CAD18C00D69AE5 /* KanjiQuerySpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

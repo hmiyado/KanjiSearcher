@@ -4,7 +4,11 @@ import Foundation
 import RxAlamofire
 import RxSwift
 
-class KanjiRepository {
+protocol KanjiRepositoryProtocol {
+    func search(query: KanjiQuery) -> Single<KanjiResults>
+}
+
+class KanjiRepository: KanjiRepositoryProtocol {
     func search(query: KanjiQuery) -> Single<KanjiResults> {
         return RxAlamofire
             .requestData(.get, query.asUrl())

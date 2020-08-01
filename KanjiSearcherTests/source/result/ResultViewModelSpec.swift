@@ -1,0 +1,49 @@
+//
+import Foundation
+@testable import KanjiSearcher
+import Nimble
+import OHHTTPStubs
+import Quick
+import RxSwift
+import RxTest
+
+class ResultViewModelSpec: QuickSpec {
+
+    override func spec() {
+        let disposeBag = DisposeBag()
+        var scheduler: TestScheduler!
+        var viewModel: ResultViewModelType!
+        let kanjiRepositoryMock = KanjiRepositoryMock()
+        beforeEach {
+            scheduler = TestScheduler.init(initialClock: 0)
+            viewModel = ResultViewModel.init(kanjiRepository: kanjiRepositoryMock)
+        }
+        describe("onQuery") {
+            context("with reading") {
+                it("get no result") {
+                    kanjiRepositoryMock.searchCondition = { _ in
+                        KanjiResults.init(status: .success, message: "", find: false, count: 0, results: [])
+                    }
+
+                    scheduler
+                        .createHotObservable([
+                            .next(10, KanjiQuery.init(reading: "なにもない"))
+                        ])
+                        .bind(to: viewModel.input.onQuery)
+                        .disposed(by: disposeBag)
+
+                    let observer = scheduler.createObserver(KanjiSearchStatus.self)
+                    viewModel.output.searchStatus.asObservable().subscribe(observer).disposed(by: disposeBag)
+                    scheduler.scheduleAt(20) {}
+
+                    scheduler.start()
+                    expect(observer.events)
+                        .to(equal([
+                            .next(10, KanjiSearchStatus.loading),
+                            .next(10, KanjiSearchStatus.success(payload: KanjiResults.init(status: .success, message: "", find: false, count: 0, results: [])))
+                        ]))
+                }
+            }
+        }
+    }
+}
