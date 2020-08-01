@@ -5,11 +5,14 @@ import Quick
 
 class KanjiResultConverterSpec: QuickSpec {
     override func spec() {
+        var reader: FileReader!
+        beforeEach {
+            reader = FileReader()
+        }
         describe("convert") {
             context("error") {
                 it("convert") {
-                    let pathString = Bundle(for: type(of: self)).path(forResource: "error_invalid_parameters", ofType: "json")
-                    let json = try Data(contentsOf: URL(fileURLWithPath: pathString!))
+                    let json = try reader.readJson(fileName: "error_invalid_parameters")
 
                     let result = KanjiResultConverter().convert(json)
                     expect(result).to(equal(KanjiResults.init(
@@ -19,8 +22,7 @@ class KanjiResultConverterSpec: QuickSpec {
             }
             context("no result") {
                 it("convert") {
-                    let pathString = Bundle(for: type(of: self)).path(forResource: "no_results", ofType: "json")
-                    let json = try Data(contentsOf: URL(fileURLWithPath: pathString!))
+                    let json = try reader.readJson(fileName: "no_results")
 
                     let result = KanjiResultConverter().convert(json)
                     expect(result)
@@ -34,8 +36,7 @@ class KanjiResultConverterSpec: QuickSpec {
             }
             context("with result") {
                 it("convert") {
-                    let pathString = Bundle(for: type(of: self)).path(forResource: "query_つじ", ofType: "json")
-                    let json = try Data(contentsOf: URL(fileURLWithPath: pathString!))
+                    let json = try reader.readJson(fileName: "query_つじ")
 
                     let result = KanjiResultConverter().convert(json)
                     expect(result).to(equal(KanjiResults.init(status: .success, message: "", find: true, count: 2, results: [

@@ -27,6 +27,7 @@
 		2F6C155724D521D500D69AE5 /* error_invalid_parameters.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F6C155624D521D500D69AE5 /* error_invalid_parameters.json */; };
 		2F6C155924D526AD00D69AE5 /* no_results.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F6C155824D526AD00D69AE5 /* no_results.json */; };
 		2F6C155B24D5274900D69AE5 /* query_つじ.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F6C155A24D5274900D69AE5 /* query_つじ.json */; };
+		2F6C156224D5330300D69AE5 /* FileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6C156124D5330300D69AE5 /* FileReader.swift */; };
 		501EBC1D565AE48412ECCBBC /* Pods_KanjiSearcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BA6443CCBE50221B27442A9 /* Pods_KanjiSearcher.framework */; };
 		FEF28FC15744B6B57FC9DC88 /* Pods_KanjiSearcherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 562500A0C8C6D7DF8D22BB36 /* Pods_KanjiSearcherTests.framework */; };
 /* End PBXBuildFile section */
@@ -68,6 +69,7 @@
 		2F6C155624D521D500D69AE5 /* error_invalid_parameters.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = error_invalid_parameters.json; sourceTree = "<group>"; };
 		2F6C155824D526AD00D69AE5 /* no_results.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = no_results.json; sourceTree = "<group>"; };
 		2F6C155A24D5274900D69AE5 /* query_つじ.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "query_つじ.json"; sourceTree = "<group>"; };
+		2F6C156124D5330300D69AE5 /* FileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReader.swift; sourceTree = "<group>"; };
 		4AE8F3AAA553B903018973ED /* Pods-KanjiSearcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KanjiSearcher.debug.xcconfig"; path = "Target Support Files/Pods-KanjiSearcher/Pods-KanjiSearcher.debug.xcconfig"; sourceTree = "<group>"; };
 		562500A0C8C6D7DF8D22BB36 /* Pods_KanjiSearcherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KanjiSearcherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		675B682B1DB2F5A62ADA7989 /* Pods-KanjiSearcherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KanjiSearcherTests.debug.xcconfig"; path = "Target Support Files/Pods-KanjiSearcherTests/Pods-KanjiSearcherTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 		2F076B8E24BB4404001EA7FD /* source */ = {
 			isa = PBXGroup;
 			children = (
+				2F6C156324D5374B00D69AE5 /* shared */,
 				2F6C154D24CD50DC00D69AE5 /* result */,
 				2F076B8F24BB4418001EA7FD /* search */,
 			);
@@ -236,6 +239,14 @@
 				2F6C155A24D5274900D69AE5 /* query_つじ.json */,
 			);
 			path = q;
+			sourceTree = "<group>";
+		};
+		2F6C156324D5374B00D69AE5 /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				2F6C156124D5330300D69AE5 /* FileReader.swift */,
+			);
+			path = shared;
 			sourceTree = "<group>";
 		};
 		B18149BC2863CB5B9341844F /* Pods */ = {
@@ -485,6 +496,7 @@
 			files = (
 				2F6C155124D309E700D69AE5 /* KanjiRepositorySpec.swift in Sources */,
 				2F6C154F24CD510300D69AE5 /* KanjiResultConverterSpec.swift in Sources */,
+				2F6C156224D5330300D69AE5 /* FileReader.swift in Sources */,
 				2F076B9724C1D7E3001EA7FD /* SearchViewModelSpec.swift in Sources */,
 				2F6C154424CAD18C00D69AE5 /* KanjiQuerySpec.swift in Sources */,
 			);
