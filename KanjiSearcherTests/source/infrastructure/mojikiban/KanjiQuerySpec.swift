@@ -17,6 +17,15 @@ class KanjiQuerySpec: QuickSpec {
                         )))
                 }
             }
+            context("with no parameters") {
+                let query = KanjiQuery.init()
+                context("asUrl") {
+                    it("returns URL without query") {
+                        expect(query.asUrl())
+                            .to(equal(URL.init(string: "https://mojikiban.ipa.go.jp/mji/q?")))
+                    }
+                }
+            }
         }
     }
 }

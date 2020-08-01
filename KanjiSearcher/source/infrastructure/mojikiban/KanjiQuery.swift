@@ -6,13 +6,13 @@ struct KanjiQuery {
     var reading: String?
 
     /// https://mojikiban.ipa.go.jp/mji/
-    func asUrl() -> URL? {
+    func asUrl() -> URL {
         var urlComponents = URLComponents(string: "https://mojikiban.ipa.go.jp/mji/q")
         urlComponents?.queryItems = [
-            URLQueryItem(name: "読み", value: reading)
-        ]
+            (reading != nil ? URLQueryItem(name: "読み", value: reading) : nil)
+            ].compactMap { $0 }
 
-        return urlComponents?.url
+        return (urlComponents?.url!)!
     }
 }
 
