@@ -34,13 +34,36 @@ class ResultViewModelSpec: QuickSpec {
 
                     let observer = scheduler.createObserver(KanjiSearchStatus.self)
                     viewModel.output.searchStatus.asObservable().subscribe(observer).disposed(by: disposeBag)
-                    scheduler.scheduleAt(20) {}
 
                     scheduler.start()
                     expect(observer.events)
                         .to(equal([
                             .next(10, KanjiSearchStatus.loading),
                             .next(10, KanjiSearchStatus.success(payload: KanjiResults.init(status: .success, message: "", find: false, count: 0, results: [])))
+                        ]))
+                }
+                it("get error for invalid parameters") {
+                    let errorInvalidParams = KanjiResults.init(status: .error, message: "Invalid Parameters", find: false, count: 0, results: [])
+
+                    kanjiRepositoryMock.searchCondition = { _ in
+                        errorInvalidParams
+                    }
+
+                    scheduler
+                        .createHotObservable([
+                            .next(10, KanjiQuery.init())
+                        ])
+                        .bind(to: viewModel.input.onQuery)
+                        .disposed(by: disposeBag)
+
+                    let observer = scheduler.createObserver(KanjiSearchStatus.self)
+                    viewModel.output.searchStatus.asObservable().subscribe(observer).disposed(by: disposeBag)
+
+                    scheduler.start()
+                    expect(observer.events)
+                        .to(equal([
+                            .next(10, KanjiSearchStatus.loading),
+                            .next(10, KanjiSearchStatus.error(error: KanjiSearchError.init(kanjiResults: errorInvalidParams)!))
                         ]))
                 }
             }
