@@ -28,12 +28,12 @@ class SearchViewController: UIViewController {
 
         viewModel.output.search
             .asObservable()
-            .subscribe(onNext: { query in
-                guard let resultVC: ResultViewController = self.storyboard?.instantiateViewController(identifier: "ResultView") else {
+            .subscribe(onNext: { [weak self] query in
+                guard let resultVC: ResultViewController = self?.storyboard?.instantiateViewController(identifier: "ResultView") else {
                     return
                 }
                 resultVC.query = query
-                self.present(resultVC, animated: true, completion: nil)
+                self?.navigationController?.pushViewController(resultVC, animated: true)
             })
             .disposed(by: disposeBag)
     }
