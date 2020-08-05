@@ -49,7 +49,7 @@ class ResultViewModel: ResultViewModelType, ResultViewModelInput, ResultViewMode
                     }
                     .asObservable()
                 )
-        }
-        .asDriver(onErrorRecover: { Driver.just( KanjiSearchStatus.error(error: KanjiSearchError.init(error: $0)) )})
+            }
+            .asDriver(onErrorRecover: { Driver.just( KanjiSearchStatus.error(error: KanjiSearchError.init(error: $0)) )})
     }
 }
