@@ -66,14 +66,26 @@
                     <view key="view" contentMode="scaleToFill" id="dLI-0I-bQc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="kaH-gA-ko1">
+                                <rect key="frame" x="134" y="394" width="146" height="109"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="kaH-gA-ko1" firstAttribute="centerY" secondItem="dLI-0I-bQc" secondAttribute="centerY" id="pas-s7-6aX"/>
+                            <constraint firstItem="kaH-gA-ko1" firstAttribute="centerX" secondItem="dLI-0I-bQc" secondAttribute="centerX" id="tBQ-fE-IMx"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="F9R-AP-6XH"/>
                     </view>
                     <navigationItem key="navigationItem" title="検索結果" id="DO7-O6-fIm"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="kaH-gA-ko1" id="p34-1g-lb8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXB-hr-db9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1952" y="138"/>
+            <point key="canvasLocation" x="1950.7246376811595" y="137.94642857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nWL-p2-7ik">
