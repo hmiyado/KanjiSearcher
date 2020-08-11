@@ -8,7 +8,8 @@ class ResultViewController: UIViewController {
     var query: KanjiQuery = KanjiQuery.init()
     private let disposableBag = DisposeBag()
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
-    
+    @IBOutlet weak var errorView: UIStackView!
+
     override func viewDidLoad() {
         viewModel
             .output
@@ -18,11 +19,13 @@ class ResultViewController: UIViewController {
                 case .loading:
                     self?.activityIndicator?.hidesWhenStopped = true
                     self?.activityIndicator?.isHidden = false
+                    self?.errorView?.isHidden = true
                     self?.activityIndicator?.startAnimating()
                 case .success(payload: _):
                     self?.activityIndicator?.isHidden = true
                 case .error(error: _):
                     self?.activityIndicator?.isHidden = true
+                    self?.errorView?.isHidden = false
                 }
             })
             .disposed(by: disposableBag)
