@@ -12,7 +12,7 @@ class SearchViewController: UIViewController {
 
     @IBOutlet weak var buttonSearch: UIButton!
     @IBOutlet weak var textFieldReading: UITextField!
-
+    
     // MARK: method
 
     override func viewDidLoad() {
@@ -29,12 +29,16 @@ class SearchViewController: UIViewController {
         viewModel.output.search
             .asObservable()
             .subscribe(onNext: { [weak self] query in
-                guard let resultVC: ResultViewController = self?.storyboard?.instantiateViewController(identifier: "ResultView") else {
-                    return
-                }
-                resultVC.query = query
-                self?.navigationController?.pushViewController(resultVC, animated: true)
+                self?.performSegue(withIdentifier: "showResult", sender: query)
             })
             .disposed(by: disposeBag)
     }
+    
+    @IBSegueAction private func showResult(_ coder: NSCoder, sender: Any?) -> ResultViewController? {
+        guard let query = sender as? KanjiQuery else {
+            return nil
+        }
+        return ResultViewController.init(coder: coder, query: query)
+    }
+
 }

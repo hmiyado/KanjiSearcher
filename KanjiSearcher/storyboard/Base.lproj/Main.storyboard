@@ -53,6 +53,7 @@
                     <connections>
                         <outlet property="buttonSearch" destination="neq-o3-6wM" id="GDa-y8-Jv4"/>
                         <outlet property="textFieldReading" destination="XCY-6R-wUV" id="TYt-VN-40y"/>
+                        <segue destination="XFw-Z2-2mS" kind="show" identifier="showResult" destinationCreationSelector="showResult:sender:" id="yWu-Q9-oO4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -67,32 +68,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="kaH-gA-ko1">
-                                <rect key="frame" x="134" y="394" width="146" height="109"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="kaH-gA-ko1">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
                             </activityIndicatorView>
-                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hfL-Vn-w2H">
-                                <rect key="frame" x="120.33333333333333" y="44" width="173.33333333333337" height="40.666666666666657"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="検索エラー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atE-UY-lAW">
-                                        <rect key="frame" x="0.0" y="0.0" width="173.33333333333334" height="20.333333333333332"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="エラーが発生しました" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r3h-hK-fxA">
-                                        <rect key="frame" x="0.0" y="20.333333333333329" width="173.33333333333334" height="20.333333333333329"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="hfL-Vn-w2H" firstAttribute="top" secondItem="F9R-AP-6XH" secondAttribute="top" id="A70-ya-N6G"/>
                             <constraint firstItem="kaH-gA-ko1" firstAttribute="centerY" secondItem="dLI-0I-bQc" secondAttribute="centerY" id="pas-s7-6aX"/>
-                            <constraint firstItem="hfL-Vn-w2H" firstAttribute="centerX" secondItem="dLI-0I-bQc" secondAttribute="centerX" id="sr8-3V-j57"/>
                             <constraint firstItem="kaH-gA-ko1" firstAttribute="centerX" secondItem="dLI-0I-bQc" secondAttribute="centerX" id="tBQ-fE-IMx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="F9R-AP-6XH"/>
@@ -100,10 +82,28 @@
                     <navigationItem key="navigationItem" title="検索結果" id="DO7-O6-fIm"/>
                     <connections>
                         <outlet property="activityIndicator" destination="kaH-gA-ko1" id="p34-1g-lb8"/>
-                        <outlet property="errorView" destination="hfL-Vn-w2H" id="K4R-lm-3II"/>
+                        <outlet property="errorView" destination="hfL-Vn-w2H" id="EW6-tB-kF9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXB-hr-db9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hfL-Vn-w2H">
+                    <rect key="frame" x="0.0" y="0.0" width="173.33333333333334" height="40.666666666666664"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="検索エラー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atE-UY-lAW">
+                            <rect key="frame" x="0.0" y="0.0" width="173.33333333333334" height="20.333333333333332"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="エラーが発生しました" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r3h-hK-fxA">
+                            <rect key="frame" x="0.0" y="20.333333333333336" width="173.33333333333334" height="20.333333333333336"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="PWT-XJ-fZO"/>
+                </stackView>
             </objects>
             <point key="canvasLocation" x="1950.7246376811595" y="137.94642857142856"/>
         </scene>
