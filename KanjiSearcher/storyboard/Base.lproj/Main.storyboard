@@ -69,25 +69,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="kaH-gA-ko1">
-                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                                <rect key="frame" x="197" y="465" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="kaH-gA-ko1" firstAttribute="centerY" secondItem="dLI-0I-bQc" secondAttribute="centerY" id="pas-s7-6aX"/>
-                            <constraint firstItem="kaH-gA-ko1" firstAttribute="centerX" secondItem="dLI-0I-bQc" secondAttribute="centerX" id="tBQ-fE-IMx"/>
+                            <constraint firstItem="kaH-gA-ko1" firstAttribute="centerY" secondItem="F9R-AP-6XH" secondAttribute="centerY" id="pas-s7-6aX"/>
+                            <constraint firstItem="kaH-gA-ko1" firstAttribute="centerX" secondItem="F9R-AP-6XH" secondAttribute="centerX" id="tBQ-fE-IMx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="F9R-AP-6XH"/>
                     </view>
                     <navigationItem key="navigationItem" title="検索結果" id="DO7-O6-fIm"/>
                     <connections>
                         <outlet property="activityIndicator" destination="kaH-gA-ko1" id="p34-1g-lb8"/>
+                        <outlet property="containerView" destination="dLI-0I-bQc" id="r2p-gO-izp"/>
                         <outlet property="errorView" destination="hfL-Vn-w2H" id="EW6-tB-kF9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXB-hr-db9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hfL-Vn-w2H">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="hfL-Vn-w2H">
                     <rect key="frame" x="0.0" y="0.0" width="173.33333333333334" height="40.666666666666664"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="検索エラー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atE-UY-lAW">
                             <rect key="frame" x="0.0" y="0.0" width="173.33333333333334" height="20.333333333333332"/>
