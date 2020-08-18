@@ -8,8 +8,9 @@ class ResultViewController: UIViewController {
     var query: KanjiQuery = KanjiQuery.init()
     private let disposableBag = DisposeBag()
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var errorView: UIStackView!
-    @IBOutlet weak var containerView: UIView!
+    @IBOutlet private weak var errorView: UIStackView!
+    @IBOutlet private weak var containerView: UIView!
+    @IBOutlet private weak var tabbleView: UITableView!
     
     init?(coder: NSCoder, query: KanjiQuery) {
         self.query = query
@@ -33,7 +34,9 @@ class ResultViewController: UIViewController {
                     self.errorView?.removeFromSuperview()
                     self.activityIndicator.center(in: self.containerView)
                     self.activityIndicator?.startAnimating()
+                    self.tabbleView?.isHidden = true
                 case .success(payload: _):
+                    self.tabbleView?.isHidden = false
                     self.activityIndicator?.removeFromSuperview()
                 case .error(error: _):
                     self.activityIndicator?.removeFromSuperview()

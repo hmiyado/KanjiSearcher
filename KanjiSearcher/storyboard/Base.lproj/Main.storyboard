@@ -67,7 +67,19 @@
                     <view key="view" contentMode="scaleToFill" id="dLI-0I-bQc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yXE-Fy-IMH">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="yXE-Fy-IMH" firstAttribute="trailing" secondItem="F9R-AP-6XH" secondAttribute="trailing" id="K4h-gm-nVP"/>
+                            <constraint firstItem="yXE-Fy-IMH" firstAttribute="leading" secondItem="F9R-AP-6XH" secondAttribute="leading" id="S6g-Bd-9gb"/>
+                            <constraint firstItem="yXE-Fy-IMH" firstAttribute="bottom" secondItem="F9R-AP-6XH" secondAttribute="bottom" id="bAN-Dy-Tso"/>
+                            <constraint firstItem="yXE-Fy-IMH" firstAttribute="top" secondItem="F9R-AP-6XH" secondAttribute="top" id="tn3-7N-rs6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="F9R-AP-6XH"/>
                     </view>
                     <navigationItem key="navigationItem" title="検索結果" id="DO7-O6-fIm"/>
@@ -75,6 +87,7 @@
                         <outlet property="activityIndicator" destination="kaH-gA-ko1" id="p34-1g-lb8"/>
                         <outlet property="containerView" destination="dLI-0I-bQc" id="r2p-gO-izp"/>
                         <outlet property="errorView" destination="hfL-Vn-w2H" id="EW6-tB-kF9"/>
+                        <outlet property="tabbleView" destination="yXE-Fy-IMH" id="VeX-og-uan"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXB-hr-db9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
