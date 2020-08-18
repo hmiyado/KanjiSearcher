@@ -7,10 +7,11 @@ class ResultViewController: UIViewController {
     private let viewModel: ResultViewModelType = ResultViewModel.init(kanjiRepository: KanjiRepository())
     var query: KanjiQuery = KanjiQuery.init()
     private let disposableBag = DisposeBag()
+    private var dataSource:ResultDataSource = ResultDataSource()
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet private weak var errorView: UIStackView!
     @IBOutlet private weak var containerView: UIView!
-    @IBOutlet private weak var tabbleView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
     
     init?(coder: NSCoder, query: KanjiQuery) {
         self.query = query
@@ -22,6 +23,8 @@ class ResultViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        self.tableView.dataSource = dataSource
+        
         viewModel
             .output
             .searchStatus
@@ -34,9 +37,11 @@ class ResultViewController: UIViewController {
                     self.errorView?.removeFromSuperview()
                     self.activityIndicator.center(in: self.containerView)
                     self.activityIndicator?.startAnimating()
-                    self.tabbleView?.isHidden = true
-                case .success(payload: _):
-                    self.tabbleView?.isHidden = false
+                    self.tableView?.isHidden = true
+                case .success(payload: let payload):
+                    self.tableView?.isHidden = false
+                    self.dataSource.kanjiResults = payload
+                    self.tableView.reloadData()
                     self.activityIndicator?.removeFromSuperview()
                 case .error(error: _):
                     self.activityIndicator?.removeFromSuperview()

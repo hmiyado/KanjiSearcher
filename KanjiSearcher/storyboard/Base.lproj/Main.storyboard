@@ -87,7 +87,7 @@
                         <outlet property="activityIndicator" destination="kaH-gA-ko1" id="p34-1g-lb8"/>
                         <outlet property="containerView" destination="dLI-0I-bQc" id="r2p-gO-izp"/>
                         <outlet property="errorView" destination="hfL-Vn-w2H" id="EW6-tB-kF9"/>
-                        <outlet property="tabbleView" destination="yXE-Fy-IMH" id="VeX-og-uan"/>
+                        <outlet property="tableView" destination="yXE-Fy-IMH" id="VeX-og-uan"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXB-hr-db9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
