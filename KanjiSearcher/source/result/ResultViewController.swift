@@ -39,10 +39,7 @@ class ResultViewController: UIViewController {
                 case .error(error: _):
                     self.activityIndicator?.isHidden = true
                     if let errorView = self.errorView, let containerView = self.containerView {
-                        containerView.addSubview(errorView)
-                        errorView.translatesAutoresizingMaskIntoConstraints = false
-                        errorView.centerXAnchor.constraint(equalToSystemSpacingAfter: containerView.centerXAnchor, multiplier: 1.0).isActive = true
-                        errorView.centerYAnchor.constraint(equalToSystemSpacingBelow: containerView.centerYAnchor, multiplier: 1.0).isActive = true
+                        errorView.center(in: containerView)
                     }
                 }
             })
