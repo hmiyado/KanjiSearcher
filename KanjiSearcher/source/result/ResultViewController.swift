@@ -30,14 +30,13 @@ class ResultViewController: UIViewController {
                 }
                 switch searchStatus {
                 case .loading:
-                    self.activityIndicator?.hidesWhenStopped = true
-                    self.activityIndicator?.isHidden = false
                     self.errorView?.removeFromSuperview()
+                    self.activityIndicator.center(in: self.containerView)
                     self.activityIndicator?.startAnimating()
                 case .success(payload: _):
-                    self.activityIndicator?.isHidden = true
+                    self.activityIndicator?.removeFromSuperview()
                 case .error(error: _):
-                    self.activityIndicator?.isHidden = true
+                    self.activityIndicator?.removeFromSuperview()
                     if let errorView = self.errorView, let containerView = self.containerView {
                         errorView.center(in: containerView)
                     }

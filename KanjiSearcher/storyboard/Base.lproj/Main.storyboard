@@ -67,16 +67,7 @@
                     <view key="view" contentMode="scaleToFill" id="dLI-0I-bQc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="kaH-gA-ko1">
-                                <rect key="frame" x="197" y="465" width="20" height="20"/>
-                            </activityIndicatorView>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="kaH-gA-ko1" firstAttribute="centerY" secondItem="F9R-AP-6XH" secondAttribute="centerY" id="pas-s7-6aX"/>
-                            <constraint firstItem="kaH-gA-ko1" firstAttribute="centerX" secondItem="F9R-AP-6XH" secondAttribute="centerX" id="tBQ-fE-IMx"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="F9R-AP-6XH"/>
                     </view>
                     <navigationItem key="navigationItem" title="検索結果" id="DO7-O6-fIm"/>
@@ -87,6 +78,10 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXB-hr-db9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="kaH-gA-ko1">
+                    <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </activityIndicatorView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="hfL-Vn-w2H">
                     <rect key="frame" x="0.0" y="0.0" width="173.33333333333334" height="40.666666666666664"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
