@@ -13,12 +13,9 @@ extension ResultDataSource: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       // Fetch a cell of the appropriate type.
-       let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "kanjiInfoListItem", for: indexPath)
        
-       // Configure the cell’s contents.
-        cell.textLabel!.text = kanjiResults?.results[indexPath.row].name ?? ""
-           
        return cell
     }
 }
+

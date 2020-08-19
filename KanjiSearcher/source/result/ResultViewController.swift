@@ -24,6 +24,7 @@ class ResultViewController: UIViewController {
     
     override func viewDidLoad() {
         self.tableView.dataSource = dataSource
+        self.tableView.delegate = self
         
         viewModel
             .output
@@ -53,5 +54,11 @@ class ResultViewController: UIViewController {
             .disposed(by: disposableBag)
         
         viewModel.input.onQuery.accept(query)
+    }
+}
+
+extension ResultViewController : UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120.0
     }
 }
