@@ -35,6 +35,7 @@
 		2F6C157324D59CF800D69AE5 /* KanjiRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6C157224D59CF700D69AE5 /* KanjiRepositoryMock.swift */; };
 		2F6C157724EC0D1F00D69AE5 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6C157624EC0D1E00D69AE5 /* UIView+Extensions.swift */; };
 		2F6C157924EC116500D69AE5 /* ResultDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6C157824EC116500D69AE5 /* ResultDataSource.swift */; };
+		2F6C158124EEB47300D69AE5 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6C158024EEB47300D69AE5 /* ResultTableViewCell.swift */; };
 		501EBC1D565AE48412ECCBBC /* Pods_KanjiSearcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BA6443CCBE50221B27442A9 /* Pods_KanjiSearcher.framework */; };
 		FEF28FC15744B6B57FC9DC88 /* Pods_KanjiSearcherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 562500A0C8C6D7DF8D22BB36 /* Pods_KanjiSearcherTests.framework */; };
 /* End PBXBuildFile section */
@@ -84,6 +85,7 @@
 		2F6C157224D59CF700D69AE5 /* KanjiRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiRepositoryMock.swift; sourceTree = "<group>"; };
 		2F6C157624EC0D1E00D69AE5 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		2F6C157824EC116500D69AE5 /* ResultDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultDataSource.swift; sourceTree = "<group>"; };
+		2F6C158024EEB47300D69AE5 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		4AE8F3AAA553B903018973ED /* Pods-KanjiSearcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KanjiSearcher.debug.xcconfig"; path = "Target Support Files/Pods-KanjiSearcher/Pods-KanjiSearcher.debug.xcconfig"; sourceTree = "<group>"; };
 		562500A0C8C6D7DF8D22BB36 /* Pods_KanjiSearcherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KanjiSearcherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		675B682B1DB2F5A62ADA7989 /* Pods-KanjiSearcherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KanjiSearcherTests.debug.xcconfig"; path = "Target Support Files/Pods-KanjiSearcherTests/Pods-KanjiSearcherTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				2F6C156A24D5503600D69AE5 /* ResultViewModel.swift */,
 				2F6C156C24D553DF00D69AE5 /* KanjiSearchStatus.swift */,
 				2F6C157824EC116500D69AE5 /* ResultDataSource.swift */,
+				2F6C158024EEB47300D69AE5 /* ResultTableViewCell.swift */,
 			);
 			path = result;
 			sourceTree = "<group>";
@@ -552,6 +555,7 @@
 				2F076B8D24BB37F8001EA7FD /* SearchViewModel.swift in Sources */,
 				2F6C154624CD427600D69AE5 /* KanjiRepository.swift in Sources */,
 				2F076B6A24BAF8C4001EA7FD /* SceneDelegate.swift in Sources */,
+				2F6C158124EEB47300D69AE5 /* ResultTableViewCell.swift in Sources */,
 				2F6C154A24CD482400D69AE5 /* KanjiResults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

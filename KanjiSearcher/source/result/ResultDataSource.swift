@@ -13,7 +13,12 @@ extension ResultDataSource: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "kanjiInfoListItem", for: indexPath)
+        let _cell = tableView.dequeueReusableCell(withIdentifier: "kanjiInfoListItem", for: indexPath)
+        guard let cell = _cell as? ResultTableViewCell, let info = kanjiResults?.results[indexPath.row] else {
+            return _cell
+        }
+        
+        cell.setKanjiInfo(kanjiInfo: info)
        
        return cell
     }
