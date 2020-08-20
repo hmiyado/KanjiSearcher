@@ -158,6 +158,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="kanjiImage" destination="eAv-JL-SZT" id="9Ux-Q5-FQR"/>
                                             <outlet property="kunyomi" destination="OfO-1J-Cdb" id="Obi-fn-4yt"/>
                                             <outlet property="onyomi" destination="P1w-3t-I5e" id="pZA-2i-iDd"/>
                                             <outlet property="strokeCount" destination="hLW-5u-i4X" id="OGo-AD-45b"/>
