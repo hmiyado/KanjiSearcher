@@ -6,7 +6,7 @@ struct KanjiInfo: Equatable {
     /// MJ文字図形名
     var kanjiId: String
     /// 戸籍統一文字番号
-    var number: Int?
+    var idInKanjiSetUsableInFamilyRegister: Int?
     var type: KanjiType
     var figure: KanjiFigure
     /// 総画数
@@ -18,10 +18,10 @@ extension KanjiInfo: Decodable {
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         kanjiId = try values.decode(String.self, forKey: .kanjiId)
-        if let number = try? values.decode(String.self, forKey: .number), !number.isEmpty {
-            self.number = Int(number)
+        if let number = try? values.decode(String.self, forKey: .idInKanjiSetUsableInFamilyRegister), !number.isEmpty {
+            self.idInKanjiSetUsableInFamilyRegister = Int(number)
         } else {
-            self.number = nil
+            self.idInKanjiSetUsableInFamilyRegister = nil
         }
         strokeCount = try values.decode(Int.self, forKey: .strokeCount)
         type = try values.decode(KanjiType.self, forKey: .type)
@@ -31,7 +31,7 @@ extension KanjiInfo: Decodable {
 
     enum CodingKeys: String, CodingKey {
         case kanjiId = "MJ文字図形名"
-        case number = "戸籍統一文字番号"
+        case idInKanjiSetUsableInFamilyRegister = "戸籍統一文字番号"
         case type = "漢字施策"
         case figure = "MJ文字図形"
         case strokeCount = "総画数"
