@@ -35,26 +35,45 @@ class KanjiResultConverterSpec: QuickSpec {
                 }
             }
             context("with result") {
-                it("convert") {
-                    let json = try reader.readJson(fileName: "query_つじ")
+                context("query is つじ") {
+                    it("convert") {
+                        let json = try reader.readJson(fileName: "query_つじ")
 
-                    let result = KanjiResultConverter().convert(json)
-                    expect(result).to(equal(KanjiResults.init(status: .success, message: "", find: true, count: 2, results: [
-                        KanjiInfo.init(
-                            name: "MJ025761",
-                            number: 437750,
-                            type: KanjiType.init(forPersonalName: true, forStandardUse: false),
-                            figure: KanjiFigure.init(url: URL(string: "http://mojikiban.ipa.go.jp/MJ025761.png")!, version: "1.0"),
-                            strokeCount: 6,
-                            reading: KanjiReading.init(onyomi: [], kunyomi: ["つじ"])),
-                        KanjiInfo.init(
-                            name: "MJ025760",
-                            number: 437660,
-                            type: KanjiType.init(forPersonalName: false, forStandardUse: false),
-                            figure: KanjiFigure.init(url: URL(string: "http://mojikiban.ipa.go.jp/MJ025760.png")!, version: "1.0"),
-                            strokeCount: 5,
-                            reading: KanjiReading.init(onyomi: [], kunyomi: ["つじ"]))
-                    ])))
+                        let result = KanjiResultConverter().convert(json)
+                        expect(result).to(equal(KanjiResults.init(status: .success, message: "", find: true, count: 2, results: [
+                            KanjiInfo.init(
+                                name: "MJ025761",
+                                number: 437750,
+                                type: KanjiType.init(forPersonalName: true, forStandardUse: false),
+                                figure: KanjiFigure.init(url: URL(string: "http://mojikiban.ipa.go.jp/MJ025761.png")!, version: "1.0"),
+                                strokeCount: 6,
+                                reading: KanjiReading.init(onyomi: [], kunyomi: ["つじ"])),
+                            KanjiInfo.init(
+                                name: "MJ025760",
+                                number: 437660,
+                                type: KanjiType.init(forPersonalName: false, forStandardUse: false),
+                                figure: KanjiFigure.init(url: URL(string: "http://mojikiban.ipa.go.jp/MJ025760.png")!, version: "1.0"),
+                                strokeCount: 5,
+                                reading: KanjiReading.init(onyomi: [], kunyomi: ["つじ"]))
+                        ])))
+                    }
+                }
+                context("query is MJ004251 (with empty number)") {
+                    it("convert") {
+                        let json = try reader.readJson(fileName: "query_MJ文字図形名_MJ004251")
+
+                        let result = KanjiResultConverter().convert(json)
+                        expect(result).to(equal(KanjiResults.init(status: .success, message: "", find: true, count: 1, results: [
+                            KanjiInfo.init(
+                                name: "MJ004251",
+                                number: nil,
+                                type: KanjiType.init(forPersonalName: false, forStandardUse: false),
+                                figure: KanjiFigure.init(url: URL(string: "http://mojikiban.ipa.go.jp/MJ004251.png")!, version: "1.0"),
+                                strokeCount: 10,
+                                reading: KanjiReading.init(onyomi: ["ケン"], kunyomi: ["つつしむ"]))
+                        ])))
+                    }
+
                 }
             }
         }

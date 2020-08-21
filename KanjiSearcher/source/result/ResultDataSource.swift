@@ -4,7 +4,7 @@ import Foundation
 import UIKit
 
 class ResultDataSource: NSObject {
-    var kanjiResults: KanjiResults? = nil
+    var kanjiResults: KanjiResults?
 }
 
 extension ResultDataSource: UITableViewDataSource {
@@ -13,14 +13,13 @@ extension ResultDataSource: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let _cell = tableView.dequeueReusableCell(withIdentifier: "kanjiInfoListItem", for: indexPath)
-        guard let cell = _cell as? ResultTableViewCell, let info = kanjiResults?.results[indexPath.row] else {
-            return _cell
+        let cellOptional = tableView.dequeueReusableCell(withIdentifier: "kanjiInfoListItem", for: indexPath)
+        guard let cell = cellOptional as? ResultTableViewCell, let info = kanjiResults?.results[indexPath.row] else {
+            return cellOptional
         }
-        
+
         cell.setKanjiInfo(kanjiInfo: info)
-       
-       return cell
+
+        return cell
     }
 }
-

@@ -12,7 +12,7 @@ class SearchViewController: UIViewController {
 
     @IBOutlet weak var buttonSearch: UIButton!
     @IBOutlet weak var textFieldReading: UITextField!
-    
+
     // MARK: method
 
     override func viewDidLoad() {
@@ -33,7 +33,7 @@ class SearchViewController: UIViewController {
             })
             .disposed(by: disposeBag)
     }
-    
+
     @IBSegueAction private func showResult(_ coder: NSCoder, sender: Any?) -> ResultViewController? {
         guard let query = sender as? KanjiQuery else {
             return nil

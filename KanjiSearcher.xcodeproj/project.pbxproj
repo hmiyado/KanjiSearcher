@@ -37,6 +37,7 @@
 		2F6C157924EC116500D69AE5 /* ResultDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6C157824EC116500D69AE5 /* ResultDataSource.swift */; };
 		2F6C158124EEB47300D69AE5 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6C158024EEB47300D69AE5 /* ResultTableViewCell.swift */; };
 		2F6C158324EEBCB300D69AE5 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6C158224EEBCB300D69AE5 /* UIImage+Extensions.swift */; };
+		2F6C158524F00B2D00D69AE5 /* query_MJ文字図形名_MJ004251.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F6C158424F00B2D00D69AE5 /* query_MJ文字図形名_MJ004251.json */; };
 		501EBC1D565AE48412ECCBBC /* Pods_KanjiSearcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BA6443CCBE50221B27442A9 /* Pods_KanjiSearcher.framework */; };
 		FEF28FC15744B6B57FC9DC88 /* Pods_KanjiSearcherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 562500A0C8C6D7DF8D22BB36 /* Pods_KanjiSearcherTests.framework */; };
 /* End PBXBuildFile section */
@@ -88,6 +89,7 @@
 		2F6C157824EC116500D69AE5 /* ResultDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultDataSource.swift; sourceTree = "<group>"; };
 		2F6C158024EEB47300D69AE5 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		2F6C158224EEBCB300D69AE5 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		2F6C158424F00B2D00D69AE5 /* query_MJ文字図形名_MJ004251.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "query_MJ文字図形名_MJ004251.json"; sourceTree = "<group>"; };
 		4AE8F3AAA553B903018973ED /* Pods-KanjiSearcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KanjiSearcher.debug.xcconfig"; path = "Target Support Files/Pods-KanjiSearcher/Pods-KanjiSearcher.debug.xcconfig"; sourceTree = "<group>"; };
 		562500A0C8C6D7DF8D22BB36 /* Pods_KanjiSearcherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KanjiSearcherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		675B682B1DB2F5A62ADA7989 /* Pods-KanjiSearcherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KanjiSearcherTests.debug.xcconfig"; path = "Target Support Files/Pods-KanjiSearcherTests/Pods-KanjiSearcherTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				2F6C155824D526AD00D69AE5 /* no_results.json */,
 				2F6C155A24D5274900D69AE5 /* query_つじ.json */,
 				2F6C156E24D5641000D69AE5 /* error_empty_query.json */,
+				2F6C158424F00B2D00D69AE5 /* query_MJ文字図形名_MJ004251.json */,
 			);
 			path = q;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				2F6C155724D521D500D69AE5 /* error_invalid_parameters.json in Resources */,
 				2F6C155B24D5274900D69AE5 /* query_つじ.json in Resources */,
 				2F6C156F24D5641000D69AE5 /* error_empty_query.json in Resources */,
+				2F6C158524F00B2D00D69AE5 /* query_MJ文字図形名_MJ004251.json in Resources */,
 				2F6C155924D526AD00D69AE5 /* no_results.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

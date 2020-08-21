@@ -1,31 +1,31 @@
 //
 
-import UIKit
 import RxSwift
+import UIKit
 
 class ResultViewController: UIViewController {
     private let viewModel: ResultViewModelType = ResultViewModel.init(kanjiRepository: KanjiRepository())
     var query: KanjiQuery = KanjiQuery.init()
     private let disposableBag = DisposeBag()
-    private var dataSource:ResultDataSource = ResultDataSource()
+    private var dataSource: ResultDataSource = ResultDataSource()
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet private weak var errorView: UIStackView!
     @IBOutlet private weak var containerView: UIView!
     @IBOutlet private weak var tableView: UITableView!
-    
+
     init?(coder: NSCoder, query: KanjiQuery) {
         self.query = query
         super.init(coder: coder)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         self.tableView.dataSource = dataSource
         self.tableView.delegate = self
-        
+
         viewModel
             .output
             .searchStatus
@@ -52,12 +52,12 @@ class ResultViewController: UIViewController {
                 }
             })
             .disposed(by: disposableBag)
-        
+
         viewModel.input.onQuery.accept(query)
     }
 }
 
-extension ResultViewController : UITableViewDelegate {
+extension ResultViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120.0
     }

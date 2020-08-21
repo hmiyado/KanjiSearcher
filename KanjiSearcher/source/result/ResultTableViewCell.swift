@@ -7,7 +7,7 @@ class ResultTableViewCell: UITableViewCell {
     @IBOutlet private weak var kunyomi: UILabel!
     @IBOutlet private weak var strokeCount: UILabel!
     @IBOutlet private weak var kanjiImage: UIImageView!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -21,7 +21,7 @@ class ResultTableViewCell: UITableViewCell {
 }
 
 private extension Array where Element == String {
-    
+
     func asDisplayedString() -> String {
         if count == 0 {
             return "--"
