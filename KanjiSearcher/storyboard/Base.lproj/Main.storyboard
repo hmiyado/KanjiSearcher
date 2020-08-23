@@ -16,20 +16,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="XCY-6R-wUV">
-                                <rect key="frame" x="72" y="99.333333333333329" width="334" height="38.333333333333329"/>
+                                <rect key="frame" x="86" y="99" width="320" height="38.666666666666657"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="Tc1-BK-FU3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="neq-o3-6wM">
-                                <rect key="frame" x="170.66666666666666" y="145.66666666666666" width="73" height="55"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <state key="normal" title="検索"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="読み" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdc-XP-WU9">
-                                <rect key="frame" x="8" y="104" width="56" height="28.666666666666657"/>
+                                <rect key="frame" x="8" y="104" width="70" height="28.666666666666657"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="56" id="Cib-Fm-rlM"/>
                                 </constraints>
@@ -37,16 +32,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ひらがなまたはカタカナを入力してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Db8-bi-vtE">
+                                <rect key="frame" x="86" y="145.66666666666666" width="320" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="neq-o3-6wM">
+                                <rect key="frame" x="170.66666666666666" y="176.66666666666666" width="73" height="55"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <state key="normal" title="検索"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Sdc-XP-WU9" firstAttribute="centerY" secondItem="XCY-6R-wUV" secondAttribute="centerY" id="B4K-N7-ErA"/>
                             <constraint firstItem="Sdc-XP-WU9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="EPE-Ue-SkF"/>
-                            <constraint firstItem="neq-o3-6wM" firstAttribute="top" secondItem="XCY-6R-wUV" secondAttribute="bottom" constant="8" id="KYv-wQ-TcZ"/>
+                            <constraint firstItem="Db8-bi-vtE" firstAttribute="leading" secondItem="XCY-6R-wUV" secondAttribute="leading" id="ERv-Kx-qFS"/>
+                            <constraint firstItem="neq-o3-6wM" firstAttribute="top" secondItem="Db8-bi-vtE" secondAttribute="bottom" constant="16" id="Lhm-OT-zzZ"/>
                             <constraint firstItem="XCY-6R-wUV" firstAttribute="leading" secondItem="Sdc-XP-WU9" secondAttribute="trailing" constant="8" id="NSv-zS-N3Y"/>
                             <constraint firstItem="Sdc-XP-WU9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="WxM-7B-reZ"/>
                             <constraint firstItem="neq-o3-6wM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="dgp-SE-ps2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XCY-6R-wUV" secondAttribute="trailing" constant="8" id="faq-7C-Kdc"/>
+                            <constraint firstItem="Db8-bi-vtE" firstAttribute="trailing" secondItem="XCY-6R-wUV" secondAttribute="trailing" id="hVd-nA-ZNT"/>
+                            <constraint firstItem="Db8-bi-vtE" firstAttribute="top" secondItem="XCY-6R-wUV" secondAttribute="bottom" constant="8" id="j39-0H-bMu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
