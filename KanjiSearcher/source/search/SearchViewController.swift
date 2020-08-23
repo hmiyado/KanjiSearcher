@@ -32,6 +32,9 @@ class SearchViewController: UIViewController {
                 self?.performSegue(withIdentifier: "showResult", sender: query)
             })
             .disposed(by: disposeBag)
+        viewModel.output.isSearchable
+            .drive(buttonSearch.rx.isEnabled)
+            .disposed(by: disposeBag)
     }
 
     @IBSegueAction private func showResult(_ coder: NSCoder, sender: Any?) -> ResultViewController? {
