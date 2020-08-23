@@ -16,22 +16,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="XCY-6R-wUV">
-                                <rect key="frame" x="98" y="103.33333333333333" width="300" height="38.333333333333329"/>
+                                <rect key="frame" x="72" y="99.333333333333329" width="334" height="38.333333333333329"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="Tc1-BK-FU3"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="Tc1-BK-FU3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="neq-o3-6wM">
-                                <rect key="frame" x="170.66666666666666" y="149.66666666666666" width="73" height="55"/>
+                                <rect key="frame" x="170.66666666666666" y="145.66666666666666" width="73" height="55"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <state key="normal" title="検索"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="読み" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdc-XP-WU9">
-                                <rect key="frame" x="32" y="108" width="50" height="28.666666666666657"/>
+                                <rect key="frame" x="8" y="104" width="56" height="28.666666666666657"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="Cib-Fm-rlM"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="56" id="Cib-Fm-rlM"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
@@ -41,11 +41,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Sdc-XP-WU9" firstAttribute="centerY" secondItem="XCY-6R-wUV" secondAttribute="centerY" id="B4K-N7-ErA"/>
-                            <constraint firstItem="Sdc-XP-WU9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="EPE-Ue-SkF"/>
+                            <constraint firstItem="Sdc-XP-WU9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="EPE-Ue-SkF"/>
                             <constraint firstItem="neq-o3-6wM" firstAttribute="top" secondItem="XCY-6R-wUV" secondAttribute="bottom" constant="8" id="KYv-wQ-TcZ"/>
-                            <constraint firstItem="XCY-6R-wUV" firstAttribute="leading" secondItem="Sdc-XP-WU9" secondAttribute="trailing" constant="16" id="NSv-zS-N3Y"/>
+                            <constraint firstItem="XCY-6R-wUV" firstAttribute="leading" secondItem="Sdc-XP-WU9" secondAttribute="trailing" constant="8" id="NSv-zS-N3Y"/>
+                            <constraint firstItem="Sdc-XP-WU9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="WxM-7B-reZ"/>
                             <constraint firstItem="neq-o3-6wM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="dgp-SE-ps2"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XCY-6R-wUV" secondAttribute="trailing" constant="16" id="faq-7C-Kdc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XCY-6R-wUV" secondAttribute="trailing" constant="8" id="faq-7C-Kdc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
