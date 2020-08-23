@@ -19,3 +19,14 @@ struct KanjiQuery {
 extension KanjiQuery: Equatable {
 
 }
+
+extension KanjiQuery {
+    /// defined in https://mojikiban.ipa.go.jp/mji/mji.00501.schema.json as ひらがな
+    private static let hiraganaPattern = "^[ぁ-ゖ゙-ゟー]*$"
+
+    static func isHiragana(_ string: String) -> Bool {
+        guard let regex = try? NSRegularExpression(pattern: hiraganaPattern) else { return false }
+        let matches = regex.matches(in: string, range: NSRange(location: 0, length: string.count))
+        return matches.count > 0
+    }
+}

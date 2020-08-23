@@ -26,6 +26,28 @@ class KanjiQuerySpec: QuickSpec {
                     }
                 }
             }
+            context("isHiragana") {
+                context("with \"ぁ\"") {
+                    it("retruns true") {
+                        expect(KanjiQuery.isHiragana("ぁ")).to(beTrue())
+                    }
+                }
+                context("with \"一部ひらがな\"") {
+                    it("returns false") {
+                        expect(KanjiQuery.isHiragana("一部ひらがな")).to(beFalse())
+                    }
+                }
+                context("with \"カタカナ\"") {
+                    it("returns false") {
+                        expect(KanjiQuery.isHiragana("カタカナ")).to(beFalse())
+                    }
+                }
+                context("with \"abc\"") {
+                    it("returns false") {
+                        expect(KanjiQuery.isHiragana("abc")).to(beFalse())
+                    }
+                }
+            }
         }
     }
 }
