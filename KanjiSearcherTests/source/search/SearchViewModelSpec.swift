@@ -9,7 +9,7 @@ class SearchViewModelSpec: QuickSpec {
     override func spec() {
         let disposeBag = DisposeBag()
         var scheduler: TestScheduler!
-        var viewModel: SearchViewModel!
+        var viewModel: SearchViewModelType!
         beforeEach {
             scheduler = TestScheduler.init(initialClock: 0)
             viewModel = SearchViewModel.init()
@@ -19,11 +19,11 @@ class SearchViewModelSpec: QuickSpec {
                 it("onSearch") {
                     scheduler
                         .createHotObservable([.next(10, ())])
-                        .bind(to: viewModel.onSearch)
+                        .bind(to: viewModel.input.onSearch)
                         .disposed(by: disposeBag)
 
                     let observer = scheduler.createObserver(KanjiQuery.self)
-                    viewModel.search.drive(observer).disposed(by: disposeBag)
+                    viewModel.output.search.drive(observer).disposed(by: disposeBag)
 
                     scheduler.start()
 
@@ -46,13 +46,13 @@ class SearchViewModelSpec: QuickSpec {
                 beforeEach {
                     scheduler
                         .createHotObservable([.next(10, "よみ")])
-                        .bind(to: viewModel.onQueryReading)
+                        .bind(to: viewModel.input.onQueryReading)
                         .disposed(by: disposeBag)
                 }
                 context("isSearchable") {
                     it("should be true") {
                         let observer = scheduler.createObserver(Bool.self)
-                        viewModel.isSearchable.drive(observer).disposed(by: disposeBag)
+                        viewModel.output.isSearchable.drive(observer).disposed(by: disposeBag)
 
                         scheduler.start()
 
@@ -63,11 +63,11 @@ class SearchViewModelSpec: QuickSpec {
                 it("onSearch") {
                     scheduler
                         .createHotObservable([.next(20, ())])
-                        .bind(to: viewModel.onSearch)
+                        .bind(to: viewModel.input.onSearch)
                         .disposed(by: disposeBag)
 
                     let observer = scheduler.createObserver(KanjiQuery.self)
-                    viewModel.search.drive(observer).disposed(by: disposeBag)
+                    viewModel.output.search.drive(observer).disposed(by: disposeBag)
 
                     scheduler.start()
 
