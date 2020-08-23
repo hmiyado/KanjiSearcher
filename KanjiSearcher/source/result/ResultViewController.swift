@@ -4,8 +4,7 @@ import RxSwift
 import UIKit
 
 class ResultViewController: UIViewController {
-    private let viewModel: ResultViewModelType = ResultViewModel.init(kanjiRepository: KanjiRepository())
-    private let initialQuery: KanjiQuery
+    private let viewModel: ResultViewModelType
     private let disposableBag = DisposeBag()
     private var dataSource: ResultDataSource = ResultDataSource()
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
@@ -14,7 +13,7 @@ class ResultViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
 
     init?(coder: NSCoder, query: KanjiQuery) {
-        self.initialQuery = query
+        self.viewModel = ResultViewModel.init(kanjiRepository: KanjiRepository(), initialQuery: query)
         super.init(coder: coder)
     }
 
@@ -80,7 +79,7 @@ class ResultViewController: UIViewController {
             })
             .disposed(by: disposableBag)
 
-        viewModel.input.onQuery.accept(initialQuery)
+        viewModel.input.onQuery.accept(viewModel.input.onQuery.value)
     }
 }
 

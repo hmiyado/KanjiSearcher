@@ -17,7 +17,7 @@ class ResultViewModelSpec: QuickSpec {
         let kanjiRepositoryMock = KanjiRepositoryMock()
         beforeEach {
             scheduler = TestScheduler.init(initialClock: 0)
-            viewModel = ResultViewModel.init(kanjiRepository: kanjiRepositoryMock)
+            viewModel = ResultViewModel.init(kanjiRepository: kanjiRepositoryMock, initialQuery: KanjiQuery.init(reading: nil))
         }
         describe("onQuery") {
             context("with なにもない (get no result)") {

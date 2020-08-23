@@ -27,7 +27,7 @@ class ResultViewModel: ResultViewModelType, ResultViewModelInput, ResultViewMode
     var output: ResultViewModelOutput { return self }
 
     // MARK: ResultViewModelInput
-    var onQuery: BehaviorRelay<KanjiQuery> = BehaviorRelay.init(value: KanjiQuery.init())
+    let onQuery: BehaviorRelay<KanjiQuery>
     var onSelectItem: PublishRelay<IndexPath> = PublishRelay.init()
 
     // MARK: ResultViewModelOutput
@@ -42,8 +42,9 @@ class ResultViewModel: ResultViewModelType, ResultViewModelInput, ResultViewMode
 
     private let searchingStatus: PublishRelay<KanjiSearchStatus> = PublishRelay.init()
 
-    init(kanjiRepository: KanjiRepositoryProtocol) {
+    init(kanjiRepository: KanjiRepositoryProtocol, initialQuery: KanjiQuery) {
         self.kanjiRepository = kanjiRepository
+        self.onQuery = BehaviorRelay.init(value: initialQuery)
         self.waitSearching = self.searchingStatus
             .filter { $0 == .loading }
             .map { _ in  () }
