@@ -27,8 +27,7 @@ class SearchViewController: UIViewController {
             .disposed(by: disposeBag)
 
         viewModel.output.search
-            .asObservable()
-            .subscribe(onNext: { [weak self] query in
+            .drive(onNext: { [weak self] query in
                 self?.performSegue(withIdentifier: "showResult", sender: query)
             })
             .disposed(by: disposeBag)
