@@ -26,47 +26,37 @@ class KanjiQuerySpec: QuickSpec {
                     }
                 }
             }
-            context("isHiragana") {
+            context("isValidReading") {
+                context("with \"\"") {
+                    it("returns false") {
+                        expect(KanjiQuery.isValidReading("")).to(beFalse())
+                    }
+                }
                 context("with \"ぁ\"") {
                     it("retruns true") {
-                        expect(KanjiQuery.isHiragana("ぁ")).to(beTrue())
+                        expect(KanjiQuery.isValidReading("ぁ")).to(beTrue())
                     }
                 }
                 context("with \"一部ひらがな\"") {
                     it("returns false") {
-                        expect(KanjiQuery.isHiragana("一部ひらがな")).to(beFalse())
-                    }
-                }
-                context("with \"カタカナ\"") {
-                    it("returns false") {
-                        expect(KanjiQuery.isHiragana("カタカナ")).to(beFalse())
-                    }
-                }
-                context("with \"abc\"") {
-                    it("returns false") {
-                        expect(KanjiQuery.isHiragana("abc")).to(beFalse())
-                    }
-                }
-            }
-            context("isKatakana") {
-                context("with \"ぁ\"") {
-                    it("retruns false") {
-                        expect(KanjiQuery.isKatakana("ぁ")).to(beFalse())
-                    }
-                }
-                context("with \"一部カタカナ\"") {
-                    it("returns false") {
-                        expect(KanjiQuery.isKatakana("一部カタカナ")).to(beFalse())
+                        expect(KanjiQuery.isValidReading("一部ひらがな")).to(beFalse())
                     }
                 }
                 context("with \"カタカナ\"") {
                     it("returns true") {
-                        expect(KanjiQuery.isKatakana("カタカナ")).to(beTrue())
+                        expect(KanjiQuery.isValidReading("カタカナ")).to(beTrue())
+                    }
+                }
+                context("with \"カタカナとひらがな\"") {
+                    // This case is valid in API spec.
+                    // However, this query returns no result.
+                    it("returns true") {
+                        expect(KanjiQuery.isValidReading("カタカナとひらがな")).to(beTrue())
                     }
                 }
                 context("with \"abc\"") {
                     it("returns false") {
-                        expect(KanjiQuery.isKatakana("abc")).to(beFalse())
+                        expect(KanjiQuery.isValidReading("abc")).to(beFalse())
                     }
                 }
             }
