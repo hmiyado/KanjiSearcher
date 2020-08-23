@@ -192,7 +192,7 @@
                         <outlet property="containerView" destination="dLI-0I-bQc" id="r2p-gO-izp"/>
                         <outlet property="errorView" destination="hfL-Vn-w2H" id="EW6-tB-kF9"/>
                         <outlet property="tableView" destination="yXE-Fy-IMH" id="VeX-og-uan"/>
-                        <segue destination="YaG-gq-uF3" kind="showDetail" identifier="showDetail" id="qBm-RP-OsW"/>
+                        <segue destination="YaG-gq-uF3" kind="showDetail" identifier="showDetail" destinationCreationSelector="showDetail:sender:" id="qBm-RP-OsW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXB-hr-db9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

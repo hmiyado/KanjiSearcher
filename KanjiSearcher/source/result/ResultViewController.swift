@@ -71,15 +71,22 @@ class ResultViewController: UIViewController {
         viewModel
             .output
             .showDetail
-            .drive(onNext: { [weak self] _ in
+            .drive(onNext: { [weak self] kanjiInfo in
                 guard let self = self else {
                     return
                 }
-                self.performSegue(withIdentifier: "showDetail", sender: nil)
+                self.performSegue(withIdentifier: "showDetail", sender: kanjiInfo)
             })
             .disposed(by: disposableBag)
 
         viewModel.input.onQuery.accept(viewModel.input.onQuery.value)
+    }
+
+    @IBSegueAction func showDetail(_ coder: NSCoder, sender: Any?) -> DetailViewController? {
+        guard let kanjiInfo = sender as? KanjiInfo else {
+            return nil
+        }
+        return DetailViewController.init(coder: coder, kanjiInfo: kanjiInfo)
     }
 }
 
