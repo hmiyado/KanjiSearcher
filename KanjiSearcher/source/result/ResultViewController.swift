@@ -26,6 +26,10 @@ class ResultViewController: UIViewController {
         self.tableView.dataSource = dataSource
         self.tableView.delegate = self
 
+        tableView.rx.itemSelected
+            .bind(to: viewModel.input.onSelectItem)
+            .disposed(by: disposableBag)
+
         viewModel
             .output
             .waitSearching
@@ -63,6 +67,16 @@ class ResultViewController: UIViewController {
                 self.dataSource.kanjiResults = kanjiResults
                 self.tableView.reloadData()
                 self.activityIndicator?.removeFromSuperview()
+            })
+            .disposed(by: disposableBag)
+        viewModel
+            .output
+            .showDetail
+            .drive(onNext: { [weak self] _ in
+                guard let self = self else {
+                    return
+                }
+                self.performSegue(withIdentifier: "showDetail", sender: nil)
             })
             .disposed(by: disposableBag)
 
