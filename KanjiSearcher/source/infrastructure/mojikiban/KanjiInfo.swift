@@ -36,7 +36,7 @@ extension KanjiInfo: Decodable {
             self.idInFamilyRegister = nil
         }
         idInBasicResidentRegister = decodeOrNilForEmptyString(forKey: .idInBasicResidentRegister)
-        domesticKanjiIdInImmigrationBreau = decodeOrNilForEmptyString(forKey: .domesticKanjiId)
+        domesticKanjiIdInImmigrationBreau = decodeOrNilForEmptyString(forKey: .domesticKanjiIdInImmigrationBreau)
         strokeCount = try values.decode(Int.self, forKey: .strokeCount)
         type = try values.decode(KanjiType.self, forKey: .type)
         figure = try values.decode(KanjiFigure.self, forKey: .figure)
@@ -47,7 +47,7 @@ extension KanjiInfo: Decodable {
         case kanjiId = "MJ文字図形名"
         case idInFamilyRegister = "戸籍統一文字番号"
         case idInBasicResidentRegister = "住基ネット統一文字コード"
-        case domesticKanjiId = "入管正字コード"
+        case domesticKanjiIdInImmigrationBreau = "入管正字コード"
         case type = "漢字施策"
         case figure = "MJ文字図形"
         case strokeCount = "総画数"
