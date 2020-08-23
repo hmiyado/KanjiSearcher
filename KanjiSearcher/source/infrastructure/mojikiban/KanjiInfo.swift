@@ -14,6 +14,8 @@ struct KanjiInfo: Equatable {
     let foreignKanjiIdInImmigrationBreau: String?
     let type: KanjiType
     let figure: KanjiFigure
+    /// 部首内画数
+    let kanjiRadicals: [KanjiRadical]
     /// 総画数
     let strokeCount: Int
     let reading: KanjiReading
@@ -40,6 +42,7 @@ extension KanjiInfo: Decodable {
         idInBasicResidentRegister = decodeOrNilForEmptyString(forKey: .idInBasicResidentRegister)
         domesticKanjiIdInImmigrationBreau = decodeOrNilForEmptyString(forKey: .domesticKanjiIdInImmigrationBreau)
         foreignKanjiIdInImmigrationBreau = decodeOrNilForEmptyString(forKey: .foreignKanjiIdInImmigrationBreau)
+        kanjiRadicals = []
         strokeCount = try values.decode(Int.self, forKey: .strokeCount)
         type = try values.decode(KanjiType.self, forKey: .type)
         figure = try values.decode(KanjiFigure.self, forKey: .figure)

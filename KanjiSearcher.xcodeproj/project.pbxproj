@@ -18,6 +18,7 @@
 		2F341E1A24F2547B009ECEF7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F341E1924F2547B009ECEF7 /* DetailViewController.swift */; };
 		2F341E1E24F28167009ECEF7 /* TestScheduler+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F341E1D24F28167009ECEF7 /* TestScheduler+Extensions.swift */; };
 		2F341E2024F28B17009ECEF7 /* KanjiId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F341E1F24F28B17009ECEF7 /* KanjiId.swift */; };
+		2F341E2224F29FF8009ECEF7 /* KanjiRadical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F341E2124F29FF8009ECEF7 /* KanjiRadical.swift */; };
 		2F6C153E24CAC8FE00D69AE5 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6C153D24CAC8FE00D69AE5 /* ResultViewController.swift */; };
 		2F6C154224CACE2300D69AE5 /* KanjiQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6C154124CACE2300D69AE5 /* KanjiQuery.swift */; };
 		2F6C154424CAD18C00D69AE5 /* KanjiQuerySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6C154324CAD18C00D69AE5 /* KanjiQuerySpec.swift */; };
@@ -73,6 +74,7 @@
 		2F341E1924F2547B009ECEF7 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		2F341E1D24F28167009ECEF7 /* TestScheduler+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestScheduler+Extensions.swift"; sourceTree = "<group>"; };
 		2F341E1F24F28B17009ECEF7 /* KanjiId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiId.swift; sourceTree = "<group>"; };
+		2F341E2124F29FF8009ECEF7 /* KanjiRadical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiRadical.swift; sourceTree = "<group>"; };
 		2F6C153D24CAC8FE00D69AE5 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		2F6C154124CACE2300D69AE5 /* KanjiQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiQuery.swift; sourceTree = "<group>"; };
 		2F6C154324CAD18C00D69AE5 /* KanjiQuerySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiQuerySpec.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 				2F6C154B24CD494700D69AE5 /* KanjiInfo.swift */,
 				2F6C154124CACE2300D69AE5 /* KanjiQuery.swift */,
 				2F341E1F24F28B17009ECEF7 /* KanjiId.swift */,
+				2F341E2124F29FF8009ECEF7 /* KanjiRadical.swift */,
 			);
 			path = mojikiban;
 			sourceTree = "<group>";
@@ -590,6 +593,7 @@
 				2F6C154824CD47A200D69AE5 /* KanjiResultConverter.swift in Sources */,
 				2F076B6C24BAF8C4001EA7FD /* SearchViewController.swift in Sources */,
 				2F6C156B24D5503600D69AE5 /* ResultViewModel.swift in Sources */,
+				2F341E2224F29FF8009ECEF7 /* KanjiRadical.swift in Sources */,
 				2F6C154224CACE2300D69AE5 /* KanjiQuery.swift in Sources */,
 				2F6C157724EC0D1F00D69AE5 /* UIView+Extensions.swift in Sources */,
 				2F341E2024F28B17009ECEF7 /* KanjiId.swift in Sources */,
