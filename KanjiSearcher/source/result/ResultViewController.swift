@@ -28,28 +28,41 @@ class ResultViewController: UIViewController {
 
         viewModel
             .output
-            .searchStatus
-            .drive(onNext: { [weak self] searchStatus in
+            .waitSearching
+            .drive(onNext: {[weak self] _ in
                 guard let self = self else {
                     return
                 }
-                switch searchStatus {
-                case .loading:
-                    self.errorView?.removeFromSuperview()
-                    self.activityIndicator.center(in: self.containerView)
-                    self.activityIndicator?.startAnimating()
-                    self.tableView?.isHidden = true
-                case .success(payload: let payload):
-                    self.tableView?.isHidden = false
-                    self.dataSource.kanjiResults = payload
-                    self.tableView.reloadData()
-                    self.activityIndicator?.removeFromSuperview()
-                case .error(error: _):
-                    self.activityIndicator?.removeFromSuperview()
-                    if let errorView = self.errorView, let containerView = self.containerView {
-                        errorView.center(in: containerView)
-                    }
+                self.errorView?.removeFromSuperview()
+                self.activityIndicator.center(in: self.containerView)
+                self.activityIndicator?.startAnimating()
+                self.tableView?.isHidden = true
+            })
+            .disposed(by: disposableBag)
+        viewModel
+            .output
+            .errorSearching
+            .drive(onNext: {[weak self] _ in
+                guard let self = self else {
+                    return
                 }
+                self.activityIndicator?.removeFromSuperview()
+                if let errorView = self.errorView, let containerView = self.containerView {
+                    errorView.center(in: containerView)
+                }
+            })
+            .disposed(by: disposableBag)
+        viewModel
+            .output
+            .successSearching
+            .drive(onNext: { [weak self] kanjiResults in
+                guard let self = self else {
+                    return
+                }
+                self.tableView?.isHidden = false
+                self.dataSource.kanjiResults = kanjiResults
+                self.tableView.reloadData()
+                self.activityIndicator?.removeFromSuperview()
             })
             .disposed(by: disposableBag)
 

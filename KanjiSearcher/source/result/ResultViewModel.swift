@@ -10,7 +10,6 @@ protocol ResultViewModelInput {
 }
 
 protocol ResultViewModelOutput {
-    var searchStatus: Driver<KanjiSearchStatus> { get }
     var waitSearching: Driver<Void> {get}
     var successSearching: Driver<KanjiResults> { get }
     var errorSearching: Driver<KanjiSearchError> { get }
@@ -29,7 +28,6 @@ class ResultViewModel: ResultViewModelType, ResultViewModelInput, ResultViewMode
     var onQuery: BehaviorRelay<KanjiQuery> = BehaviorRelay.init(value: KanjiQuery.init())
 
     // MARK: ResultViewModelOutput
-    var searchStatus: Driver<KanjiSearchStatus>
     var waitSearching: Driver<Void>
     var successSearching: Driver<KanjiResults>
     var errorSearching: Driver<KanjiSearchError>
@@ -42,7 +40,6 @@ class ResultViewModel: ResultViewModelType, ResultViewModelInput, ResultViewMode
 
     init(kanjiRepository: KanjiRepositoryProtocol) {
         self.kanjiRepository = kanjiRepository
-        self.searchStatus = searchingStatus.asDriver(onErrorDriveWith: .empty())
         self.waitSearching = self.searchingStatus
             .filter { $0 == .loading }
             .map { _ in  () }
