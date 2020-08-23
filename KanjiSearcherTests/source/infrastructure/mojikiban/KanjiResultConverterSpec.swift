@@ -49,7 +49,8 @@ class KanjiResultConverterSpec: QuickSpec {
                                 foreignKanjiIdInImmigrationBreau: nil,
                                 type: KanjiType.init(forPersonalName: true, forStandardUse: false),
                                 figure: KanjiFigure.init(url: URL(string: "http://mojikiban.ipa.go.jp/MJ025761.png")!, version: "1.0"),
-                                kanjiRadicals: [],
+                                kanjiRadicals: [
+                                    KanjiRadical.init(radicalId: 162, strokeCount: 2)],
                                 strokeCount: 6,
                                 reading: KanjiReading.init(onyomi: [], kunyomi: ["つじ"])),
                             KanjiInfo.init(
@@ -60,7 +61,9 @@ class KanjiResultConverterSpec: QuickSpec {
                                 foreignKanjiIdInImmigrationBreau: nil,
                                 type: KanjiType.init(forPersonalName: false, forStandardUse: false),
                                 figure: KanjiFigure.init(url: URL(string: "http://mojikiban.ipa.go.jp/MJ025760.png")!, version: "1.0"),
-                                kanjiRadicals: [],
+                                kanjiRadicals: [
+                                    KanjiRadical.init(radicalId: 162, strokeCount: 2)
+                                ],
                                 strokeCount: 5,
                                 reading: KanjiReading.init(onyomi: [], kunyomi: ["つじ"]))
                         ])))
@@ -80,7 +83,9 @@ class KanjiResultConverterSpec: QuickSpec {
                                 foreignKanjiIdInImmigrationBreau: nil,
                                 type: KanjiType.init(forPersonalName: false, forStandardUse: false),
                                 figure: KanjiFigure.init(url: URL(string: "http://mojikiban.ipa.go.jp/MJ004251.png")!, version: "1.0"),
-                                kanjiRadicals: [],
+                                kanjiRadicals: [
+                                    KanjiRadical.init(radicalId: 141, strokeCount: 4)
+                                ],
                                 strokeCount: 10,
                                 reading: KanjiReading.init(onyomi: ["ケン"], kunyomi: ["つつしむ"]))
                         ])))
