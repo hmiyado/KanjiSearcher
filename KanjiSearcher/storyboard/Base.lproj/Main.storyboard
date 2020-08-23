@@ -192,6 +192,7 @@
                         <outlet property="containerView" destination="dLI-0I-bQc" id="r2p-gO-izp"/>
                         <outlet property="errorView" destination="hfL-Vn-w2H" id="EW6-tB-kF9"/>
                         <outlet property="tableView" destination="yXE-Fy-IMH" id="VeX-og-uan"/>
+                        <segue destination="YaG-gq-uF3" kind="showDetail" identifier="showDetail" id="qBm-RP-OsW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXB-hr-db9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -238,6 +239,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bCA-hq-AZC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="137.94642857142856"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="mlk-If-QC1">
+            <objects>
+                <viewController id="YaG-gq-uF3" customClass="DetailViewController" customModule="KanjiSearcher" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="78q-6Y-Ux3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="5jz-Y3-45U"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0Xg-cH-Pce"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BPv-bv-CxJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1925" y="-535"/>
         </scene>
     </scenes>
 </document>
