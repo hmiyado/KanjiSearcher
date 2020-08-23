@@ -20,16 +20,21 @@ protocol SearchViewModelType {
 
 final class SearchViewModel: SearchViewModelType, SearchViewModelInput, SearchViewModelOutput {
 
+    // MARK: SearchViewModelType
     var input: SearchViewModelInput { return self }
     var output: SearchViewModelOutput { return self }
 
+    // MARK: SearchViewModelInput
     var onQueryReading: BehaviorRelay<String> = BehaviorRelay.init(value: "")
     var onSearch: PublishRelay<Void> = PublishRelay.init()
 
+    // MARK: SearchViewModelOutput
     var search: Driver<KanjiQuery>
 
-    let disposeBag = DisposeBag()
+    // MARK: properties
+    private let disposeBag = DisposeBag()
 
+    // MARK: initializer
     init() {
         search = onSearch
             .withLatestFrom(onQueryReading)
