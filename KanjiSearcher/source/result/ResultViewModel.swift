@@ -28,16 +28,16 @@ class ResultViewModel: ResultViewModelType, ResultViewModelInput, ResultViewMode
 
     // MARK: ResultViewModelInput
     let onQuery: BehaviorRelay<KanjiQuery>
-    var onSelectItem: PublishRelay<IndexPath> = PublishRelay.init()
+    let onSelectItem: PublishRelay<IndexPath> = PublishRelay.init()
 
     // MARK: ResultViewModelOutput
-    var waitSearching: Driver<Void>
-    var successSearching: Driver<KanjiResults>
-    var errorSearching: Driver<KanjiSearchError>
-    var showDetail: Driver<KanjiInfo>
+    let waitSearching: Driver<Void>
+    let successSearching: Driver<KanjiResults>
+    let errorSearching: Driver<KanjiSearchError>
+    let showDetail: Driver<KanjiInfo>
 
     // MARK: properties
-    private var kanjiRepository: KanjiRepositoryProtocol
+    private let kanjiRepository: KanjiRepositoryProtocol
     private let disposeBag = DisposeBag()
 
     private let searchingStatus: PublishRelay<KanjiSearchStatus> = PublishRelay.init()
