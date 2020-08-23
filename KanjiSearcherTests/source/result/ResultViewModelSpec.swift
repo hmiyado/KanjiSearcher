@@ -33,10 +33,8 @@ class ResultViewModelSpec: QuickSpec {
                         .bind(to: viewModel.input.onQuery)
                         .disposed(by: disposeBag)
 
-                    let loadObserver = scheduler.createObserver(Void.self)
-                    viewModel.output.waitSearching.asObservable().subscribe(loadObserver).disposed(by: disposeBag)
-                    let successObserver = scheduler.createObserver(KanjiResults.self)
-                    viewModel.output.successSearching.asObservable().subscribe(successObserver).disposed(by: disposeBag)
+                    let loadObserver = scheduler.createObserver(with: viewModel.output.waitSearching, disposedBy: disposeBag)
+                    let successObserver = scheduler.createObserver(with: viewModel.output.successSearching, disposedBy: disposeBag)
 
                     scheduler.start()
                     expect(loadObserver.events.map { $0.time })
@@ -61,8 +59,8 @@ class ResultViewModelSpec: QuickSpec {
                             .bind(to: viewModel.input.onQuery)
                             .disposed(by: disposeBag)
 
-                        let observer = scheduler.createObserver(KanjiSearchError.self)
-                        viewModel.output.errorSearching.asObservable().subscribe(observer).disposed(by: disposeBag)
+                        let observer = scheduler
+                            .createObserver(with: viewModel.output.errorSearching, disposedBy: disposeBag)
 
                         scheduler.start()
                         expect(observer.events)
@@ -86,8 +84,10 @@ class ResultViewModelSpec: QuickSpec {
                             .disposed(by: disposeBag)
                     }
                     it("drives success") {
-                        let observer = scheduler.createObserver(KanjiResults.self)
-                        viewModel.output.successSearching.asObservable().subscribe(observer).disposed(by: disposeBag)
+                        let observer = scheduler.createObserver(
+                            with: viewModel.output.successSearching,
+                            disposedBy: disposeBag
+                        )
 
                         scheduler.start()
                         expect(observer.events)
@@ -102,8 +102,8 @@ class ResultViewModelSpec: QuickSpec {
                                 .bind(to: viewModel.input.onSelectItem)
                                 .disposed(by: disposeBag)
 
-                            let observer = scheduler.createObserver(KanjiInfo.self)
-                            viewModel.output.showDetail.drive(observer).disposed(by: disposeBag)
+                            let observer = scheduler
+                                .createObserver(with: viewModel.output.showDetail, disposedBy: disposeBag)
 
                             scheduler.start()
                             expect(observer.events)
