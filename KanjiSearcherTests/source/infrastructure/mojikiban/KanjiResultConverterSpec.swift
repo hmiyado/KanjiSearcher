@@ -44,6 +44,7 @@ class KanjiResultConverterSpec: QuickSpec {
                             KanjiInfo.init(
                                 kanjiId: KanjiId(fullId: "MJ025761"),
                                 idInKanjiSetUsableInFamilyRegister: 437750,
+                                idInBasicResidentRegister: "J+BC2F",
                                 type: KanjiType.init(forPersonalName: true, forStandardUse: false),
                                 figure: KanjiFigure.init(url: URL(string: "http://mojikiban.ipa.go.jp/MJ025761.png")!, version: "1.0"),
                                 strokeCount: 6,
@@ -51,6 +52,7 @@ class KanjiResultConverterSpec: QuickSpec {
                             KanjiInfo.init(
                                 kanjiId: KanjiId(fullId: "MJ025760"),
                                 idInKanjiSetUsableInFamilyRegister: 437660,
+                                idInBasicResidentRegister: "J+8FBB",
                                 type: KanjiType.init(forPersonalName: false, forStandardUse: false),
                                 figure: KanjiFigure.init(url: URL(string: "http://mojikiban.ipa.go.jp/MJ025760.png")!, version: "1.0"),
                                 strokeCount: 5,
@@ -67,6 +69,7 @@ class KanjiResultConverterSpec: QuickSpec {
                             KanjiInfo.init(
                                 kanjiId: KanjiId(fullId: "MJ004251"),
                                 idInKanjiSetUsableInFamilyRegister: nil,
+                                idInBasicResidentRegister: "J+458D",
                                 type: KanjiType.init(forPersonalName: false, forStandardUse: false),
                                 figure: KanjiFigure.init(url: URL(string: "http://mojikiban.ipa.go.jp/MJ004251.png")!, version: "1.0"),
                                 strokeCount: 10,
