@@ -3,8 +3,7 @@
 import Foundation
 
 struct KanjiInfo: Equatable {
-    /// MJ文字図形名
-    var kanjiId: String
+    let kanjiId: KanjiId
     /// 戸籍統一文字番号
     var idInKanjiSetUsableInFamilyRegister: Int?
     var type: KanjiType
@@ -17,7 +16,7 @@ struct KanjiInfo: Equatable {
 extension KanjiInfo: Decodable {
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        kanjiId = try values.decode(String.self, forKey: .kanjiId)
+        kanjiId = KanjiId(fullId: try values.decode(String.self, forKey: .kanjiId))
         if let number = try? values.decode(String.self, forKey: .idInKanjiSetUsableInFamilyRegister), !number.isEmpty {
             self.idInKanjiSetUsableInFamilyRegister = Int(number)
         } else {

@@ -42,14 +42,14 @@ class KanjiResultConverterSpec: QuickSpec {
                         let result = KanjiResultConverter().convert(json)
                         expect(result).to(equal(KanjiResults.init(status: .success, message: "", find: true, count: 2, results: [
                             KanjiInfo.init(
-                                kanjiId: "MJ025761",
+                                kanjiId: KanjiId(fullId: "MJ025761"),
                                 idInKanjiSetUsableInFamilyRegister: 437750,
                                 type: KanjiType.init(forPersonalName: true, forStandardUse: false),
                                 figure: KanjiFigure.init(url: URL(string: "http://mojikiban.ipa.go.jp/MJ025761.png")!, version: "1.0"),
                                 strokeCount: 6,
                                 reading: KanjiReading.init(onyomi: [], kunyomi: ["つじ"])),
                             KanjiInfo.init(
-                                kanjiId: "MJ025760",
+                                kanjiId: KanjiId(fullId: "MJ025760"),
                                 idInKanjiSetUsableInFamilyRegister: 437660,
                                 type: KanjiType.init(forPersonalName: false, forStandardUse: false),
                                 figure: KanjiFigure.init(url: URL(string: "http://mojikiban.ipa.go.jp/MJ025760.png")!, version: "1.0"),
@@ -65,7 +65,7 @@ class KanjiResultConverterSpec: QuickSpec {
                         let result = KanjiResultConverter().convert(json)
                         expect(result).to(equal(KanjiResults.init(status: .success, message: "", find: true, count: 1, results: [
                             KanjiInfo.init(
-                                kanjiId: "MJ004251",
+                                kanjiId: KanjiId(fullId: "MJ004251"),
                                 idInKanjiSetUsableInFamilyRegister: nil,
                                 type: KanjiType.init(forPersonalName: false, forStandardUse: false),
                                 figure: KanjiFigure.init(url: URL(string: "http://mojikiban.ipa.go.jp/MJ004251.png")!, version: "1.0"),
