@@ -10,6 +10,7 @@ protocol SearchViewModelInput {
 }
 
 protocol SearchViewModelOutput {
+    var isSearchable: Driver<Bool> { get }
     var search: Driver<KanjiQuery> { get }
 }
 
@@ -29,6 +30,7 @@ final class SearchViewModel: SearchViewModelType, SearchViewModelInput, SearchVi
     var onSearch: PublishRelay<Void> = PublishRelay.init()
 
     // MARK: SearchViewModelOutput
+    var isSearchable: Driver<Bool>
     var search: Driver<KanjiQuery>
 
     // MARK: properties
@@ -41,5 +43,11 @@ final class SearchViewModel: SearchViewModelType, SearchViewModelInput, SearchVi
             .filter { !$0.isEmpty }
             .map { KanjiQuery.init(reading: $0) }
             .asDriver(onErrorDriveWith: .empty())
+
+        isSearchable = onQueryReading
+            .map { queryReading in
+                KanjiQuery.isValidReading(queryReading)
+        }
+        .asDriver(onErrorDriveWith: .just(false))
     }
 }

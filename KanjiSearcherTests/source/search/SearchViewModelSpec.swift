@@ -30,13 +30,35 @@ class SearchViewModelSpec: QuickSpec {
                     expect(observer.events)
                         .to(equal([]))
                 }
+                context("isSearchable") {
+                    it("should be false") {
+                        let observer = scheduler.createObserver(Bool.self)
+                        viewModel.output.isSearchable.drive(observer).disposed(by: disposeBag)
+
+                        scheduler.start()
+
+                        expect(observer.events).to(equal([.next(0, false)]))
+                    }
+
+                }
             }
             context("with QeuryReading") {
                 beforeEach {
                     scheduler
-                        .createHotObservable([.next(10, "query")])
+                        .createHotObservable([.next(10, "よみ")])
                         .bind(to: viewModel.onQueryReading)
                         .disposed(by: disposeBag)
+                }
+                context("isSearchable") {
+                    it("should be true") {
+                        let observer = scheduler.createObserver(Bool.self)
+                        viewModel.isSearchable.drive(observer).disposed(by: disposeBag)
+
+                        scheduler.start()
+
+                        expect(observer.events)
+                            .to(contain([.next(10, true)]))
+                    }
                 }
                 it("onSearch") {
                     scheduler
@@ -50,7 +72,7 @@ class SearchViewModelSpec: QuickSpec {
                     scheduler.start()
 
                     expect(observer.events)
-                        .to(equal([.next(20, KanjiQuery.init(reading: "query"))]))
+                        .to(equal([.next(20, KanjiQuery.init(reading: "よみ"))]))
 
                 }
             }
