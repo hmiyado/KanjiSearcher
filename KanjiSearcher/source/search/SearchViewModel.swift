@@ -26,12 +26,12 @@ final class SearchViewModel: SearchViewModelType, SearchViewModelInput, SearchVi
     var output: SearchViewModelOutput { return self }
 
     // MARK: SearchViewModelInput
-    var onQueryReading: BehaviorRelay<String> = BehaviorRelay.init(value: "")
-    var onSearch: PublishRelay<Void> = PublishRelay.init()
+    let onQueryReading: BehaviorRelay<String> = BehaviorRelay.init(value: "")
+    let onSearch: PublishRelay<Void> = PublishRelay.init()
 
     // MARK: SearchViewModelOutput
-    var isSearchable: Driver<Bool>
-    var search: Driver<KanjiQuery>
+    let isSearchable: Driver<Bool>
+    let search: Driver<KanjiQuery>
 
     // MARK: properties
     private let disposeBag = DisposeBag()
