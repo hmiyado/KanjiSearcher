@@ -43,7 +43,7 @@ class KanjiResultConverterSpec: QuickSpec {
                         expect(result).to(equal(KanjiResults.init(status: .success, message: "", find: true, count: 2, results: [
                             KanjiInfo.init(
                                 kanjiId: KanjiId(fullId: "MJ025761"),
-                                idInKanjiSetUsableInFamilyRegister: 437750,
+                                idInFamilyRegister: 437750,
                                 idInBasicResidentRegister: "J+BC2F",
                                 type: KanjiType.init(forPersonalName: true, forStandardUse: false),
                                 figure: KanjiFigure.init(url: URL(string: "http://mojikiban.ipa.go.jp/MJ025761.png")!, version: "1.0"),
@@ -51,7 +51,7 @@ class KanjiResultConverterSpec: QuickSpec {
                                 reading: KanjiReading.init(onyomi: [], kunyomi: ["つじ"])),
                             KanjiInfo.init(
                                 kanjiId: KanjiId(fullId: "MJ025760"),
-                                idInKanjiSetUsableInFamilyRegister: 437660,
+                                idInFamilyRegister: 437660,
                                 idInBasicResidentRegister: "J+8FBB",
                                 type: KanjiType.init(forPersonalName: false, forStandardUse: false),
                                 figure: KanjiFigure.init(url: URL(string: "http://mojikiban.ipa.go.jp/MJ025760.png")!, version: "1.0"),
@@ -68,7 +68,7 @@ class KanjiResultConverterSpec: QuickSpec {
                         expect(result).to(equal(KanjiResults.init(status: .success, message: "", find: true, count: 1, results: [
                             KanjiInfo.init(
                                 kanjiId: KanjiId(fullId: "MJ004251"),
-                                idInKanjiSetUsableInFamilyRegister: nil,
+                                idInFamilyRegister: nil,
                                 idInBasicResidentRegister: "J+458D",
                                 type: KanjiType.init(forPersonalName: false, forStandardUse: false),
                                 figure: KanjiFigure.init(url: URL(string: "http://mojikiban.ipa.go.jp/MJ004251.png")!, version: "1.0"),
