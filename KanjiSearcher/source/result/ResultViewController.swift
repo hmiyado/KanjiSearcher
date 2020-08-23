@@ -5,7 +5,7 @@ import UIKit
 
 class ResultViewController: UIViewController {
     private let viewModel: ResultViewModelType = ResultViewModel.init(kanjiRepository: KanjiRepository())
-    var query: KanjiQuery = KanjiQuery.init()
+    private let initialQuery: KanjiQuery
     private let disposableBag = DisposeBag()
     private var dataSource: ResultDataSource = ResultDataSource()
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
@@ -14,7 +14,7 @@ class ResultViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
 
     init?(coder: NSCoder, query: KanjiQuery) {
-        self.query = query
+        self.initialQuery = query
         super.init(coder: coder)
     }
 
@@ -80,7 +80,7 @@ class ResultViewController: UIViewController {
             })
             .disposed(by: disposableBag)
 
-        viewModel.input.onQuery.accept(query)
+        viewModel.input.onQuery.accept(initialQuery)
     }
 }
 
