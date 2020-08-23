@@ -48,6 +48,28 @@ class KanjiQuerySpec: QuickSpec {
                     }
                 }
             }
+            context("isKatakana") {
+                context("with \"ぁ\"") {
+                    it("retruns false") {
+                        expect(KanjiQuery.isKatakana("ぁ")).to(beFalse())
+                    }
+                }
+                context("with \"一部カタカナ\"") {
+                    it("returns false") {
+                        expect(KanjiQuery.isKatakana("一部カタカナ")).to(beFalse())
+                    }
+                }
+                context("with \"カタカナ\"") {
+                    it("returns true") {
+                        expect(KanjiQuery.isKatakana("カタカナ")).to(beTrue())
+                    }
+                }
+                context("with \"abc\"") {
+                    it("returns false") {
+                        expect(KanjiQuery.isKatakana("abc")).to(beFalse())
+                    }
+                }
+            }
         }
     }
 }

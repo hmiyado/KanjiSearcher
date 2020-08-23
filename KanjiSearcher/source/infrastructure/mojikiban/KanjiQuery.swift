@@ -22,11 +22,21 @@ extension KanjiQuery: Equatable {
 
 extension KanjiQuery {
     /// defined in https://mojikiban.ipa.go.jp/mji/mji.00501.schema.json as ひらがな
-    private static let hiraganaPattern = "^[ぁ-ゖ゙-ゟー]*$"
+    private static let hiraganaPattern = try? NSRegularExpression(pattern: "^[ぁ-ゖ゙-ゟー]*$")
+    /// defined in https://mojikiban.ipa.go.jp/mji/mji.00501.schema.json as カタカナ
+    private static let katakanaPattern = try? NSRegularExpression(pattern: "^[゠-ヿ]*$")
+
+    private static func matches(to string: String, with pattern: NSRegularExpression?) -> Bool {
+        guard let regex = pattern else { return false }
+        let results = regex.matches(in: string, range: NSRange(location: 0, length: string.count))
+        return results.count > 0
+    }
 
     static func isHiragana(_ string: String) -> Bool {
-        guard let regex = try? NSRegularExpression(pattern: hiraganaPattern) else { return false }
-        let matches = regex.matches(in: string, range: NSRange(location: 0, length: string.count))
-        return matches.count > 0
+        matches(to: string, with: hiraganaPattern)
+    }
+
+    static func isKatakana(_ string: String) -> Bool {
+        matches(to: string, with: katakanaPattern)
     }
 }
