@@ -27,24 +27,7 @@ extension KanjiResults: Decodable {
         find = try values.decode(Bool.self, forKey: .find)
         count = try values.decode(Int.self, forKey: .count)
 
-        guard var resultsContainer = try? values.nestedUnkeyedContainer(forKey: .results) else {
-            results = []
-            return
-        }
-
-        var tempResults: [KanjiInfo] = []
-        while !resultsContainer.isAtEnd {
-            do {
-                let kanjiInfoDecoder = try resultsContainer.superDecoder()
-                let kanjiInfo = try KanjiInfo.init(from: kanjiInfoDecoder)
-                tempResults.append(kanjiInfo)
-            } catch {
-                // continue
-                print("Unexpected error: \(error).")
-            }
-        }
-
-        results = tempResults
+        results = (try? values.decodeArray(forKey: .results)) ?? []
     }
 
     enum CodingKeys: String, CodingKey {
