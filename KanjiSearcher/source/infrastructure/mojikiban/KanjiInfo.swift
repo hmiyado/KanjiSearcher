@@ -5,12 +5,12 @@ import Foundation
 struct KanjiInfo: Equatable {
     let kanjiId: KanjiId
     /// 戸籍統一文字番号
-    var idInKanjiSetUsableInFamilyRegister: Int?
-    var type: KanjiType
-    var figure: KanjiFigure
+    let idInKanjiSetUsableInFamilyRegister: Int?
+    let type: KanjiType
+    let figure: KanjiFigure
     /// 総画数
-    var strokeCount: Int
-    var reading: KanjiReading
+    let strokeCount: Int
+    let reading: KanjiReading
 }
 
 extension KanjiInfo: Decodable {
@@ -42,9 +42,9 @@ extension KanjiInfo: Decodable {
 /// 漢字施策
 struct KanjiType: Decodable, Equatable {
     /// 人名用漢字
-    var forPersonalName: Bool
+    let forPersonalName: Bool
     /// 常用漢字
-    var forStandardUse: Bool
+    let forStandardUse: Bool
 
     enum CodingKeys: String, CodingKey {
         case forPersonalName = "人名用漢字"
@@ -54,8 +54,8 @@ struct KanjiType: Decodable, Equatable {
 
 /// MJ文字図形
 struct KanjiFigure: Decodable, Equatable {
-    var url: URL
-    var version: String
+    let url: URL
+    let version: String
 
     enum CodingKeys: String, CodingKey {
         case url = "uri"
@@ -66,9 +66,9 @@ struct KanjiFigure: Decodable, Equatable {
 /// 読み
 struct KanjiReading: Equatable {
     /// 音読み
-    var onyomi: [String]
+    let onyomi: [String]
     /// 訓読み
-    var kunyomi: [String]
+    let kunyomi: [String]
 }
 
 extension KanjiReading: Decodable {
