@@ -10,6 +10,8 @@ struct KanjiInfo: Equatable {
     let idInBasicResidentRegister: String?
     /// 入管正字コード
     let domesticKanjiIdInImmigrationBreau: String?
+    /// 入管外字コード
+    let foreignKanjiIdInImmigrationBreau: String?
     let type: KanjiType
     let figure: KanjiFigure
     /// 総画数
@@ -37,6 +39,7 @@ extension KanjiInfo: Decodable {
         }
         idInBasicResidentRegister = decodeOrNilForEmptyString(forKey: .idInBasicResidentRegister)
         domesticKanjiIdInImmigrationBreau = decodeOrNilForEmptyString(forKey: .domesticKanjiIdInImmigrationBreau)
+        foreignKanjiIdInImmigrationBreau = decodeOrNilForEmptyString(forKey: .foreignKanjiIdInImmigrationBreau)
         strokeCount = try values.decode(Int.self, forKey: .strokeCount)
         type = try values.decode(KanjiType.self, forKey: .type)
         figure = try values.decode(KanjiFigure.self, forKey: .figure)
@@ -48,6 +51,7 @@ extension KanjiInfo: Decodable {
         case idInFamilyRegister = "戸籍統一文字番号"
         case idInBasicResidentRegister = "住基ネット統一文字コード"
         case domesticKanjiIdInImmigrationBreau = "入管正字コード"
+        case foreignKanjiIdInImmigrationBreau = "入管外字コード"
         case type = "漢字施策"
         case figure = "MJ文字図形"
         case strokeCount = "総画数"
