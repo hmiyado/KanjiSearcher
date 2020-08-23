@@ -7,12 +7,14 @@ import RxSwift
 
 protocol ResultViewModelInput {
     var onQuery: BehaviorRelay<KanjiQuery> { get }
+    var onSelectItem: PublishRelay<IndexPath> { get }
 }
 
 protocol ResultViewModelOutput {
     var waitSearching: Driver<Void> {get}
     var successSearching: Driver<KanjiResults> { get }
     var errorSearching: Driver<KanjiSearchError> { get }
+    var showDetail: Driver<KanjiInfo> {get}
 }
 
 protocol ResultViewModelType {
@@ -26,11 +28,13 @@ class ResultViewModel: ResultViewModelType, ResultViewModelInput, ResultViewMode
 
     // MARK: ResultViewModelInput
     var onQuery: BehaviorRelay<KanjiQuery> = BehaviorRelay.init(value: KanjiQuery.init())
+    var onSelectItem: PublishRelay<IndexPath> = PublishRelay.init()
 
     // MARK: ResultViewModelOutput
     var waitSearching: Driver<Void>
     var successSearching: Driver<KanjiResults>
     var errorSearching: Driver<KanjiSearchError>
+    var showDetail: Driver<KanjiInfo>
 
     // MARK: properties
     private var kanjiRepository: KanjiRepositoryProtocol
@@ -63,6 +67,11 @@ class ResultViewModel: ResultViewModelType, ResultViewModelInput, ResultViewMode
                 default:
                     return nil
                 }
+        }
+        .asDriver(onErrorDriveWith: .empty())
+        self.showDetail = self.onSelectItem
+            .withLatestFrom(self.successSearching) { indexPath, kanjiResults in
+                kanjiResults.results[indexPath.row]
         }
         .asDriver(onErrorDriveWith: .empty())
 

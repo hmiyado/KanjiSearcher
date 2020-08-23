@@ -72,8 +72,9 @@ class ResultViewModelSpec: QuickSpec {
                     }
                 }
                 context("with つじ (get 2 results)") {
-                    it("drives success") {
-                        let result = try KanjiResultConverter().convert(reader.readJson(fileName: "query_つじ"))
+                    var result: KanjiResults!
+                    beforeEach {
+                        result = try? KanjiResultConverter().convert(reader.readJson(fileName: "query_つじ"))
                         kanjiRepositoryMock.searchCondition = { _ in
                             result
                         }
@@ -83,7 +84,8 @@ class ResultViewModelSpec: QuickSpec {
                             ])
                             .bind(to: viewModel.input.onQuery)
                             .disposed(by: disposeBag)
-
+                    }
+                    it("drives success") {
                         let observer = scheduler.createObserver(KanjiResults.self)
                         viewModel.output.successSearching.asObservable().subscribe(observer).disposed(by: disposeBag)
 
@@ -93,7 +95,21 @@ class ResultViewModelSpec: QuickSpec {
                                 .next(10, result)
                             ]))
                     }
+                    context("and on select 2nd item") {
+                        it("showDetail of the item") {
+                            scheduler
+                                .createHotObservable([.next(20, IndexPath.init(row: 1, section: 0))])
+                                .bind(to: viewModel.input.onSelectItem)
+                                .disposed(by: disposeBag)
 
+                            let observer = scheduler.createObserver(KanjiInfo.self)
+                            viewModel.output.showDetail.drive(observer).disposed(by: disposeBag)
+
+                            scheduler.start()
+                            expect(observer.events)
+                                .to(equal([.next(20, result.results[1])]))
+                        }
+                    }
                 }
             }
         }
