@@ -11,6 +11,9 @@ protocol ResultViewModelInput {
 
 protocol ResultViewModelOutput {
     var searchStatus: Driver<KanjiSearchStatus> { get }
+    var waitSearching: Driver<Void> {get}
+    var successSearching: Driver<KanjiResults> { get }
+    var errorSearching: Driver<KanjiSearchError> { get }
 }
 
 protocol ResultViewModelType {
@@ -27,15 +30,46 @@ class ResultViewModel: ResultViewModelType, ResultViewModelInput, ResultViewMode
 
     // MARK: ResultViewModelOutput
     var searchStatus: Driver<KanjiSearchStatus>
+    var waitSearching: Driver<Void>
+    var successSearching: Driver<KanjiResults>
+    var errorSearching: Driver<KanjiSearchError>
 
     // MARK: properties
     private var kanjiRepository: KanjiRepositoryProtocol
     private let disposeBag = DisposeBag()
 
+    private let searchingStatus: PublishRelay<KanjiSearchStatus> = PublishRelay.init()
+
     init(kanjiRepository: KanjiRepositoryProtocol) {
         self.kanjiRepository = kanjiRepository
+        self.searchStatus = searchingStatus.asDriver(onErrorDriveWith: .empty())
+        self.waitSearching = self.searchingStatus
+            .filter { $0 == .loading }
+            .map { _ in  () }
+            .asDriver(onErrorDriveWith: .empty())
+        self.errorSearching = self.searchingStatus
+            .compactMap { status in
+                switch status {
+                case .error(error: let error):
+                    return error
+                default:
+                    return nil
+                }
+        }
+        .asDriver(onErrorDriveWith: .empty())
+        self.successSearching = self
+            .searchingStatus
+            .compactMap { status in
+                switch status {
+                case .success(payload: let payload):
+                    return payload
+                default:
+                    return nil
+                }
+        }
+        .asDriver(onErrorDriveWith: .empty())
 
-        searchStatus = onQuery
+        onQuery
             // skip initial BehaviorRelay value
             .skip(1)
             .flatMap { query in
@@ -53,6 +87,7 @@ class ResultViewModel: ResultViewModelType, ResultViewModelInput, ResultViewMode
                     .asObservable()
                 )
         }
-        .asDriver(onErrorRecover: { Driver.just( KanjiSearchStatus.error(error: KanjiSearchError.init(error: $0)) )})
+        .bind(to: self.searchingStatus)
+        .disposed(by: disposeBag)
     }
 }
