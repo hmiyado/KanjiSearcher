@@ -18,16 +18,19 @@ protocol ResultViewModelType {
     var output: ResultViewModelOutput { get }
 }
 class ResultViewModel: ResultViewModelType, ResultViewModelInput, ResultViewModelOutput {
+    // MARK: ResultViewModelType
     var input: ResultViewModelInput { return self }
     var output: ResultViewModelOutput { return self }
 
+    // MARK: ResultViewModelInput
     var onQuery: BehaviorRelay<KanjiQuery> = BehaviorRelay.init(value: KanjiQuery.init())
 
+    // MARK: ResultViewModelOutput
     var searchStatus: Driver<KanjiSearchStatus>
 
-    var kanjiRepository: KanjiRepositoryProtocol
-
-    let disposeBag = DisposeBag()
+    // MARK: properties
+    private var kanjiRepository: KanjiRepositoryProtocol
+    private let disposeBag = DisposeBag()
 
     init(kanjiRepository: KanjiRepositoryProtocol) {
         self.kanjiRepository = kanjiRepository
