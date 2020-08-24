@@ -336,6 +336,12 @@
                         <viewLayoutGuide key="safeArea" id="5jz-Y3-45U"/>
                     </view>
                     <navigationItem key="navigationItem" id="0Xg-cH-Pce"/>
+                    <connections>
+                        <outlet property="kanjiImage" destination="go6-Wa-pZB" id="sMr-9s-aMD"/>
+                        <outlet property="kunyomi" destination="TQx-0n-zyP" id="203-G0-wRm"/>
+                        <outlet property="onyomi" destination="vE0-fL-bgR" id="CQB-fa-sMp"/>
+                        <outlet property="strokeCount" destination="cjf-tc-UPZ" id="6ry-Gd-Ffo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BPv-bv-CxJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

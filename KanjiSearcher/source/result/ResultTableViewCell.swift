@@ -20,6 +20,16 @@ class ResultTableViewCell: UITableViewCell {
     }
 }
 
+extension KanjiReading {
+    var displayedOnyomi: String {
+        onyomi.asDisplayedString()
+    }
+
+    var displayedKunyomi: String {
+        kunyomi.asDisplayedString()
+    }
+}
+
 private extension Array where Element == String {
 
     func asDisplayedString() -> String {
