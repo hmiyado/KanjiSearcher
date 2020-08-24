@@ -10,6 +10,8 @@ class DetailViewController: UIViewController {
     @IBOutlet private weak var onyomi: UILabel!
     @IBOutlet private weak var kunyomi: UILabel!
     @IBOutlet private weak var strokeCount: UILabel!
+    @IBOutlet private weak var forPersonalName: UILabel!
+    @IBOutlet private weak var forStandardUse: UILabel!
 
     init?(coder: NSCoder, kanjiInfo: KanjiInfo) {
         self.kanjiInfo = kanjiInfo
@@ -25,5 +27,7 @@ class DetailViewController: UIViewController {
         self.onyomi.text = kanjiInfo.reading.displayedOnyomi
         self.kunyomi.text = kanjiInfo.reading.displayedKunyomi
         self.strokeCount.text = String(kanjiInfo.strokeCount)
+        self.forPersonalName.isEnabled = kanjiInfo.type.forPersonalName
+        self.forStandardUse.isEnabled = kanjiInfo.type.forStandardUse
     }
 }
