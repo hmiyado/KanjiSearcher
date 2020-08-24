@@ -13,8 +13,8 @@ class ResultTableViewCell: UITableViewCell {
     }
 
     func setKanjiInfo(kanjiInfo: KanjiInfo) {
-        onyomi.text = kanjiInfo.reading.onyomi.asDisplayedString()
-        kunyomi.text = kanjiInfo.reading.kunyomi.asDisplayedString()
+        onyomi.text = kanjiInfo.reading.displayedOnyomi
+        kunyomi.text = kanjiInfo.reading.displayedKunyomi
         strokeCount.text = String(kanjiInfo.strokeCount)
         kanjiImage.image = UIImage.init(url: kanjiInfo.figure.url)
     }
