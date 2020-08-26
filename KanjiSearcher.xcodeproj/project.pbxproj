@@ -15,6 +15,7 @@
 		2F076B7424BAF8C6001EA7FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F076B7224BAF8C6001EA7FD /* LaunchScreen.storyboard */; };
 		2F076B8D24BB37F8001EA7FD /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F076B8C24BB37F8001EA7FD /* SearchViewModel.swift */; };
 		2F076B9724C1D7E3001EA7FD /* SearchViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F076B9624C1D7E3001EA7FD /* SearchViewModelSpec.swift */; };
+		2F28CEC324F694C100BE7C34 /* KanjiRadicalSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F28CEC224F694C100BE7C34 /* KanjiRadicalSpec.swift */; };
 		2F341E1A24F2547B009ECEF7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F341E1924F2547B009ECEF7 /* DetailViewController.swift */; };
 		2F341E1E24F28167009ECEF7 /* TestScheduler+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F341E1D24F28167009ECEF7 /* TestScheduler+Extensions.swift */; };
 		2F341E2024F28B17009ECEF7 /* KanjiId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F341E1F24F28B17009ECEF7 /* KanjiId.swift */; };
@@ -72,6 +73,7 @@
 		2F076B8024BAF8C6001EA7FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F076B8C24BB37F8001EA7FD /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		2F076B9624C1D7E3001EA7FD /* SearchViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelSpec.swift; sourceTree = "<group>"; };
+		2F28CEC224F694C100BE7C34 /* KanjiRadicalSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiRadicalSpec.swift; sourceTree = "<group>"; };
 		2F341E1924F2547B009ECEF7 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		2F341E1D24F28167009ECEF7 /* TestScheduler+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestScheduler+Extensions.swift"; sourceTree = "<group>"; };
 		2F341E1F24F28B17009ECEF7 /* KanjiId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiId.swift; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 				2F6C154E24CD510300D69AE5 /* KanjiResultConverterSpec.swift */,
 				2F6C154324CAD18C00D69AE5 /* KanjiQuerySpec.swift */,
 				2F6C157224D59CF700D69AE5 /* KanjiRepositoryMock.swift */,
+				2F28CEC224F694C100BE7C34 /* KanjiRadicalSpec.swift */,
 			);
 			path = mojikiban;
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 				2F6C154F24CD510300D69AE5 /* KanjiResultConverterSpec.swift in Sources */,
 				2F341E1E24F28167009ECEF7 /* TestScheduler+Extensions.swift in Sources */,
 				2F6C156224D5330300D69AE5 /* FileReader.swift in Sources */,
+				2F28CEC324F694C100BE7C34 /* KanjiRadicalSpec.swift in Sources */,
 				2F076B9724C1D7E3001EA7FD /* SearchViewModelSpec.swift in Sources */,
 				2F6C157324D59CF800D69AE5 /* KanjiRepositoryMock.swift in Sources */,
 				2F6C154424CAD18C00D69AE5 /* KanjiQuerySpec.swift in Sources */,
