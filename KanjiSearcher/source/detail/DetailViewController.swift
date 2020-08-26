@@ -5,6 +5,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
     private let kanjiInfo: KanjiInfo
+    private let dataSource: KanjiRadicalsDataSource
 
     @IBOutlet private weak var kanjiImage: UIImageView!
     @IBOutlet private weak var onyomi: UILabel!
@@ -12,9 +13,11 @@ class DetailViewController: UIViewController {
     @IBOutlet private weak var strokeCount: UILabel!
     @IBOutlet private weak var forPersonalName: UILabel!
     @IBOutlet private weak var forStandardUse: UILabel!
+    @IBOutlet private weak var kanjiRadicalList: UICollectionView!
 
     init?(coder: NSCoder, kanjiInfo: KanjiInfo) {
         self.kanjiInfo = kanjiInfo
+        self.dataSource = KanjiRadicalsDataSource(kanjiRadicals: kanjiInfo.kanjiRadicals)
         super.init(coder: coder)
     }
 
@@ -23,6 +26,8 @@ class DetailViewController: UIViewController {
     }
 
     override func viewDidLoad() {
+        self.kanjiRadicalList.dataSource = dataSource
+
         self.kanjiImage.image = UIImage.init(url: kanjiInfo.figure.url)
         self.onyomi.text = kanjiInfo.reading.displayedOnyomi
         self.kunyomi.text = kanjiInfo.reading.displayedKunyomi

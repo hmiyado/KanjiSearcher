@@ -16,6 +16,8 @@
 		2F076B8D24BB37F8001EA7FD /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F076B8C24BB37F8001EA7FD /* SearchViewModel.swift */; };
 		2F076B9724C1D7E3001EA7FD /* SearchViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F076B9624C1D7E3001EA7FD /* SearchViewModelSpec.swift */; };
 		2F28CEC324F694C100BE7C34 /* KanjiRadicalSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F28CEC224F694C100BE7C34 /* KanjiRadicalSpec.swift */; };
+		2F28CEBF24F5556600BE7C34 /* KanjiRadicalsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F28CEBE24F5556600BE7C34 /* KanjiRadicalsDataSource.swift */; };
+		2F28CEC124F5571700BE7C34 /* KanjiRadicalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F28CEC024F5571700BE7C34 /* KanjiRadicalCollectionViewCell.swift */; };
 		2F341E1A24F2547B009ECEF7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F341E1924F2547B009ECEF7 /* DetailViewController.swift */; };
 		2F341E1E24F28167009ECEF7 /* TestScheduler+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F341E1D24F28167009ECEF7 /* TestScheduler+Extensions.swift */; };
 		2F341E2024F28B17009ECEF7 /* KanjiId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F341E1F24F28B17009ECEF7 /* KanjiId.swift */; };
@@ -74,6 +76,8 @@
 		2F076B8C24BB37F8001EA7FD /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		2F076B9624C1D7E3001EA7FD /* SearchViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelSpec.swift; sourceTree = "<group>"; };
 		2F28CEC224F694C100BE7C34 /* KanjiRadicalSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiRadicalSpec.swift; sourceTree = "<group>"; };
+		2F28CEBE24F5556600BE7C34 /* KanjiRadicalsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiRadicalsDataSource.swift; sourceTree = "<group>"; };
+		2F28CEC024F5571700BE7C34 /* KanjiRadicalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiRadicalCollectionViewCell.swift; sourceTree = "<group>"; };
 		2F341E1924F2547B009ECEF7 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		2F341E1D24F28167009ECEF7 /* TestScheduler+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestScheduler+Extensions.swift"; sourceTree = "<group>"; };
 		2F341E1F24F28B17009ECEF7 /* KanjiId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiId.swift; sourceTree = "<group>"; };
@@ -224,6 +228,8 @@
 			isa = PBXGroup;
 			children = (
 				2F341E1924F2547B009ECEF7 /* DetailViewController.swift */,
+				2F28CEBE24F5556600BE7C34 /* KanjiRadicalsDataSource.swift */,
+				2F28CEC024F5571700BE7C34 /* KanjiRadicalCollectionViewCell.swift */,
 			);
 			path = detail;
 			sourceTree = "<group>";
@@ -594,6 +600,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F6C153E24CAC8FE00D69AE5 /* ResultViewController.swift in Sources */,
+				2F28CEBF24F5556600BE7C34 /* KanjiRadicalsDataSource.swift in Sources */,
 				2F341E1A24F2547B009ECEF7 /* DetailViewController.swift in Sources */,
 				2F6C157924EC116500D69AE5 /* ResultDataSource.swift in Sources */,
 				2F6C154824CD47A200D69AE5 /* KanjiResultConverter.swift in Sources */,
@@ -601,6 +608,7 @@
 				2F6C156B24D5503600D69AE5 /* ResultViewModel.swift in Sources */,
 				2F341E2224F29FF8009ECEF7 /* KanjiRadical.swift in Sources */,
 				2F6C154224CACE2300D69AE5 /* KanjiQuery.swift in Sources */,
+				2F28CEC124F5571700BE7C34 /* KanjiRadicalCollectionViewCell.swift in Sources */,
 				2F6C157724EC0D1F00D69AE5 /* UIView+Extensions.swift in Sources */,
 				2F341E2024F28B17009ECEF7 /* KanjiId.swift in Sources */,
 				2F6C156D24D553DF00D69AE5 /* KanjiSearchStatus.swift in Sources */,

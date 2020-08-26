@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -269,7 +270,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="画数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cn9-xN-DGq">
-                                <rect key="frame" x="16" y="329" width="52" height="20"/>
+                                <rect key="frame" x="16" y="330" width="52" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="52" id="Jcz-WK-gD0"/>
                                     <constraint firstAttribute="height" constant="20" id="S34-LX-6Nc"/>
@@ -278,7 +279,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="おんよみ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vE0-fL-bgR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="オンヨミ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vE0-fL-bgR">
                                 <rect key="frame" x="76" y="272" width="322" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="560" id="CdO-5g-BI2"/>
@@ -287,8 +288,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="クンヨミ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQx-0n-zyP">
-                                <rect key="frame" x="76" y="301" width="322" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="くんよみ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQx-0n-zyP">
+                                <rect key="frame" x="76" y="301" width="322" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="560" id="XXk-Dg-xZ2"/>
                                 </constraints>
@@ -297,7 +298,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cjf-tc-UPZ">
-                                <rect key="frame" x="76" y="329" width="322" height="20"/>
+                                <rect key="frame" x="76" y="330" width="322" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="560" id="a4F-e5-toV"/>
                                 </constraints>
@@ -313,21 +314,65 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人名用漢字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zu-qq-e81">
-                                <rect key="frame" x="16" y="357" width="87" height="21"/>
+                                <rect key="frame" x="16" y="358" width="87" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="常用漢字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Cl-YL-8Dc">
-                                <rect key="frame" x="111" y="357" width="70" height="21"/>
+                                <rect key="frame" x="111" y="358" width="70" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="部首" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ef-5d-WxA">
+                                <rect key="frame" x="16" y="387" width="52" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iB4-TY-SFW">
+                                <rect key="frame" x="76" y="387" width="322" height="421"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Wf1-6F-qXO">
+                                    <size key="itemSize" width="24" height="24"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="kanjiRadicalListItem" id="b0q-CP-Nch" customClass="KanjiRadicalCollectionViewCell" customModule="KanjiSearcher" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="28" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="9Dl-QM-tBP">
+                                            <rect key="frame" x="0.0" y="0.0" width="28" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="辶" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CdU-4h-fhd">
+                                                    <rect key="frame" x="5" y="0.0" width="18" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="CdU-4h-fhd" firstAttribute="centerY" secondItem="9Dl-QM-tBP" secondAttribute="centerY" id="swf-AX-Dng"/>
+                                                <constraint firstItem="CdU-4h-fhd" firstAttribute="centerX" secondItem="9Dl-QM-tBP" secondAttribute="centerX" id="z4K-GE-1ix"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="28" height="21"/>
+                                        <connections>
+                                            <outlet property="kanjiRadicalLabel" destination="CdU-4h-fhd" id="sYf-2E-ZCC"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="cn9-xN-DGq" firstAttribute="leading" secondItem="PoN-Tb-v4m" secondAttribute="leading" id="2JF-1U-rYK"/>
+                            <constraint firstItem="8Ef-5d-WxA" firstAttribute="trailing" secondItem="hkp-Di-WrG" secondAttribute="trailing" id="3C7-WM-yID"/>
+                            <constraint firstItem="5jz-Y3-45U" firstAttribute="bottom" secondItem="iB4-TY-SFW" secondAttribute="bottom" id="3q7-P1-HbB"/>
                             <constraint firstItem="vE0-fL-bgR" firstAttribute="top" secondItem="go6-Wa-pZB" secondAttribute="bottom" constant="16" id="6tw-YG-BqD"/>
                             <constraint firstItem="PoN-Tb-v4m" firstAttribute="leading" secondItem="hkp-Di-WrG" secondAttribute="leading" id="8Eu-p7-77b"/>
                             <constraint firstItem="9Cl-YL-8Dc" firstAttribute="leading" secondItem="2zu-qq-e81" secondAttribute="trailing" constant="8" id="AjI-pi-DFe"/>
@@ -344,10 +389,15 @@
                             <constraint firstItem="cjf-tc-UPZ" firstAttribute="leading" secondItem="TQx-0n-zyP" secondAttribute="leading" id="gZJ-cI-re5"/>
                             <constraint firstItem="cjf-tc-UPZ" firstAttribute="top" secondItem="TQx-0n-zyP" secondAttribute="bottom" constant="8" id="j8I-nt-tbw"/>
                             <constraint firstItem="2zu-qq-e81" firstAttribute="leading" secondItem="cn9-xN-DGq" secondAttribute="leading" id="jgd-yV-d2R"/>
+                            <constraint firstItem="8Ef-5d-WxA" firstAttribute="top" secondItem="iB4-TY-SFW" secondAttribute="top" id="mCF-Fo-uQZ"/>
+                            <constraint firstItem="8Ef-5d-WxA" firstAttribute="top" secondItem="2zu-qq-e81" secondAttribute="bottom" constant="8" id="pTE-ol-ixI"/>
+                            <constraint firstItem="5jz-Y3-45U" firstAttribute="trailing" secondItem="iB4-TY-SFW" secondAttribute="trailing" constant="16" id="paG-U3-LAY"/>
                             <constraint firstItem="2zu-qq-e81" firstAttribute="top" secondItem="cjf-tc-UPZ" secondAttribute="bottom" constant="8" id="r4I-1r-0pe"/>
+                            <constraint firstItem="8Ef-5d-WxA" firstAttribute="leading" secondItem="hkp-Di-WrG" secondAttribute="leading" id="s1T-XC-zW7"/>
                             <constraint firstItem="5jz-Y3-45U" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9Cl-YL-8Dc" secondAttribute="trailing" constant="16" id="s3W-jv-InS"/>
                             <constraint firstItem="hkp-Di-WrG" firstAttribute="leading" secondItem="5jz-Y3-45U" secondAttribute="leading" constant="16" id="uEC-Nw-m60"/>
                             <constraint firstItem="5jz-Y3-45U" firstAttribute="trailing" secondItem="TQx-0n-zyP" secondAttribute="trailing" constant="16" id="vSP-AE-eZi"/>
+                            <constraint firstItem="iB4-TY-SFW" firstAttribute="leading" secondItem="vE0-fL-bgR" secondAttribute="leading" id="wHA-Oa-SLe"/>
                             <constraint firstItem="TQx-0n-zyP" firstAttribute="top" secondItem="vE0-fL-bgR" secondAttribute="bottom" constant="8" id="z6q-yn-U1d"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5jz-Y3-45U"/>
@@ -357,6 +407,7 @@
                         <outlet property="forPersonalName" destination="2zu-qq-e81" id="B2Z-Wg-wqH"/>
                         <outlet property="forStandardUse" destination="9Cl-YL-8Dc" id="SUk-te-qGV"/>
                         <outlet property="kanjiImage" destination="go6-Wa-pZB" id="sMr-9s-aMD"/>
+                        <outlet property="kanjiRadicalList" destination="iB4-TY-SFW" id="Eal-wg-XOm"/>
                         <outlet property="kunyomi" destination="TQx-0n-zyP" id="203-G0-wRm"/>
                         <outlet property="onyomi" destination="vE0-fL-bgR" id="CQB-fa-sMp"/>
                         <outlet property="strokeCount" destination="cjf-tc-UPZ" id="6ry-Gd-Ffo"/>
