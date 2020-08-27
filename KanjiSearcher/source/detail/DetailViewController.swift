@@ -27,6 +27,9 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         self.kanjiRadicalList.dataSource = dataSource
+        if let layout = self.kanjiRadicalList.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.estimatedItemSize = CGSize(width: 20, height: 20)
+        }
 
         self.kanjiImage.image = UIImage.init(url: kanjiInfo.figure.url)
         self.onyomi.text = kanjiInfo.reading.displayedOnyomi

@@ -332,9 +332,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iB4-TY-SFW">
-                                <rect key="frame" x="76" y="387" width="322" height="421"/>
+                                <rect key="frame" x="76" y="387" width="322" height="21"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Wf1-6F-qXO">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Wf1-6F-qXO">
                                     <size key="itemSize" width="24" height="24"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -342,25 +342,27 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="kanjiRadicalListItem" id="b0q-CP-Nch" customClass="KanjiRadicalCollectionViewCell" customModule="KanjiSearcher" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="28" height="21"/>
+                                        <rect key="frame" x="0.0" y="0.66666666666666663" width="20" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="9Dl-QM-tBP">
-                                            <rect key="frame" x="0.0" y="0.0" width="28" height="21"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="辶" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CdU-4h-fhd">
-                                                    <rect key="frame" x="5" y="0.0" width="18" height="21"/>
+                                                    <rect key="frame" x="-0.33333333333333393" y="0.0" width="20.666666666666671" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="CdU-4h-fhd" firstAttribute="height" secondItem="9Dl-QM-tBP" secondAttribute="height" id="krZ-tA-li3"/>
+                                                <constraint firstItem="CdU-4h-fhd" firstAttribute="width" secondItem="9Dl-QM-tBP" secondAttribute="width" multiplier="1.03704" id="nxA-eT-RhU"/>
                                                 <constraint firstItem="CdU-4h-fhd" firstAttribute="centerY" secondItem="9Dl-QM-tBP" secondAttribute="centerY" id="swf-AX-Dng"/>
                                                 <constraint firstItem="CdU-4h-fhd" firstAttribute="centerX" secondItem="9Dl-QM-tBP" secondAttribute="centerX" id="z4K-GE-1ix"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="28" height="21"/>
+                                        <size key="customSize" width="20" height="20"/>
                                         <connections>
                                             <outlet property="kanjiRadicalLabel" destination="CdU-4h-fhd" id="sYf-2E-ZCC"/>
                                         </connections>
@@ -372,7 +374,7 @@
                         <constraints>
                             <constraint firstItem="cn9-xN-DGq" firstAttribute="leading" secondItem="PoN-Tb-v4m" secondAttribute="leading" id="2JF-1U-rYK"/>
                             <constraint firstItem="8Ef-5d-WxA" firstAttribute="trailing" secondItem="hkp-Di-WrG" secondAttribute="trailing" id="3C7-WM-yID"/>
-                            <constraint firstItem="5jz-Y3-45U" firstAttribute="bottom" secondItem="iB4-TY-SFW" secondAttribute="bottom" id="3q7-P1-HbB"/>
+                            <constraint firstItem="8Ef-5d-WxA" firstAttribute="bottom" secondItem="iB4-TY-SFW" secondAttribute="bottom" id="3q7-P1-HbB"/>
                             <constraint firstItem="vE0-fL-bgR" firstAttribute="top" secondItem="go6-Wa-pZB" secondAttribute="bottom" constant="16" id="6tw-YG-BqD"/>
                             <constraint firstItem="PoN-Tb-v4m" firstAttribute="leading" secondItem="hkp-Di-WrG" secondAttribute="leading" id="8Eu-p7-77b"/>
                             <constraint firstItem="9Cl-YL-8Dc" firstAttribute="leading" secondItem="2zu-qq-e81" secondAttribute="trailing" constant="8" id="AjI-pi-DFe"/>
