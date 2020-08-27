@@ -15,9 +15,10 @@
 		2F076B7424BAF8C6001EA7FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F076B7224BAF8C6001EA7FD /* LaunchScreen.storyboard */; };
 		2F076B8D24BB37F8001EA7FD /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F076B8C24BB37F8001EA7FD /* SearchViewModel.swift */; };
 		2F076B9724C1D7E3001EA7FD /* SearchViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F076B9624C1D7E3001EA7FD /* SearchViewModelSpec.swift */; };
-		2F28CEC324F694C100BE7C34 /* KanjiRadicalSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F28CEC224F694C100BE7C34 /* KanjiRadicalSpec.swift */; };
 		2F28CEBF24F5556600BE7C34 /* KanjiRadicalsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F28CEBE24F5556600BE7C34 /* KanjiRadicalsDataSource.swift */; };
 		2F28CEC124F5571700BE7C34 /* KanjiRadicalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F28CEC024F5571700BE7C34 /* KanjiRadicalCollectionViewCell.swift */; };
+		2F28CEC324F694C100BE7C34 /* KanjiRadicalSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F28CEC224F694C100BE7C34 /* KanjiRadicalSpec.swift */; };
+		2F28CEC624F7F72400BE7C34 /* query_MJ文字図形名_MJ013503.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F28CEC524F7F72400BE7C34 /* query_MJ文字図形名_MJ013503.json */; };
 		2F341E1A24F2547B009ECEF7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F341E1924F2547B009ECEF7 /* DetailViewController.swift */; };
 		2F341E1E24F28167009ECEF7 /* TestScheduler+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F341E1D24F28167009ECEF7 /* TestScheduler+Extensions.swift */; };
 		2F341E2024F28B17009ECEF7 /* KanjiId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F341E1F24F28B17009ECEF7 /* KanjiId.swift */; };
@@ -75,9 +76,10 @@
 		2F076B8024BAF8C6001EA7FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F076B8C24BB37F8001EA7FD /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		2F076B9624C1D7E3001EA7FD /* SearchViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelSpec.swift; sourceTree = "<group>"; };
-		2F28CEC224F694C100BE7C34 /* KanjiRadicalSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiRadicalSpec.swift; sourceTree = "<group>"; };
 		2F28CEBE24F5556600BE7C34 /* KanjiRadicalsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiRadicalsDataSource.swift; sourceTree = "<group>"; };
 		2F28CEC024F5571700BE7C34 /* KanjiRadicalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiRadicalCollectionViewCell.swift; sourceTree = "<group>"; };
+		2F28CEC224F694C100BE7C34 /* KanjiRadicalSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiRadicalSpec.swift; sourceTree = "<group>"; };
+		2F28CEC524F7F72400BE7C34 /* query_MJ文字図形名_MJ013503.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "query_MJ文字図形名_MJ013503.json"; sourceTree = "<group>"; };
 		2F341E1924F2547B009ECEF7 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		2F341E1D24F28167009ECEF7 /* TestScheduler+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestScheduler+Extensions.swift"; sourceTree = "<group>"; };
 		2F341E1F24F28B17009ECEF7 /* KanjiId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiId.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 				2F6C155A24D5274900D69AE5 /* query_つじ.json */,
 				2F6C156E24D5641000D69AE5 /* error_empty_query.json */,
 				2F6C158424F00B2D00D69AE5 /* query_MJ文字図形名_MJ004251.json */,
+				2F28CEC524F7F72400BE7C34 /* query_MJ文字図形名_MJ013503.json */,
 			);
 			path = q;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				2F6C156F24D5641000D69AE5 /* error_empty_query.json in Resources */,
 				2F6C158524F00B2D00D69AE5 /* query_MJ文字図形名_MJ004251.json in Resources */,
 				2F6C155924D526AD00D69AE5 /* no_results.json in Resources */,
+				2F28CEC624F7F72400BE7C34 /* query_MJ文字図形名_MJ013503.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

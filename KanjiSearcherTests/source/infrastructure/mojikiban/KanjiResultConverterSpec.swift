@@ -90,7 +90,28 @@ class KanjiResultConverterSpec: QuickSpec {
                                 reading: KanjiReading.init(onyomi: ["ケン"], kunyomi: ["つつしむ"]))
                         ])))
                     }
-
+                }
+                context("query is MJ013503 (with 2 kanji radicals)") {
+                    it("convert") {
+                        let json = try reader.readJson(fileName: "query_MJ文字図形名_MJ013503")
+                        let result = KanjiResultConverter().convert(json)
+                        expect(result)
+                            .to(equal(KanjiResults.init(status: .success, message: "", find: true, count: 1, results: [
+                                KanjiInfo.init(
+                                    kanjiId: KanjiId(fullId: "MJ013503"),
+                                    idInFamilyRegister: nil,
+                                    idInBasicResidentRegister: "J+B2A9",
+                                    domesticKanjiIdInImmigrationBreau: "66FE",
+                                    foreignKanjiIdInImmigrationBreau: nil,
+                                    type: KanjiType.init(forPersonalName: false, forStandardUse: false),
+                                    figure: KanjiFigure.init(url: URL(string: "http://mojikiban.ipa.go.jp/MJ013503.png")!, version: "1.0"),
+                                    kanjiRadicals: [KanjiRadical.init(radicalId: 72, strokeCount: 8), KanjiRadical.init(radicalId: 73, strokeCount: 8)],
+                                    strokeCount: 12,
+                                    reading: KanjiReading.init(
+                                        onyomi: ["ソ", "ソウ", "ゾ"],
+                                        kunyomi: ["かつて", "すなわち"]))
+                            ])))
+                    }
                 }
             }
         }
