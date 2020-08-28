@@ -42,7 +42,7 @@ extension KanjiInfo: Decodable {
         idInBasicResidentRegister = decodeOrNilForEmptyString(forKey: .idInBasicResidentRegister)
         domesticKanjiIdInImmigrationBreau = decodeOrNilForEmptyString(forKey: .domesticKanjiIdInImmigrationBreau)
         foreignKanjiIdInImmigrationBreau = decodeOrNilForEmptyString(forKey: .foreignKanjiIdInImmigrationBreau)
-        kanjiRadicals = try values.decodeArray(forKey: .kanjiRadicals)
+        kanjiRadicals = try values.decode(Array<KanjiRadical>.self, forKey: .kanjiRadicals)
         strokeCount = try values.decode(Int.self, forKey: .strokeCount)
         type = try values.decode(KanjiType.self, forKey: .type)
         figure = try values.decode(KanjiFigure.self, forKey: .figure)
