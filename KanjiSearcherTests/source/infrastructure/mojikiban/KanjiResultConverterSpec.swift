@@ -113,6 +113,29 @@ class KanjiResultConverterSpec: QuickSpec {
                             ])))
                     }
                 }
+                context("query is MJ009387 (with kanji radical that has no stroke)") {
+                    it("convert") {
+                        let json = try reader.readJson(fileName: "query_MJ文字図形名_MJ009387")
+                        let result = KanjiResultConverter().convert(json)
+                        expect(result)
+                            .to(equal(KanjiResults.init(status: .success, message: "", find: true, count: 1, results: [
+                                KanjiInfo.init(
+                                    kanjiId: KanjiId(fullId: "MJ009387"),
+                                    idInFamilyRegister: 064630,
+                                    idInBasicResidentRegister: "J+58F0",
+                                    domesticKanjiIdInImmigrationBreau: "58F0",
+                                    foreignKanjiIdInImmigrationBreau: nil,
+                                    type: KanjiType.init(forPersonalName: true, forStandardUse: true),
+                                    figure: KanjiFigure.init(url: URL(string: "http://mojikiban.ipa.go.jp/MJ009387.png")!, version: "1.0"),
+                                    kanjiRadicals: [KanjiRadical.init(radicalId: 33, strokeCount: 4), KanjiRadical.init(radicalId: 128, strokeCount: 0)],
+                                    strokeCount: 7,
+                                    reading: KanjiReading.init(
+                                        onyomi: [                    "セイ", "ショウ", "ケイ"],
+                                        kunyomi: ["こえ", "こわ"]))
+                            ])))
+
+                    }
+                }
             }
         }
     }
