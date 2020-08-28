@@ -27,7 +27,11 @@ extension KanjiResults: Decodable {
         find = try values.decode(Bool.self, forKey: .find)
         count = try values.decode(Int.self, forKey: .count)
 
-        results = (try? values.decodeArray(forKey: .results)) ?? []
+        if values.contains(.results) {
+            results = try values.decode(Array<KanjiInfo>.self, forKey: .results)
+        } else {
+            results = []
+        }
     }
 
     enum CodingKeys: String, CodingKey {
