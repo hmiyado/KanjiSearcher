@@ -26,7 +26,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="読み" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdc-XP-WU9">
-                                <rect key="frame" x="16" y="104" width="52" height="28.666666666666664"/>
+                                <rect key="frame" x="16" y="104" width="52" height="28.666666666666657"/>
                                 <accessibility key="accessibilityConfiguration" identifier="reading"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="52" id="Cib-Fm-rlM"/>
