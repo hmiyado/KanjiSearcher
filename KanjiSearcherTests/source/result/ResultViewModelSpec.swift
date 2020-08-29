@@ -35,14 +35,15 @@ class ResultViewModelSpec: QuickSpec {
 
                     let loadObserver = scheduler.createObserver(with: viewModel.output.waitSearching, disposedBy: disposeBag)
                     let successObserver = scheduler.createObserver(with: viewModel.output.successSearching, disposedBy: disposeBag)
+                    let emptyObserver = scheduler.createObserver(with: viewModel.output.emptySearching, disposedBy: disposeBag)
 
                     scheduler.start()
                     expect(loadObserver.events.map { $0.time })
                         .to(equal([10]))
                     expect(successObserver.events)
-                        .to(equal([
-                            .next(10, KanjiResults.init(status: .success, message: "", find: false, count: 0, results: []))
-                        ]))
+                        .to(equal([]))
+                    expect(emptyObserver.events.count)
+                        .to(equal(1))
                 }
                 context("get error for invalid parameters") {
                     it("drives error") {

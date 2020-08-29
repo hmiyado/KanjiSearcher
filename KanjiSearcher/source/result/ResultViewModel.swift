@@ -14,6 +14,7 @@ protocol ResultViewModelOutput {
     var waitSearching: Driver<Void> {get}
     var successSearching: Driver<KanjiResults> { get }
     var errorSearching: Driver<KanjiSearchError> { get }
+    var emptySearching: Driver<Void> { get }
     var showDetail: Driver<KanjiInfo> {get}
 }
 
@@ -34,6 +35,7 @@ class ResultViewModel: ResultViewModelType, ResultViewModelInput, ResultViewMode
     let waitSearching: Driver<Void>
     let successSearching: Driver<KanjiResults>
     let errorSearching: Driver<KanjiSearchError>
+    let emptySearching: Driver<Void>
     let showDetail: Driver<KanjiInfo>
 
     // MARK: properties
@@ -59,8 +61,7 @@ class ResultViewModel: ResultViewModelType, ResultViewModelInput, ResultViewMode
                 }
         }
         .asDriver(onErrorDriveWith: .empty())
-        self.successSearching = self
-            .searchingStatus
+        let success: Observable<KanjiResults> = self.searchingStatus
             .compactMap { status in
                 switch status {
                 case .success(payload: let payload):
@@ -69,7 +70,13 @@ class ResultViewModel: ResultViewModelType, ResultViewModelInput, ResultViewMode
                     return nil
                 }
         }
-        .asDriver(onErrorDriveWith: .empty())
+        self.successSearching = success
+            .filter { !$0.results.isEmpty }
+            .asDriver(onErrorDriveWith: .empty())
+        self.emptySearching = success
+            .filter { $0.results.isEmpty }
+            .map { _ in () }
+            .asDriver(onErrorDriveWith: .empty())
         self.showDetail = self.onSelectItem
             .withLatestFrom(self.successSearching) { indexPath, kanjiResults in
                 kanjiResults.results[indexPath.row]
