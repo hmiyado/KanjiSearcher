@@ -38,6 +38,7 @@ class ResultViewController: UIViewController {
                     return
                 }
                 self.errorView?.removeFromSuperview()
+                self.emptyView?.removeFromSuperview()
                 self.activityIndicator.center(in: self.containerView)
                 self.activityIndicator?.startAnimating()
                 self.tableView?.isHidden = true
@@ -64,13 +65,20 @@ class ResultViewController: UIViewController {
                     return
                 }
                 self.activityIndicator?.removeFromSuperview()
-                if kanjiResults.results.isEmpty {
-                    self.emptyView.center(in: self.containerView)
-                } else {
-                    self.tableView?.isHidden = false
-                    self.dataSource.kanjiResults = kanjiResults
-                    self.tableView.reloadData()
+                self.tableView?.isHidden = false
+                self.dataSource.kanjiResults = kanjiResults
+                self.tableView.reloadData()
+            })
+            .disposed(by: disposableBag)
+        viewModel
+            .output
+            .emptySearching
+            .drive(onNext: {[weak self] _ in
+                guard let self = self else {
+                    return
                 }
+                self.activityIndicator?.removeFromSuperview()
+                self.emptyView.center(in: self.containerView)
             })
             .disposed(by: disposableBag)
         viewModel
