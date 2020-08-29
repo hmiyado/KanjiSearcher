@@ -191,6 +191,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="kaH-gA-ko1" id="p34-1g-lb8"/>
                         <outlet property="containerView" destination="dLI-0I-bQc" id="r2p-gO-izp"/>
+                        <outlet property="emptyView" destination="6hy-AW-RiR" id="YYZ-Oi-jwB"/>
                         <outlet property="errorView" destination="hfL-Vn-w2H" id="EW6-tB-kF9"/>
                         <outlet property="tableView" destination="yXE-Fy-IMH" id="VeX-og-uan"/>
                         <segue destination="YaG-gq-uF3" kind="showDetail" identifier="showDetail" destinationCreationSelector="showDetail:sender:" id="qBm-RP-OsW"/>
@@ -201,6 +202,19 @@
                     <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </activityIndicatorView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="6hy-AW-RiR">
+                    <rect key="frame" x="0.0" y="0.0" width="249" height="200"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="検索結果が見つかりませんでした" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1l-2v-ySL">
+                            <rect key="frame" x="0.0" y="0.0" width="249" height="200"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="avd-T7-lfq"/>
+                </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="hfL-Vn-w2H">
                     <rect key="frame" x="0.0" y="0.0" width="173.33333333333334" height="40.666666666666664"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

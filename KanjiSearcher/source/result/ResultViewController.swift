@@ -9,6 +9,7 @@ class ResultViewController: UIViewController {
     private var dataSource: ResultDataSource = ResultDataSource()
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet private weak var errorView: UIStackView!
+    @IBOutlet private weak var emptyView: UIStackView!
     @IBOutlet private weak var containerView: UIView!
     @IBOutlet private weak var tableView: UITableView!
 
@@ -62,10 +63,14 @@ class ResultViewController: UIViewController {
                 guard let self = self else {
                     return
                 }
-                self.tableView?.isHidden = false
-                self.dataSource.kanjiResults = kanjiResults
-                self.tableView.reloadData()
                 self.activityIndicator?.removeFromSuperview()
+                if kanjiResults.results.isEmpty {
+                    self.emptyView.center(in: self.containerView)
+                } else {
+                    self.tableView?.isHidden = false
+                    self.dataSource.kanjiResults = kanjiResults
+                    self.tableView.reloadData()
+                }
             })
             .disposed(by: disposableBag)
         viewModel
