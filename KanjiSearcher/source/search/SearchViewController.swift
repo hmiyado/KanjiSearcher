@@ -25,6 +25,9 @@ class SearchViewController: UIViewController {
             .map { query in query ?? "" }
             .bind(to: viewModel.input.onQueryReading)
             .disposed(by: disposeBag)
+        textFieldReading.rx.controlEvent(.editingDidEnd)
+            .bind(to: viewModel.input.onEndEditing)
+            .disposed(by: disposeBag)
 
         viewModel.output.search
             .drive(onNext: { [weak self] query in

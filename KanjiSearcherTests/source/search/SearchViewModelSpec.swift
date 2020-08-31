@@ -39,7 +39,22 @@ class SearchViewModelSpec: QuickSpec {
 
                         expect(observer.events).to(equal([.next(0, false)]))
                     }
+                }
+                context("onEndEditing") {
+                    it("do not search") {
+                        scheduler
+                            .createHotObservable([.next(10, ())])
+                            .bind(to: viewModel.input.onEndEditing)
+                            .disposed(by: disposeBag)
 
+                        let observer = scheduler.createObserver(with: viewModel.output.search, disposedBy: disposeBag)
+
+                        scheduler.start()
+
+                        expect(observer.events)
+                            .to(equal([]))
+
+                    }
                 }
             }
             context("with QeuryReading") {
@@ -58,6 +73,20 @@ class SearchViewModelSpec: QuickSpec {
 
                         expect(observer.events)
                             .to(contain([.next(10, true)]))
+                    }
+                }
+                context("onEndEditing") {
+                    it("search") {
+                        scheduler
+                            .createHotObservable([.next(20, ())])
+                            .bind(to: viewModel.input.onEndEditing)
+                            .disposed(by: disposeBag)
+                        let observer = scheduler.createObserver(with: viewModel.output.search, disposedBy: disposeBag)
+
+                        scheduler.start()
+
+                        expect(observer.events)
+                            .to(equal([.next(20, KanjiQuery.init(reading: "よみ"))]))
                     }
                 }
                 it("onSearch") {

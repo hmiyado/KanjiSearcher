@@ -6,6 +6,7 @@ import RxSwift
 
 protocol SearchViewModelInput {
     var onQueryReading: BehaviorRelay<String> { get }
+    var onEndEditing: PublishRelay<Void> { get }
     var onSearch: PublishRelay<Void> { get }
 }
 
@@ -27,6 +28,7 @@ final class SearchViewModel: SearchViewModelType, SearchViewModelInput, SearchVi
 
     // MARK: SearchViewModelInput
     let onQueryReading: BehaviorRelay<String> = BehaviorRelay.init(value: "")
+    let onEndEditing: PublishRelay<Void> = PublishRelay.init()
     let onSearch: PublishRelay<Void> = PublishRelay.init()
 
     // MARK: SearchViewModelOutput
@@ -38,16 +40,19 @@ final class SearchViewModel: SearchViewModelType, SearchViewModelInput, SearchVi
 
     // MARK: initializer
     init() {
-        search = onSearch
-            .withLatestFrom(onQueryReading)
-            .filter { !$0.isEmpty }
-            .map { KanjiQuery.init(reading: $0) }
-            .asDriver(onErrorDriveWith: .empty())
-
         isSearchable = onQueryReading
             .map { queryReading in
                 KanjiQuery.isValidReading(queryReading)
         }
         .asDriver(onErrorDriveWith: .just(false))
+
+        search = Observable<Void>
+            .merge(onSearch.asObservable(), onEndEditing.asObservable())
+            .withLatestFrom(isSearchable) { _, isSearchable in isSearchable }
+            .filter { $0 }
+            .withLatestFrom(onQueryReading)
+            .filter { !$0.isEmpty }
+            .map { KanjiQuery.init(reading: $0) }
+            .asDriver(onErrorDriveWith: .empty())
     }
 }
