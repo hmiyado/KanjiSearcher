@@ -22,8 +22,7 @@ class SearchViewModelSpec: QuickSpec {
                         .bind(to: viewModel.input.onSearch)
                         .disposed(by: disposeBag)
 
-                    let observer = scheduler.createObserver(KanjiQuery.self)
-                    viewModel.output.search.drive(observer).disposed(by: disposeBag)
+                    let observer = scheduler.createObserver(with: viewModel.output.search, disposedBy: disposeBag)
 
                     scheduler.start()
 
@@ -32,8 +31,7 @@ class SearchViewModelSpec: QuickSpec {
                 }
                 context("isSearchable") {
                     it("should be false") {
-                        let observer = scheduler.createObserver(Bool.self)
-                        viewModel.output.isSearchable.drive(observer).disposed(by: disposeBag)
+                        let observer = scheduler.createObserver(with: viewModel.output.isSearchable, disposedBy: disposeBag)
 
                         scheduler.start()
 
@@ -66,8 +64,7 @@ class SearchViewModelSpec: QuickSpec {
                 }
                 context("isSearchable") {
                     it("should be true") {
-                        let observer = scheduler.createObserver(Bool.self)
-                        viewModel.output.isSearchable.drive(observer).disposed(by: disposeBag)
+                        let observer = scheduler.createObserver(with: viewModel.output.isSearchable, disposedBy: disposeBag)
 
                         scheduler.start()
 
@@ -95,8 +92,7 @@ class SearchViewModelSpec: QuickSpec {
                         .bind(to: viewModel.input.onSearch)
                         .disposed(by: disposeBag)
 
-                    let observer = scheduler.createObserver(KanjiQuery.self)
-                    viewModel.output.search.drive(observer).disposed(by: disposeBag)
+                    let observer = scheduler.createObserver(with: viewModel.output.search, disposedBy: disposeBag)
 
                     scheduler.start()
 
