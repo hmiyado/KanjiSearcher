@@ -16,10 +16,11 @@ class KanjiSearchError: Error {
     }
 
     init?(kanjiResults: KanjiResults) {
-        if kanjiResults.message.isEmpty {
+        switch kanjiResults.status {
+        case .success:
             return nil
-        } else {
-            self.message = kanjiResults.message
+        case .error(let message):
+            self.message = message
         }
     }
 }
