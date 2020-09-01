@@ -16,7 +16,7 @@ class KanjiResultConverterSpec: QuickSpec {
 
                     let result = KanjiResultConverter().convert(json)
                     expect(result).to(equal(KanjiResults.init(
-                        status: .error, message: "Invalid Parameters", count: 0, results: []
+                        status: .error(message: "Invalid Parameters"), message: "Invalid Parameters", count: 0, results: []
                     )))
                 }
             }

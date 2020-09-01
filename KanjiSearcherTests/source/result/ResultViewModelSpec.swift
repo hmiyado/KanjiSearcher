@@ -47,7 +47,7 @@ class ResultViewModelSpec: QuickSpec {
                 }
                 context("get error for invalid parameters") {
                     it("drives error") {
-                        let errorInvalidParams = KanjiResults.init(status: .error, message: "Invalid Parameters", count: 0, results: [])
+                        let errorInvalidParams = KanjiResults.init(status: .error(message: "Invalid Parameters"), message: "Invalid Parameters", count: 0, results: [])
 
                         kanjiRepositoryMock.searchCondition = { _ in
                             errorInvalidParams

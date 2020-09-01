@@ -12,15 +12,19 @@ struct KanjiResults: Equatable {
 extension KanjiResults: Decodable {
     init(from decorder: Decoder) throws {
         let values = try decorder.container(keyedBy: CodingKeys.self)
-        status = try values.decode(KanjiResultStatus.self, forKey: .status)
+        let status = try values.decode(String.self, forKey: .status)
         switch status {
-        case .success:
+        case "success":
+            self.status = .success
             message = ""
-        case .error:
+        case "error":
             message = try values.decode(String.self, forKey: .message)
+            self.status = .error(message: message)
             count = 0
             results = []
             return
+        default:
+            throw DecodingError.dataCorruptedError(forKey: CodingKeys.status, in: values, debugDescription: "unexpected value \(status)")
         }
         count = try values.decode(Int.self, forKey: .count)
 
@@ -40,7 +44,7 @@ extension KanjiResults: Decodable {
 
 }
 
-enum KanjiResultStatus: String, Codable {
+enum KanjiResultStatus: Equatable {
     case success
-    case error
+    case error(message: String)
 }
