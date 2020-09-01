@@ -5,7 +5,6 @@ import Foundation
 struct KanjiResults: Equatable {
     var status: KanjiResultStatus
     var message: String
-    var find: Bool
     var count: Int
     var results: [KanjiInfo]
 }
@@ -19,12 +18,10 @@ extension KanjiResults: Decodable {
             message = ""
         case .error:
             message = try values.decode(String.self, forKey: .message)
-            find = false
             count = 0
             results = []
             return
         }
-        find = try values.decode(Bool.self, forKey: .find)
         count = try values.decode(Int.self, forKey: .count)
 
         if values.contains(.results) {
@@ -36,7 +33,6 @@ extension KanjiResults: Decodable {
 
     enum CodingKeys: String, CodingKey {
         case status
-        case find
         case count
         case results
         case message

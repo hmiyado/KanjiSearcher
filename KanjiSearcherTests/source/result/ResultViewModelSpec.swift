@@ -23,7 +23,7 @@ class ResultViewModelSpec: QuickSpec {
             context("with なにもない (get no result)") {
                 it("drives success") {
                     kanjiRepositoryMock.searchCondition = { _ in
-                        KanjiResults.init(status: .success, message: "", find: false, count: 0, results: [])
+                        KanjiResults.init(status: .success, message: "", count: 0, results: [])
                     }
 
                     scheduler
@@ -47,7 +47,7 @@ class ResultViewModelSpec: QuickSpec {
                 }
                 context("get error for invalid parameters") {
                     it("drives error") {
-                        let errorInvalidParams = KanjiResults.init(status: .error, message: "Invalid Parameters", find: false, count: 0, results: [])
+                        let errorInvalidParams = KanjiResults.init(status: .error, message: "Invalid Parameters", count: 0, results: [])
 
                         kanjiRepositoryMock.searchCondition = { _ in
                             errorInvalidParams
