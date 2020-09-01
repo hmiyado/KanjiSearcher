@@ -4,7 +4,6 @@ import Foundation
 
 struct KanjiResults: Equatable {
     var status: KanjiResultStatus
-    var count: Int
     var results: [KanjiInfo]
 }
 
@@ -14,12 +13,11 @@ extension KanjiResults: Decodable {
         let status = try values.decode(String.self, forKey: .status)
         switch status {
         case "success":
-            count = try values.decode(Int.self, forKey: .count)
+            let count = try values.decode(Int.self, forKey: .count)
             self.status = .success(count: count)
         case "error":
             let message = try values.decode(String.self, forKey: .message)
             self.status = .error(message: message)
-            count = 0
             results = []
             return
         default:

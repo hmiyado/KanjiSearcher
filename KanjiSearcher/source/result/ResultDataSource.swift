@@ -9,7 +9,14 @@ class ResultDataSource: NSObject {
 
 extension ResultDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return kanjiResults?.count ?? 0
+        switch kanjiResults?.status {
+        case .success(let count):
+            return count
+        case .error:
+            return 0
+        case .none:
+            return 0
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
