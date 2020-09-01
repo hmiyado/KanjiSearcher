@@ -9,7 +9,7 @@ class KanjiResultConverter {
             return try decoder.decode(KanjiResults.self, from: json)
         } catch {
             return KanjiResults.init(
-                status: .error(message: error.localizedDescription), results: []
+                status: .error(message: error.localizedDescription)
             )
         }
     }

@@ -4,7 +4,14 @@ import Foundation
 
 struct KanjiResults: Equatable {
     var status: KanjiResultStatus
-    var results: [KanjiInfo]
+    var isEmpty: Bool {
+        switch status {
+        case let .success(_, results):
+            return results.isEmpty
+        default:
+            return true
+        }
+    }
 }
 
 extension KanjiResults: Decodable {
@@ -14,21 +21,18 @@ extension KanjiResults: Decodable {
         switch status {
         case "success":
             let count = try values.decode(Int.self, forKey: .count)
-            self.status = .success(count: count)
+            let results = values.contains(.results) ?
+                try values.decode(Array<KanjiInfo>.self, forKey: .results) :
+                []
+            self.status = .success(count: count, results: results)
         case "error":
             let message = try values.decode(String.self, forKey: .message)
             self.status = .error(message: message)
-            results = []
             return
         default:
             throw DecodingError.dataCorruptedError(forKey: CodingKeys.status, in: values, debugDescription: "unexpected value \(status)")
         }
 
-        if values.contains(.results) {
-            results = try values.decode(Array<KanjiInfo>.self, forKey: .results)
-        } else {
-            results = []
-        }
     }
 
     enum CodingKeys: String, CodingKey {
@@ -41,6 +45,6 @@ extension KanjiResults: Decodable {
 }
 
 enum KanjiResultStatus: Equatable {
-    case success(count: Int)
+    case success(count: Int, results: [KanjiInfo])
     case error(message: String)
 }
