@@ -16,7 +16,7 @@ class KanjiSearchError: Error {
     }
 
     init?(kanjiResults: KanjiResults) {
-        switch kanjiResults.status {
+        switch kanjiResults {
         case .success:
             return nil
         case .error(let message):

@@ -2,10 +2,12 @@
 
 import Foundation
 
-struct KanjiResults: Equatable {
-    var status: KanjiResultStatus
+enum KanjiResults: Equatable {
+    case success(count: Int, results: [KanjiInfo])
+    case error(message: String)
+
     var isEmpty: Bool {
-        switch status {
+        switch self {
         case let .success(_, results):
             return results.isEmpty
         default:
@@ -24,11 +26,10 @@ extension KanjiResults: Decodable {
             let results = values.contains(.results) ?
                 try values.decode(Array<KanjiInfo>.self, forKey: .results) :
                 []
-            self.status = .success(count: count, results: results)
+            self = .success(count: count, results: results)
         case "error":
             let message = try values.decode(String.self, forKey: .message)
-            self.status = .error(message: message)
-            return
+            self = .error(message: message)
         default:
             throw DecodingError.dataCorruptedError(forKey: CodingKeys.status, in: values, debugDescription: "unexpected value \(status)")
         }
@@ -42,9 +43,4 @@ extension KanjiResults: Decodable {
         case message
     }
 
-}
-
-enum KanjiResultStatus: Equatable {
-    case success(count: Int, results: [KanjiInfo])
-    case error(message: String)
 }

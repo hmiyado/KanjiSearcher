@@ -15,9 +15,7 @@ class KanjiResultConverterSpec: QuickSpec {
                     let json = try reader.readJson(fileName: "error_invalid_parameters")
 
                     let result = KanjiResultConverter().convert(json)
-                    expect(result).to(equal(KanjiResults.init(
-                        status: .error(message: "Invalid Parameters")
-                    )))
+                    expect(result).to(equal(.error(message: "Invalid Parameters")))
                 }
             }
             context("no result") {
@@ -26,8 +24,7 @@ class KanjiResultConverterSpec: QuickSpec {
 
                     let result = KanjiResultConverter().convert(json)
                     expect(result)
-                        .to(equal(KanjiResults.init(
-                            status: .success(count: 0, results: []))))
+                        .to(equal(.success(count: 0, results: [])))
                 }
             }
             context("with result") {
@@ -36,7 +33,7 @@ class KanjiResultConverterSpec: QuickSpec {
                         let json = try reader.readJson(fileName: "query_つじ")
 
                         let result = KanjiResultConverter().convert(json)
-                        expect(result).to(equal(KanjiResults.init(status: .success(count: 2, results: [
+                        expect(result).to(equal(.success(count: 2, results: [
                             KanjiInfo.init(
                                 kanjiId: KanjiId(fullId: "MJ025761"),
                                 idInFamilyRegister: 437750,
@@ -62,7 +59,7 @@ class KanjiResultConverterSpec: QuickSpec {
                                 ],
                                 strokeCount: 5,
                                 reading: KanjiReading.init(onyomi: [], kunyomi: ["つじ"]))
-                        ]))))
+                        ])))
                     }
                 }
                 context("query is MJ004251 (with empty number)") {
@@ -70,7 +67,7 @@ class KanjiResultConverterSpec: QuickSpec {
                         let json = try reader.readJson(fileName: "query_MJ文字図形名_MJ004251")
 
                         let result = KanjiResultConverter().convert(json)
-                        expect(result).to(equal(KanjiResults.init(status: .success(count: 1, results: [
+                        expect(result).to(equal(.success(count: 1, results: [
                             KanjiInfo.init(
                                 kanjiId: KanjiId(fullId: "MJ004251"),
                                 idInFamilyRegister: nil,
@@ -84,7 +81,7 @@ class KanjiResultConverterSpec: QuickSpec {
                                 ],
                                 strokeCount: 10,
                                 reading: KanjiReading.init(onyomi: ["ケン"], kunyomi: ["つつしむ"]))
-                        ]))))
+                        ])))
                     }
                 }
                 context("query is MJ013503 (with 2 kanji radicals)") {
@@ -92,7 +89,7 @@ class KanjiResultConverterSpec: QuickSpec {
                         let json = try reader.readJson(fileName: "query_MJ文字図形名_MJ013503")
                         let result = KanjiResultConverter().convert(json)
                         expect(result)
-                            .to(equal(KanjiResults.init(status: .success(count: 1, results: [
+                            .to(equal(.success(count: 1, results: [
                                 KanjiInfo.init(
                                     kanjiId: KanjiId(fullId: "MJ013503"),
                                     idInFamilyRegister: nil,
@@ -106,7 +103,7 @@ class KanjiResultConverterSpec: QuickSpec {
                                     reading: KanjiReading.init(
                                         onyomi: ["ソ", "ソウ", "ゾ"],
                                         kunyomi: ["かつて", "すなわち"]))
-                            ]))))
+                            ])))
                     }
                 }
                 context("query is MJ009387 (with kanji radical that has no stroke)") {
@@ -114,7 +111,7 @@ class KanjiResultConverterSpec: QuickSpec {
                         let json = try reader.readJson(fileName: "query_MJ文字図形名_MJ009387")
                         let result = KanjiResultConverter().convert(json)
                         expect(result)
-                            .to(equal(KanjiResults.init(status: .success(count: 1, results: [
+                            .to(equal(.success(count: 1, results: [
                                 KanjiInfo.init(
                                     kanjiId: KanjiId(fullId: "MJ009387"),
                                     idInFamilyRegister: 064630,
@@ -128,7 +125,7 @@ class KanjiResultConverterSpec: QuickSpec {
                                     reading: KanjiReading.init(
                                         onyomi: [                    "セイ", "ショウ", "ケイ"],
                                         kunyomi: ["こえ", "こわ"]))
-                            ]))))
+                            ])))
                     }
                 }
             }

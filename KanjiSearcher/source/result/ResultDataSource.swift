@@ -9,7 +9,7 @@ class ResultDataSource: NSObject {
 
 extension ResultDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch kanjiResults?.status {
+        switch kanjiResults {
         case let .success(count, _):
             return count
         case .error:
@@ -24,7 +24,7 @@ extension ResultDataSource: UITableViewDataSource {
         guard let cell = cellOptional as? ResultTableViewCell else {
             return cellOptional
         }
-        switch kanjiResults?.status {
+        switch kanjiResults {
         case .success(_, let results):
             cell.setKanjiInfo(kanjiInfo: results[indexPath.row])
         default:

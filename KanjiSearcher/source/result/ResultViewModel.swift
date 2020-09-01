@@ -79,7 +79,7 @@ class ResultViewModel: ResultViewModelType, ResultViewModelInput, ResultViewMode
             .asDriver(onErrorDriveWith: .empty())
         self.showDetail = self.onSelectItem
             .withLatestFrom(self.successSearching) { indexPath, kanjiResults in
-                switch kanjiResults.status {
+                switch kanjiResults {
                 case let .success(_, results):
                     return results[indexPath.row]
                 default:
