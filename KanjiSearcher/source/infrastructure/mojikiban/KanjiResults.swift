@@ -14,7 +14,8 @@ extension KanjiResults: Decodable {
         let status = try values.decode(String.self, forKey: .status)
         switch status {
         case "success":
-            self.status = .success
+            count = try values.decode(Int.self, forKey: .count)
+            self.status = .success(count: count)
         case "error":
             let message = try values.decode(String.self, forKey: .message)
             self.status = .error(message: message)
@@ -24,7 +25,6 @@ extension KanjiResults: Decodable {
         default:
             throw DecodingError.dataCorruptedError(forKey: CodingKeys.status, in: values, debugDescription: "unexpected value \(status)")
         }
-        count = try values.decode(Int.self, forKey: .count)
 
         if values.contains(.results) {
             results = try values.decode(Array<KanjiInfo>.self, forKey: .results)
@@ -43,6 +43,6 @@ extension KanjiResults: Decodable {
 }
 
 enum KanjiResultStatus: Equatable {
-    case success
+    case success(count: Int)
     case error(message: String)
 }

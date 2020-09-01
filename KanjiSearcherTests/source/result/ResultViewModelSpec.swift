@@ -23,7 +23,7 @@ class ResultViewModelSpec: QuickSpec {
             context("with なにもない (get no result)") {
                 it("drives success") {
                     kanjiRepositoryMock.searchCondition = { _ in
-                        KanjiResults.init(status: .success, count: 0, results: [])
+                        KanjiResults.init(status: .success(count: 0), count: 0, results: [])
                     }
 
                     scheduler
