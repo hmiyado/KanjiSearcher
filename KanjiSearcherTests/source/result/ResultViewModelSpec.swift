@@ -66,7 +66,7 @@ class ResultViewModelSpec: QuickSpec {
                         scheduler.start()
                         expect(observer.events)
                             .to(equal([
-                                .next(10, KanjiSearchError.init(kanjiResults: errorInvalidParams)!)
+                                .next(10, .invalidParameters)
                             ]))
                     }
                 }

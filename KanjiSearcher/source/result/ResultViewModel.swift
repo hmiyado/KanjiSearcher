@@ -13,7 +13,7 @@ protocol ResultViewModelInput {
 protocol ResultViewModelOutput {
     var waitSearching: Driver<Void> {get}
     var successSearching: Driver<[KanjiInfo]> { get }
-    var errorSearching: Driver<KanjiSearchError> { get }
+    var errorSearching: Driver<KanjiResultsError> { get }
     var emptySearching: Driver<Void> { get }
     var showDetail: Driver<KanjiInfo> {get}
 }
@@ -34,7 +34,7 @@ class ResultViewModel: ResultViewModelType, ResultViewModelInput, ResultViewMode
     // MARK: ResultViewModelOutput
     let waitSearching: Driver<Void>
     let successSearching: Driver<[KanjiInfo]>
-    let errorSearching: Driver<KanjiSearchError>
+    let errorSearching: Driver<KanjiResultsError>
     let emptySearching: Driver<Void>
     let showDetail: Driver<KanjiInfo>
 
@@ -54,7 +54,7 @@ class ResultViewModel: ResultViewModelType, ResultViewModelInput, ResultViewMode
         self.errorSearching = self.searchingStatus
             .compactMap { status in
                 switch status {
-                case .error(error: let error):
+                case .error(detail: let error):
                     return error
                 default:
                     return nil
@@ -98,10 +98,11 @@ class ResultViewModel: ResultViewModelType, ResultViewModelInput, ResultViewMode
                     kanjiRepository
                         .search(query: query)
                         .map {
-                            if let error = KanjiSearchError.init(kanjiResults: $0) {
-                                return KanjiSearchStatus.error(error: error)
-                            } else {
+                            switch $0 {
+                            case .success:
                                 return KanjiSearchStatus.success(payload: $0)
+                            case let .error(detail):
+                                return KanjiSearchStatus.error(detail: detail)
                             }
                     }
                     .asObservable()
