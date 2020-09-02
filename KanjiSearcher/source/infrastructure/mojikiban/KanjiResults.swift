@@ -5,15 +5,6 @@ import Foundation
 enum KanjiResults: Equatable {
     case success(count: Int, results: [KanjiInfo])
     case error(message: String)
-
-    var isEmpty: Bool {
-        switch self {
-        case let .success(_, results):
-            return results.isEmpty
-        default:
-            return true
-        }
-    }
 }
 
 extension KanjiResults: Decodable {
