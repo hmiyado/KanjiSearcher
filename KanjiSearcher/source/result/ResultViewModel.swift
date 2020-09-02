@@ -12,7 +12,7 @@ protocol ResultViewModelInput {
 
 protocol ResultViewModelOutput {
     var waitSearching: Driver<Void> {get}
-    var successSearching: Driver<KanjiResults> { get }
+    var successSearching: Driver<[KanjiInfo]> { get }
     var errorSearching: Driver<KanjiSearchError> { get }
     var emptySearching: Driver<Void> { get }
     var showDetail: Driver<KanjiInfo> {get}
@@ -33,7 +33,7 @@ class ResultViewModel: ResultViewModelType, ResultViewModelInput, ResultViewMode
 
     // MARK: ResultViewModelOutput
     let waitSearching: Driver<Void>
-    let successSearching: Driver<KanjiResults>
+    let successSearching: Driver<[KanjiInfo]>
     let errorSearching: Driver<KanjiSearchError>
     let emptySearching: Driver<Void>
     let showDetail: Driver<KanjiInfo>
@@ -61,11 +61,16 @@ class ResultViewModel: ResultViewModelType, ResultViewModelInput, ResultViewMode
                 }
         }
         .asDriver(onErrorDriveWith: .empty())
-        let success: Observable<KanjiResults> = self.searchingStatus
+        let success: Observable<[KanjiInfo]> = self.searchingStatus
             .compactMap { status in
                 switch status {
                 case .success(payload: let payload):
-                    return payload
+                    switch payload {
+                    case let .success(_, results):
+                        return results
+                    default:
+                        return nil
+                    }
                 default:
                     return nil
                 }
@@ -78,13 +83,8 @@ class ResultViewModel: ResultViewModelType, ResultViewModelInput, ResultViewMode
             .map { _ in () }
             .asDriver(onErrorDriveWith: .empty())
         self.showDetail = self.onSelectItem
-            .withLatestFrom(self.successSearching) { indexPath, kanjiResults in
-                switch kanjiResults {
-                case let .success(_, results):
-                    return results[indexPath.row]
-                default:
-                    return nil
-                }
+            .withLatestFrom(self.successSearching) { indexPath, results in
+                results[indexPath.row]
         }
         .compactMap { $0 }
         .asDriver(onErrorDriveWith: .empty())

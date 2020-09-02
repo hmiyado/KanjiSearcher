@@ -4,19 +4,12 @@ import Foundation
 import UIKit
 
 class ResultDataSource: NSObject {
-    var kanjiResults: KanjiResults?
+    var results: [KanjiInfo] = []
 }
 
 extension ResultDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch kanjiResults {
-        case let .success(count, _):
-            return count
-        case .error:
-            return 0
-        case .none:
-            return 0
-        }
+        results.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -24,12 +17,7 @@ extension ResultDataSource: UITableViewDataSource {
         guard let cell = cellOptional as? ResultTableViewCell else {
             return cellOptional
         }
-        switch kanjiResults {
-        case .success(_, let results):
-            cell.setKanjiInfo(kanjiInfo: results[indexPath.row])
-        default:
-            break
-        }
+        cell.setKanjiInfo(kanjiInfo: results[indexPath.row])
 
         return cell
     }

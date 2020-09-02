@@ -90,11 +90,16 @@ class ResultViewModelSpec: QuickSpec {
                             disposedBy: disposeBag
                         )
 
-                        scheduler.start()
-                        expect(observer.events)
-                            .to(equal([
-                                .next(10, result)
-                            ]))
+                        switch result {
+                        case let .success(_, results):
+                            scheduler.start()
+                            expect(observer.events)
+                                .to(equal([
+                                    .next(10, results)
+                                ]))
+                        default:
+                            fail()
+                        }
                     }
                     context("and on select 2nd item") {
                         it("showDetail of the item") {

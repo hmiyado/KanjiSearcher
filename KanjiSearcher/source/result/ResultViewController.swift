@@ -66,7 +66,7 @@ class ResultViewController: UIViewController {
                 }
                 self.activityIndicator?.removeFromSuperview()
                 self.tableView?.isHidden = false
-                self.dataSource.kanjiResults = kanjiResults
+                self.dataSource.results = kanjiResults
                 self.tableView.reloadData()
             })
             .disposed(by: disposableBag)
