@@ -71,16 +71,22 @@ class ResultViewModel: ResultViewModelType, ResultViewModelInput, ResultViewMode
                 }
         }
         self.successSearching = success
-            .filter { !$0.results.isEmpty }
+            .filter { !$0.isEmpty }
             .asDriver(onErrorDriveWith: .empty())
         self.emptySearching = success
-            .filter { $0.results.isEmpty }
+            .filter { $0.isEmpty }
             .map { _ in () }
             .asDriver(onErrorDriveWith: .empty())
         self.showDetail = self.onSelectItem
             .withLatestFrom(self.successSearching) { indexPath, kanjiResults in
-                kanjiResults.results[indexPath.row]
+                switch kanjiResults {
+                case let .success(_, results):
+                    return results[indexPath.row]
+                default:
+                    return nil
+                }
         }
+        .compactMap { $0 }
         .asDriver(onErrorDriveWith: .empty())
 
         onQuery

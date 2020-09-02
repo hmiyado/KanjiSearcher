@@ -9,16 +9,27 @@ class ResultDataSource: NSObject {
 
 extension ResultDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return kanjiResults?.count ?? 0
+        switch kanjiResults {
+        case let .success(count, _):
+            return count
+        case .error:
+            return 0
+        case .none:
+            return 0
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellOptional = tableView.dequeueReusableCell(withIdentifier: "kanjiInfoListItem", for: indexPath)
-        guard let cell = cellOptional as? ResultTableViewCell, let info = kanjiResults?.results[indexPath.row] else {
+        guard let cell = cellOptional as? ResultTableViewCell else {
             return cellOptional
         }
-
-        cell.setKanjiInfo(kanjiInfo: info)
+        switch kanjiResults {
+        case .success(_, let results):
+            cell.setKanjiInfo(kanjiInfo: results[indexPath.row])
+        default:
+            break
+        }
 
         return cell
     }
