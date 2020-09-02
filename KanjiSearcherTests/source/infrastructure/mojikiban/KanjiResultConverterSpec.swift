@@ -15,7 +15,7 @@ class KanjiResultConverterSpec: QuickSpec {
                     let json = try reader.readJson(fileName: "error_invalid_parameters")
 
                     let result = KanjiResultConverter().convert(json)
-                    expect(result).to(equal(.error(message: "Invalid Parameters")))
+                    expect(result).to(equal(.error(detail: .invalidParameters)))
                 }
             }
             context("no result") {

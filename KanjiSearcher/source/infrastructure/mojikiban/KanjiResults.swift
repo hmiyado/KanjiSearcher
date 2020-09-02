@@ -4,7 +4,7 @@ import Foundation
 
 enum KanjiResults: Equatable {
     case success(count: Int, results: [KanjiInfo])
-    case error(message: String)
+    case error(detail: KanjiResultsError)
 }
 
 extension KanjiResults: Decodable {
@@ -20,7 +20,14 @@ extension KanjiResults: Decodable {
             self = .success(count: count, results: results)
         case "error":
             let message = try values.decode(String.self, forKey: .message)
-            self = .error(message: message)
+            switch message {
+            case "Invalid Parameters":
+                self = .error(detail: .invalidParameters)
+            case "Empty Query":
+                self = .error(detail: .emptyQuery)
+            default:
+                self = .error(detail: .unknown(description: message))
+            }
         default:
             throw DecodingError.dataCorruptedError(forKey: CodingKeys.status, in: values, debugDescription: "unexpected value \(status)")
         }
@@ -33,5 +40,15 @@ extension KanjiResults: Decodable {
         case results
         case message
     }
+
+}
+
+enum KanjiResultsError: Error {
+    case invalidParameters
+    case emptyQuery
+    case unknown(description: String)
+}
+
+extension KanjiResultsError: Equatable {
 
 }

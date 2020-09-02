@@ -19,8 +19,8 @@ class KanjiSearchError: Error {
         switch kanjiResults {
         case .success:
             return nil
-        case .error(let message):
-            self.message = message
+        case .error(let detail):
+            self.message = detail.localizedDescription
         }
     }
 }
