@@ -35,7 +35,7 @@ class KanjiRepositorySpec: QuickSpec {
                         .search(query: KanjiQuery.init(reading: "つじ"))
                         .toBlocking()
 
-                    expect(try observable.toArray()).to(equal([KanjiResultConverter().convert(json)]))
+                    expect(try observable.toArray()).to(equal([KanjiResultsConverter().convert(json)]))
                 }
             }
             context("with no query") {
@@ -58,7 +58,7 @@ class KanjiRepositorySpec: QuickSpec {
                         .search(query: KanjiQuery.init())
                         .toBlocking()
 
-                    expect(try observable.first()).to(equal(KanjiResultConverter().convert(json)))
+                    expect(try observable.first()).to(equal(KanjiResultsConverter().convert(json)))
                 }
             }
         }

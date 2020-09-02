@@ -73,7 +73,7 @@ class ResultViewModelSpec: QuickSpec {
                 context("with つじ (get 2 results)") {
                     var result: KanjiResults!
                     beforeEach {
-                        result = try? KanjiResultConverter().convert(reader.readJson(fileName: "query_つじ"))
+                        result = try? KanjiResultsConverter().convert(reader.readJson(fileName: "query_つじ"))
                         kanjiRepositoryMock.searchCondition = { _ in
                             result
                         }

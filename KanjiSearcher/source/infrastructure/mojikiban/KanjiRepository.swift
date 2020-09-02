@@ -13,7 +13,7 @@ class KanjiRepository: KanjiRepositoryProtocol {
         return RxAlamofire
             .requestData(.get, query.asUrl())
             .map { (_, data) in
-                KanjiResultConverter().convert(data)
+                KanjiResultsConverter().convert(data)
         }
         .asSingle()
     }

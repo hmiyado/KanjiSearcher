@@ -2,7 +2,7 @@
 
 import Foundation
 
-class KanjiResultConverter {
+class KanjiResultsConverter {
     func convert(_ json: Data) -> KanjiResults {
         let decoder = JSONDecoder.init()
         do {
