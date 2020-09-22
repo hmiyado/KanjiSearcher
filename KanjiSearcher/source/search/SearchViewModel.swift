@@ -39,7 +39,7 @@ final class SearchViewModel: SearchViewModelType, SearchViewModelInput, SearchVi
     private let disposeBag = DisposeBag()
 
     // MARK: initializer
-    init() {
+    init(scheduler: SchedulerType = MainScheduler.instance) {
         isSearchable = onQueryReading
             .map { queryReading in
                 KanjiQuery.isValidReading(queryReading)
@@ -48,6 +48,7 @@ final class SearchViewModel: SearchViewModelType, SearchViewModelInput, SearchVi
 
         search = Observable<Void>
             .merge(onSearch.asObservable(), onEndEditing.asObservable())
+            .throttle(RxTimeInterval.milliseconds(500), latest: false, scheduler: scheduler)
             .withLatestFrom(isSearchable) { _, isSearchable in isSearchable }
             .filter { $0 }
             .withLatestFrom(onQueryReading)
