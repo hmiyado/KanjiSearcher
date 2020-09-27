@@ -1,0 +1,71 @@
+name: Alamofire, nameSpecified: 
+body: Copyright (c) 2014-2…
+version: 5.2.1
+
+name: LicensePlist, nameSpecified: 
+body: MIT License
+
+Copyrig…
+version: 2.16.0
+
+name: Nimble, nameSpecified: 
+body: Apache License
+     …
+version: 8.1.1
+
+name: OHHTTPStubs, nameSpecified: 
+body: - MIT LICENSE -
+
+Cop…
+version: 9.0.0
+
+name: Quick, nameSpecified: 
+body: Apache License
+     …
+version: 3.0.0
+
+name: RxAlamofire, nameSpecified: 
+body: The MIT License (MIT…
+version: 5.6.0
+
+name: RxBlocking, nameSpecified: 
+body: **The MIT License**
+…
+version: 5.1.1
+
+name: RxCocoa, nameSpecified: 
+body: **The MIT License**
+…
+version: 5.1.1
+
+name: RxRelay, nameSpecified: 
+body: **The MIT License**
+…
+version: 5.1.1
+
+name: RxSwift, nameSpecified: 
+body: **The MIT License**
+…
+version: 5.1.1
+
+name: RxSwift, nameSpecified: 
+body: **The MIT License**
+…
+version: 5.1.1
+
+name: RxTest, nameSpecified: 
+body: **The MIT License**
+…
+version: 5.1.1
+
+name: SnapKit, nameSpecified: 
+body: Copyright (c) 2011-P…
+version: 5.0.1
+
+name: SwiftLint, nameSpecified: 
+body: The MIT License (MIT…
+version: 0.39.2
+
+add-version-numbers: false
+
+LicensePlist Version: 2.16.0
