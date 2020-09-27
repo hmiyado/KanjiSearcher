@@ -10,6 +10,7 @@ target 'KanjiSearcher' do
   # Pods for KanjiSearcher
   pod 'Alamofire', '~> 5.2'
   
+  pod 'SnapKit', '~> 5.0.0'
   pod 'RxAlamofire', '~> 5.6.0'
   pod 'RxSwift', "~>#{rx_version}"
   pod 'RxCocoa', "~>#{rx_version}"
