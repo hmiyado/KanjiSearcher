@@ -8,7 +8,6 @@ class ResultViewController: UIViewController {
     private let disposableBag = DisposeBag()
     private var dataSource: ResultDataSource = ResultDataSource()
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet private weak var errorView: UIStackView!
     @IBOutlet private weak var emptyView: UIStackView!
     @IBOutlet private weak var containerView: UIView!
     @IBOutlet private weak var tableView: UITableView!
@@ -23,6 +22,8 @@ class ResultViewController: UIViewController {
     }
 
     override func viewDidLoad() {
+        let errorView = ResultErrorView()
+
         self.tableView.dataSource = dataSource
         self.tableView.delegate = self
 
@@ -37,7 +38,7 @@ class ResultViewController: UIViewController {
                 guard let self = self else {
                     return
                 }
-                self.errorView?.removeFromSuperview()
+                errorView.removeFromSuperview()
                 self.emptyView?.removeFromSuperview()
                 self.activityIndicator.center(in: self.containerView)
                 self.activityIndicator?.startAnimating()
@@ -52,8 +53,9 @@ class ResultViewController: UIViewController {
                     return
                 }
                 self.activityIndicator?.removeFromSuperview()
-                if let errorView = self.errorView, let containerView = self.containerView {
+                if let containerView = self.containerView {
                     errorView.center(in: containerView)
+                    //                    errorView.showError(error)
                 }
             })
             .disposed(by: disposableBag)

@@ -47,6 +47,8 @@
 		2F6C158124EEB47300D69AE5 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6C158024EEB47300D69AE5 /* ResultTableViewCell.swift */; };
 		2F6C158324EEBCB300D69AE5 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6C158224EEBCB300D69AE5 /* UIImage+Extensions.swift */; };
 		2F6C158524F00B2D00D69AE5 /* query_MJ文字図形名_MJ004251.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F6C158424F00B2D00D69AE5 /* query_MJ文字図形名_MJ004251.json */; };
+		2FCC9C602501336F00672389 /* ResultErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCC9C5F2501336F00672389 /* ResultErrorView.swift */; };
+		2FCC9C622501429700672389 /* ResultErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FCC9C612501429700672389 /* ResultErrorView.xib */; };
 		501EBC1D565AE48412ECCBBC /* Pods_KanjiSearcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BA6443CCBE50221B27442A9 /* Pods_KanjiSearcher.framework */; };
 		FEF28FC15744B6B57FC9DC88 /* Pods_KanjiSearcherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 562500A0C8C6D7DF8D22BB36 /* Pods_KanjiSearcherTests.framework */; };
 /* End PBXBuildFile section */
@@ -108,6 +110,8 @@
 		2F6C158024EEB47300D69AE5 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		2F6C158224EEBCB300D69AE5 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		2F6C158424F00B2D00D69AE5 /* query_MJ文字図形名_MJ004251.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "query_MJ文字図形名_MJ004251.json"; sourceTree = "<group>"; };
+		2FCC9C5F2501336F00672389 /* ResultErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultErrorView.swift; sourceTree = "<group>"; };
+		2FCC9C612501429700672389 /* ResultErrorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultErrorView.xib; sourceTree = "<group>"; };
 		4AE8F3AAA553B903018973ED /* Pods-KanjiSearcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KanjiSearcher.debug.xcconfig"; path = "Target Support Files/Pods-KanjiSearcher/Pods-KanjiSearcher.debug.xcconfig"; sourceTree = "<group>"; };
 		562500A0C8C6D7DF8D22BB36 /* Pods_KanjiSearcherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KanjiSearcherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		675B682B1DB2F5A62ADA7989 /* Pods-KanjiSearcherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KanjiSearcherTests.debug.xcconfig"; path = "Target Support Files/Pods-KanjiSearcherTests/Pods-KanjiSearcherTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -244,6 +248,8 @@
 				2F6C156C24D553DF00D69AE5 /* KanjiSearchStatus.swift */,
 				2F6C157824EC116500D69AE5 /* ResultDataSource.swift */,
 				2F6C158024EEB47300D69AE5 /* ResultTableViewCell.swift */,
+				2FCC9C5F2501336F00672389 /* ResultErrorView.swift */,
+				2FCC9C612501429700672389 /* ResultErrorView.xib */,
 			);
 			path = result;
 			sourceTree = "<group>";
@@ -462,6 +468,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FCC9C622501429700672389 /* ResultErrorView.xib in Resources */,
 				2F28CECB24FA909900BE7C34 /* Main.storyboard in Resources */,
 				2F076B7424BAF8C6001EA7FD /* LaunchScreen.storyboard in Resources */,
 				2F076B7124BAF8C6001EA7FD /* Assets.xcassets in Resources */,
@@ -604,6 +611,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FCC9C602501336F00672389 /* ResultErrorView.swift in Sources */,
 				2F6C153E24CAC8FE00D69AE5 /* ResultViewController.swift in Sources */,
 				2F28CEBF24F5556600BE7C34 /* KanjiRadicalsDataSource.swift in Sources */,
 				2F341E1A24F2547B009ECEF7 /* DetailViewController.swift in Sources */,
