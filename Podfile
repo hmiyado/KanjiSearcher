@@ -16,6 +16,7 @@ target 'KanjiSearcher' do
   pod 'RxCocoa', "~>#{rx_version}"
 
   pod 'SwiftLint', "~>0.39.2"
+  pod 'LicensePlist'
 
   target 'KanjiSearcherTests' do
     inherit! :search_paths
