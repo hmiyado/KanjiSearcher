@@ -43,8 +43,8 @@ final class SearchViewModel: SearchViewModelType, SearchViewModelInput, SearchVi
         isSearchable = onQueryReading
             .map { queryReading in
                 KanjiQuery.isValidReading(queryReading)
-        }
-        .asDriver(onErrorDriveWith: .just(false))
+            }
+            .asDriver(onErrorDriveWith: .just(false))
 
         search = Observable<Void>
             .merge(onSearch.asObservable(), onEndEditing.asObservable())

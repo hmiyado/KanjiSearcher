@@ -12,9 +12,9 @@ class KanjiQuerySpec: QuickSpec {
                 it("asUrl") {
                     expect(query.asUrl())
                         .to(equal(URL
-                            .init(string: "https://mojikiban.ipa.go.jp/mji/q?読み=あ"
-                                .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-                        )))
+                                    .init(string: "https://mojikiban.ipa.go.jp/mji/q?読み=あ"
+                                            .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+                                    )))
                 }
             }
             context("with no parameters") {

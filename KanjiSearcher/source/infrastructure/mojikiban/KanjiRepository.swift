@@ -14,7 +14,7 @@ class KanjiRepository: KanjiRepositoryProtocol {
             .requestData(.get, query.asUrl())
             .map { (_, data) in
                 KanjiResultsConverter().convert(data)
-        }
-        .asSingle()
+            }
+            .asSingle()
     }
 }

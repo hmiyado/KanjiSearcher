@@ -10,7 +10,7 @@ struct KanjiQuery {
         var urlComponents = URLComponents(string: "https://mojikiban.ipa.go.jp/mji/q")
         urlComponents?.queryItems = [
             (reading != nil ? URLQueryItem(name: "読み", value: reading) : nil)
-            ].compactMap { $0 }
+        ].compactMap { $0 }
 
         return (urlComponents?.url!)!
     }

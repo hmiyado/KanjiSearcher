@@ -59,8 +59,8 @@ class ResultViewModel: ResultViewModelType, ResultViewModelInput, ResultViewMode
                 default:
                     return nil
                 }
-        }
-        .asDriver(onErrorDriveWith: .empty())
+            }
+            .asDriver(onErrorDriveWith: .empty())
         let success: Observable<[KanjiInfo]> = self.searchingStatus
             .compactMap { status in
                 switch status {
@@ -74,7 +74,7 @@ class ResultViewModel: ResultViewModelType, ResultViewModelInput, ResultViewMode
                 default:
                     return nil
                 }
-        }
+            }
         self.successSearching = success
             .filter { !$0.isEmpty }
             .asDriver(onErrorDriveWith: .empty())
@@ -85,9 +85,9 @@ class ResultViewModel: ResultViewModelType, ResultViewModelInput, ResultViewMode
         self.showDetail = self.onSelectItem
             .withLatestFrom(self.successSearching) { indexPath, results in
                 results[indexPath.row]
-        }
-        .compactMap { $0 }
-        .asDriver(onErrorDriveWith: .empty())
+            }
+            .compactMap { $0 }
+            .asDriver(onErrorDriveWith: .empty())
 
         onQuery
             // skip initial BehaviorRelay value
@@ -104,11 +104,11 @@ class ResultViewModel: ResultViewModelType, ResultViewModelInput, ResultViewMode
                             case let .error(detail):
                                 return KanjiSearchStatus.error(detail: detail)
                             }
-                    }
-                    .asObservable()
+                        }
+                        .asObservable()
                 )
-        }
-        .bind(to: self.searchingStatus)
-        .disposed(by: disposeBag)
+            }
+            .bind(to: self.searchingStatus)
+            .disposed(by: disposeBag)
     }
 }
