@@ -1,6 +1,7 @@
 //
 
 import Foundation
+import SnapKit
 import UIKit
 
 class ResultErrorView: UIView {
@@ -26,6 +27,9 @@ class ResultErrorView: UIView {
             return
         }
         addSubview(view)
+        view.snp.makeConstraints { (make) -> Void in
+            make.edges.equalToSuperview()
+        }
     }
 
     func showError(_ error: KanjiResultsError) {

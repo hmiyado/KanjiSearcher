@@ -33,8 +33,9 @@
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="lLc-cM-Vwz" firstAttribute="width" secondItem="go1-WV-g0h" secondAttribute="width" id="4kf-h4-OYm"/>
+                <constraint firstItem="lLc-cM-Vwz" firstAttribute="width" relation="lessThanOrEqual" secondItem="go1-WV-g0h" secondAttribute="width" id="4kf-h4-OYm"/>
                 <constraint firstItem="lLc-cM-Vwz" firstAttribute="top" secondItem="go1-WV-g0h" secondAttribute="bottom" constant="18" id="ERB-Ag-yFe"/>
+                <constraint firstItem="lLc-cM-Vwz" firstAttribute="trailing" secondItem="go1-WV-g0h" secondAttribute="trailing" id="MDU-5w-8HB"/>
                 <constraint firstAttribute="trailing" secondItem="go1-WV-g0h" secondAttribute="trailing" constant="16" id="TyH-oO-J9i"/>
                 <constraint firstItem="go1-WV-g0h" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="i6s-qK-xj4"/>
                 <constraint firstItem="go1-WV-g0h" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="tpG-Nw-qWH"/>

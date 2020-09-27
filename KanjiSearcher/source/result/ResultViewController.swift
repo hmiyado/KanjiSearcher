@@ -1,6 +1,7 @@
 //
 
 import RxSwift
+import SnapKit
 import UIKit
 
 class ResultViewController: UIViewController {
@@ -48,14 +49,19 @@ class ResultViewController: UIViewController {
         viewModel
             .output
             .errorSearching
-            .drive(onNext: {[weak self] _ in
+            .drive(onNext: {[weak self] error in
                 guard let self = self else {
                     return
                 }
                 self.activityIndicator?.removeFromSuperview()
                 if let containerView = self.containerView {
-                    errorView.center(in: containerView)
-                    //                    errorView.showError(error)
+                    containerView.addSubview(errorView)
+                    errorView.snp.makeConstraints { (make) -> Void in
+                        make.center.equalTo(containerView.safeAreaLayoutGuide)
+                        make.width.equalTo(containerView.safeAreaLayoutGuide)
+                        make.height.equalTo(containerView.safeAreaLayoutGuide)
+                    }
+                    errorView.showError(error)
                 }
             })
             .disposed(by: disposableBag)
